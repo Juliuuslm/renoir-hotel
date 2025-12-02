@@ -7,6 +7,7 @@ import { ModalProvider } from '@/lib/modal-context';
 import { BookingModal } from '@/components/shared/BookingModal';
 import { MenuModal } from '@/components/shared/MenuModal';
 import { HotelStructuredData } from '@/components/shared/StructuredData';
+import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -68,13 +69,15 @@ export default function RootLayout({
         <HotelStructuredData />
       </head>
       <body className="font-sans text-neutral-900 bg-neutral-50 selection:bg-neutral-900 selection:text-white min-h-screen flex flex-col">
-        <ModalProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <BookingModal />
-          <MenuModal />
-        </ModalProvider>
+        <SmoothScrollProvider>
+          <ModalProvider>
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <BookingModal />
+            <MenuModal />
+          </ModalProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
