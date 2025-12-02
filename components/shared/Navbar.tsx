@@ -1,0 +1,135 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import { useModal } from '@/lib/modal-context';
+
+export const Navbar = () => {
+  const pathname = usePathname();
+  const { openBookingModal } = useModal();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMenuOpen]);
+
+  const navLinks = [
+    { href: '/suites', label: 'Suites' },
+    { href: '/gastronomia', label: 'Gastronomía' },
+    { href: '/wellness', label: 'Wellness' },
+    { href: '/experiencias', label: 'Experiencias' },
+    { href: '/contacto', label: 'Contacto' },
+  ];
+
+  const isHome = pathname === '/';
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled || !isHome
+            ? 'bg-white/95 backdrop-blur-md py-4 text-neutral-900 border-b border-neutral-100 shadow-sm'
+            : 'bg-transparent py-8 text-white'
+        }`}
+      >
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <Link
+            href="/"
+            className="font-serif text-2xl tracking-[0.2em] font-bold z-50 relative hover:opacity-70 transition-opacity"
+            onClick={handleNavClick}
+          >
+            RENOIR
+          </Link>
+
+          <div className="hidden md:flex space-x-8 lg:space-x-12 text-xs tracking-[0.15em] uppercase font-medium">
+            {navLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`hover:opacity-60 transition-opacity relative group ${
+                  pathname === item.href ? 'opacity-100' : 'opacity-80'
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-2 left-0 w-full h-0.5 bg-current transform origin-left transition-transform duration-300 ${
+                    pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex items-center space-x-6">
+            <button
+              onClick={openBookingModal}
+              className="hidden md:block text-xs uppercase tracking-widest border border-current px-4 py-2 hover:bg-neutral-900 hover:text-white transition-colors"
+            >
+              Reservar
+            </button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden z-50 relative"
+              aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 bg-neutral-900 z-40 transform transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        } flex items-center justify-center`}
+      >
+        <div className="flex flex-col space-y-8 text-center text-white">
+          <Link
+            href="/"
+            className="font-serif text-4xl hover:text-neutral-400 transition-colors"
+            onClick={handleNavClick}
+          >
+            Inicio
+          </Link>
+          {navLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="font-serif text-4xl hover:text-neutral-400 transition-colors"
+              onClick={handleNavClick}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <button
+            onClick={() => {
+              setIsMenuOpen(false);
+              openBookingModal();
+            }}
+            className="mt-8 border border-white px-8 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-neutral-900 transition-colors"
+          >
+            Reservar Ahora
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};

@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import './globals.css';
+import { Navbar } from '@/components/shared/Navbar';
+import { Footer } from '@/components/shared/Footer';
+import { ModalProvider } from '@/lib/modal-context';
+import { BookingModal } from '@/components/shared/BookingModal';
+import { MenuModal } from '@/components/shared/MenuModal';
+import { HotelStructuredData } from '@/components/shared/StructuredData';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -58,8 +64,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <HotelStructuredData />
+      </head>
       <body className="font-sans text-neutral-900 bg-neutral-50 selection:bg-neutral-900 selection:text-white min-h-screen flex flex-col">
-        <main className="flex-grow">{children}</main>
+        <ModalProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <BookingModal />
+          <MenuModal />
+        </ModalProvider>
       </body>
     </html>
   );
