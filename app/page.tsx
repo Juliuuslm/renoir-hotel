@@ -129,7 +129,7 @@ export default function HomePage() {
       <section className="bg-white py-32 md:py-48 text-neutral-900">
         <div className="container mx-auto px-6 max-w-5xl">
           {/* Header */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <RevealText>
               <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
                 Notre Histoire
@@ -204,7 +204,7 @@ export default function HomePage() {
       <section className="bg-neutral-900 text-white py-32 md:py-48">
         <div className="container mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <RevealText>
               <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
                 Vida en Renoir
@@ -239,7 +239,7 @@ export default function HomePage() {
                 <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
                   Alojamiento
                 </span>
-                <h2 className="font-serif text-5xl md:text-6xl leading-[1.1] mb-8">
+                <h2 className="font-serif text-5xl md:text-6xl leading-[1.1] mb-12">
                   Nuestros{' '}
                   <span className="italic text-neutral-500">Santuarios</span>
                 </h2>
@@ -253,7 +253,7 @@ export default function HomePage() {
               <RevealText delay={200}>
                 <Link
                   href="/suites"
-                  className="inline-flex items-center text-xs tracking-[0.2em] uppercase border border-neutral-900 px-8 py-4 hover:bg-neutral-900 hover:text-white transition-all duration-300"
+                  className="inline-flex items-center text-xs tracking-[0.2em] uppercase border border-neutral-900 px-12 py-4 hover:bg-neutral-900 hover:text-white transition-all duration-300"
                 >
                   Explorar Suites <ArrowRight size={14} className="ml-2" />
                 </Link>

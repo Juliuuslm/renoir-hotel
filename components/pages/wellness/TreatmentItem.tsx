@@ -12,8 +12,8 @@ interface TreatmentItemProps {
 
 export const TreatmentItem = ({ title, duration, price, desc, index }: TreatmentItemProps) => {
   return (
-    <div className="group border-b border-neutral-200 py-8 hover:bg-neutral-50 transition-colors duration-300">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8">
+    <div className="group border-b border-neutral-200 hover:bg-neutral-50 transition-colors duration-300">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center px-6 py-6 md:px-8 md:py-8">
         <div className="mb-4 md:mb-0 max-w-xl">
           <span className="text-[10px] uppercase tracking-widest text-neutral-400 mb-2 block">
             Ritual 0{index + 1}

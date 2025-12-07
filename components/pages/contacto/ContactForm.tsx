@@ -61,8 +61,8 @@ export const ContactForm = () => {
   };
 
   return (
-    <form className="space-y-10" onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <form className="space-y-8" onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="group">
           <input
             type="text"
@@ -127,7 +127,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-neutral-900 text-white px-10 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-700 transition-all duration-300 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-neutral-900 text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-700 transition-all duration-300 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
         </button>

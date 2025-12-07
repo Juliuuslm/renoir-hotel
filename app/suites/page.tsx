@@ -46,7 +46,7 @@ export default function SuitesPage() {
   return (
     <div className="animate-fadeIn pb-24">
       {/* Hero Section */}
-      <section className="relative h-[70vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070&auto=format&fit=crop"
@@ -78,10 +78,10 @@ export default function SuitesPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-24 bg-neutral-50 flex justify-center">
+      <section className="py-20 md:py-32 bg-neutral-50 flex justify-center">
         <div className="max-w-3xl px-6 text-center">
           <RevealText>
-            <h3 className="font-serif text-3xl mb-8 text-neutral-800 italic">
+            <h3 className="font-serif text-3xl md:text-4xl mb-8 text-neutral-800 italic">
               &ldquo;El sueño es la obra de arte más privada.&rdquo;
             </h3>
             <p className="text-neutral-500 font-light text-lg leading-relaxed">

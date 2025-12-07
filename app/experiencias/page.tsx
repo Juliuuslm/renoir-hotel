@@ -67,7 +67,7 @@ export default function ExperienciasPage() {
   return (
     <div className="animate-fadeIn">
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?q=80&w=1974&auto=format&fit=crop"
@@ -82,7 +82,7 @@ export default function ExperienciasPage() {
         </div>
         <div className="relative z-10 text-center text-white px-6">
           <p
-            className={`text-xs tracking-[0.4em] uppercase mb-6 transition-all duration-700 delay-300 ${
+            className={`text-xs tracking-[0.4em] uppercase mb-4 transition-all duration-700 delay-300 ${
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
@@ -99,7 +99,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Intro */}
-      <section className="py-24 bg-white text-center">
+      <section className="py-20 md:py-32 bg-white text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Compass size={32} className="mx-auto text-neutral-400 mb-6" strokeWidth={1} />
@@ -116,7 +116,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Agenda Cultural */}
-      <section className="py-12 bg-neutral-50">
+      <section className="py-20 md:py-32 bg-neutral-50">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <RevealText>
@@ -143,7 +143,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Concierge Picks */}
-      <section className="py-24 bg-neutral-900 text-white">
+      <section className="py-20 md:py-32 bg-neutral-900 text-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -192,17 +192,17 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Ateliers */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 text-center">
           <RevealText>
             <h2 className="font-serif text-4xl mb-12">Ateliers Creativos</h2>
           </RevealText>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {workshops.map((ws, i) => (
               <RevealText
                 key={i}
                 delay={i * 100}
-                className="p-8 border border-neutral-100 hover:shadow-lg transition-shadow duration-300"
+                className="p-8 md:p-12 border border-neutral-100 hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="text-neutral-900 mb-6 flex justify-center">{ws.icon}</div>
                 <h4 className="font-serif text-lg mb-2">{ws.title}</h4>

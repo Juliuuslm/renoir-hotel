@@ -34,7 +34,7 @@ export default function GastronomiaPage() {
         </div>
         <div className="relative z-10 text-center text-white px-6">
           <p
-            className={`text-xs tracking-[0.4em] uppercase mb-6 transition-all duration-700 delay-300 ${
+            className={`text-xs tracking-[0.4em] uppercase mb-4 transition-all duration-700 delay-300 ${
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
@@ -51,7 +51,7 @@ export default function GastronomiaPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-32 bg-white text-center">
+      <section className="py-20 md:py-32 bg-white text-center">
         <div className="container mx-auto px-6 max-w-4xl">
           <RevealText>
             <h3 className="font-serif text-3xl md:text-5xl mb-8 text-neutral-900 leading-tight">

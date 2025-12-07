@@ -60,7 +60,7 @@ export default function WellnessPage() {
         </div>
         <div className="relative z-10 text-center text-stone-900 px-6">
           <p
-            className={`text-xs tracking-[0.4em] uppercase mb-6 transition-all duration-700 delay-300 ${
+            className={`text-xs tracking-[0.4em] uppercase mb-4 transition-all duration-700 delay-300 ${
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
@@ -77,7 +77,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-32 bg-stone-50 text-center">
+      <section className="py-20 md:py-32 bg-stone-50 text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Waves size={32} className="mx-auto text-stone-400 mb-6" strokeWidth={1} />
@@ -93,7 +93,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Treatments Section */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <RevealText>
             <div className="flex justify-between items-end mb-16 border-b border-black pb-4">
@@ -114,9 +114,9 @@ export default function WellnessPage() {
       </section>
 
       {/* Facilities Section */}
-      <section className="py-24 bg-stone-100">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="md:col-span-1 p-8 bg-white shadow-sm border border-stone-200">
+      <section className="py-20 md:py-32 bg-stone-100">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="md:col-span-1 p-8 md:p-12 bg-white shadow-sm border border-stone-200">
             <RevealText>
               <Heart size={24} className="text-stone-400 mb-6" />
               <h4 className="font-serif text-2xl mb-4">Mindfulness</h4>
@@ -128,7 +128,7 @@ export default function WellnessPage() {
               </span>
             </RevealText>
           </div>
-          <div className="md:col-span-1 p-8 bg-white shadow-sm border border-stone-200">
+          <div className="md:col-span-1 p-8 md:p-12 bg-white shadow-sm border border-stone-200">
             <RevealText delay={100}>
               <Activity size={24} className="text-stone-400 mb-6" />
               <h4 className="font-serif text-2xl mb-4">Fitness Studio</h4>
@@ -140,13 +140,13 @@ export default function WellnessPage() {
               </span>
             </RevealText>
           </div>
-          <div className="md:col-span-1 p-8 bg-stone-800 text-stone-100 flex flex-col justify-center text-center">
+          <div className="md:col-span-1 p-8 md:p-12 bg-stone-800 text-stone-100 flex flex-col justify-center text-center">
             <RevealText delay={200}>
               <h4 className="font-serif text-3xl mb-4">Membresía</h4>
               <p className="text-sm text-stone-400 mb-8 font-light">
                 Acceso exclusivo a todas las instalaciones del spa.
               </p>
-              <button className="bg-white text-stone-900 px-6 py-3 text-xs uppercase tracking-widest hover:bg-stone-200 transition-colors w-full">
+              <button className="bg-white text-stone-900 px-12 py-4 text-xs uppercase tracking-widest hover:bg-stone-200 transition-colors w-full">
                 Solicitar Info
               </button>
             </RevealText>

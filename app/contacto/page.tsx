@@ -26,7 +26,7 @@ export default function ContactoPage() {
   return (
     <div className="animate-fadeIn bg-neutral-50 min-h-screen">
       {/* Hero Contact Minimal */}
-      <section className="pt-40 pb-20 px-6 text-center">
+      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 text-center">
         <RevealText>
           <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase mb-4 block">
             Conecte
@@ -125,7 +125,7 @@ export default function ContactoPage() {
       </section>
 
       {/* FAQ rápido */}
-      <section className="bg-neutral-100 py-24 border-t border-neutral-200">
+      <section className="bg-neutral-100 py-20 md:py-32 border-t border-neutral-200">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             {faqs.map((faq, i) => (

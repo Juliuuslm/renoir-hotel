@@ -33,7 +33,7 @@ export const RoomCard = ({
       <div className="w-full md:w-1/2 h-[50vh] md:h-auto relative overflow-hidden group">
         <ParallaxImage src={image} alt={title} className="h-full w-full" />
       </div>
-      <div className="w-full md:w-1/2 p-8 md:p-24 flex flex-col justify-center bg-white">
+      <div className="w-full md:w-1/2 p-12 md:p-20 flex flex-col justify-center bg-white">
         <RevealText delay={100}>
           <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase mb-4 block">
             Colección {2024 + index}
@@ -67,7 +67,7 @@ export const RoomCard = ({
             </div>
             <button
               onClick={onOpenBooking}
-              className="bg-neutral-900 text-white px-8 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
+              className="bg-neutral-900 text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
             >
               Reservar
             </button>
