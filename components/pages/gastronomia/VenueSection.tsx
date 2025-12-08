@@ -67,10 +67,10 @@ export const VenueSection = ({
             </div>
             <button
               onClick={onOpenMenu}
-              className={`mt-8 text-xs tracking-[0.2em] uppercase border-b pb-1 transition-all ${
+              className={`mt-8 text-xs tracking-[0.2em] uppercase border-b pb-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all ${
                 type === 'dark'
-                  ? 'border-white hover:text-yellow-500 hover:border-yellow-500'
-                  : 'border-black hover:text-neutral-500 hover:border-neutral-500'
+                  ? 'border-white hover:text-yellow-500 active:text-yellow-600 hover:border-yellow-500'
+                  : 'border-black hover:text-neutral-500 active:text-neutral-600 hover:border-neutral-500'
               }`}
             >
               Ver Menú & Reservar

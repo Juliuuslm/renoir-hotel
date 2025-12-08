@@ -24,4 +24,41 @@
   .font-sans {
     font-family: var(--font-inter), sans-serif;
   }
+
+  /* Touch device optimization - Deshabilitar hover en touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    .hover\:scale-110 {
+      transform: none !important;
+    }
+    .hover\:opacity-60 {
+      opacity: 1 !important;
+    }
+    .group:hover .group-hover\:scale-110 {
+      transform: none !important;
+    }
+    .group:hover .group-hover\:opacity-40 {
+      opacity: 0.6 !important;
+    }
+  }
+
+  /* Active states para touch feedback */
+  .tap-highlight {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Touch feedback global para botones y links */
+  button:active,
+  a:active,
+  .touchable:active {
+    @apply scale-95 transition-transform duration-100;
+  }
+
+  /* Focus visible para accesibilidad (teclado) */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-2 outline-offset-2 outline-yellow-600;
+  }
 }

@@ -63,7 +63,7 @@ export const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`hover:opacity-60 transition-opacity relative group py-3 ${
+                className={`hover:opacity-60 active:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-opacity relative group py-3 ${
                   pathname === item.href ? 'opacity-100' : 'opacity-80'
                 }`}
               >
@@ -80,7 +80,7 @@ export const Navbar = () => {
           <div className="flex items-center space-x-6">
             <button
               onClick={openBookingModal}
-              className="hidden md:block text-xs uppercase tracking-widest border border-current px-6 py-3 sm:px-8 sm:py-4 hover:bg-neutral-900 hover:text-white transition-colors min-h-[44px]"
+              className="hidden md:block text-xs uppercase tracking-widest border border-current px-6 py-3 sm:px-8 sm:py-4 hover:bg-neutral-900 active:bg-neutral-800 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors min-h-[44px]"
             >
               Reservar
             </button>
@@ -111,7 +111,7 @@ export const Navbar = () => {
           <div className="flex flex-col space-y-6 text-center text-white">
           <Link
             href="/"
-            className="font-serif text-4xl hover:text-neutral-400 transition-colors py-2"
+            className="font-serif text-3xl sm:text-4xl hover:text-neutral-400 active:text-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-600 transition-colors py-2"
             onClick={handleNavClick}
           >
             Inicio
@@ -120,7 +120,7 @@ export const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="font-serif text-4xl hover:text-neutral-400 transition-colors py-2"
+              className="font-serif text-3xl sm:text-4xl hover:text-neutral-400 active:text-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-600 transition-colors py-2"
               onClick={handleNavClick}
             >
               {item.label}
@@ -131,7 +131,7 @@ export const Navbar = () => {
               setIsMenuOpen(false);
               openBookingModal();
             }}
-            className="mt-8 border border-white px-8 py-4 text-xs uppercase tracking-widest hover:bg-white hover:text-neutral-900 transition-colors min-h-[44px]"
+            className="mt-8 border border-white px-8 py-4 text-xs uppercase tracking-widest hover:bg-white active:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors min-h-[44px]"
           >
             Reservar Ahora
           </button>

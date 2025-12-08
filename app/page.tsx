@@ -86,7 +86,7 @@ export default function HomePage() {
           >
             <button
               onClick={openBookingModal}
-              className="border border-white/30 px-8 py-3 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-300"
+              className="border border-white/30 px-8 py-3 text-xs tracking-[0.2em] uppercase hover:bg-white active:bg-neutral-100 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300"
             >
               Reservar Estancia
             </button>
@@ -253,7 +253,7 @@ export default function HomePage() {
               <RevealText delay={200}>
                 <Link
                   href="/suites"
-                  className="inline-flex items-center text-xs tracking-[0.2em] uppercase border border-neutral-900 px-12 py-4 hover:bg-neutral-900 hover:text-white transition-all duration-300"
+                  className="inline-flex items-center text-xs tracking-[0.2em] uppercase border border-neutral-900 px-12 py-4 hover:bg-neutral-900 active:bg-neutral-800 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300"
                 >
                   Explorar Suites <ArrowRight size={14} className="ml-2" />
                 </Link>

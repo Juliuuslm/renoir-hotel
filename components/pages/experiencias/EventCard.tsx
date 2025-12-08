@@ -13,12 +13,16 @@ interface EventCardProps {
 
 export const EventCard = ({ day, month, title, category, image }: EventCardProps) => {
   return (
-    <div className="group relative overflow-hidden bg-neutral-900 h-96 w-full cursor-pointer">
+    <div
+      className="group relative overflow-hidden bg-neutral-900 h-96 w-full cursor-pointer tap-highlight"
+      role="button"
+      tabIndex={0}
+    >
       <Image
         src={image}
         alt={title}
         fill
-        className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+        className="object-cover transition-transform duration-700 group-hover:scale-110 group-active:scale-105 opacity-60 group-hover:opacity-40"
         sizes="(max-width: 768px) 100vw, 33vw"
         loading="lazy"
       />
@@ -33,10 +37,10 @@ export const EventCard = ({ day, month, title, category, image }: EventCardProps
           </span>
         </div>
         <div>
-          <h3 className="font-serif text-3xl text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+          <h3 className="font-serif text-3xl text-white mb-2 transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500">
             {title}
           </h3>
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center text-white/80 text-sm space-x-2">
+          <div className="opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-active:opacity-100 transition-opacity duration-500 flex items-center text-white/80 text-sm space-x-2">
             <span>Reservar lugar</span> <ArrowRight size={14} />
           </div>
         </div>

@@ -59,7 +59,7 @@ export const MenuModal = () => {
 
         <button
           onClick={closeModal}
-          className="border-b border-neutral-900 pb-1 text-xs uppercase tracking-widest hover:text-neutral-600 transition-colors"
+          className="border-b border-neutral-900 pb-1 text-xs uppercase tracking-widest hover:text-neutral-600 active:text-neutral-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors"
         >
           Cerrar Menú
         </button>

@@ -15,14 +15,18 @@ export const GalleryCard = ({ image, title, category, tall = false }: GalleryCar
     : 'h-[300px] md:h-[400px]';
 
   return (
-    <div className={`group relative overflow-hidden bg-neutral-800 cursor-pointer ${heightClass}`}>
+    <div
+      className={`group relative overflow-hidden bg-neutral-800 cursor-pointer tap-highlight ${heightClass}`}
+      role="button"
+      tabIndex={0}
+    >
       {/* Imagen con hover effects */}
       <div className="relative w-full h-full">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover transition-all duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+          className="object-cover transition-all duration-700 group-hover:scale-110 group-active:scale-105 opacity-60 group-hover:opacity-40"
           sizes="(max-width: 768px) 100vw, 50vw"
           loading="lazy"
         />
@@ -33,7 +37,7 @@ export const GalleryCard = ({ image, title, category, tall = false }: GalleryCar
 
       {/* Contenido de texto */}
       <div className="absolute inset-0 p-8 flex flex-col justify-end">
-        <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+        <div className="transform translate-y-2 group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500">
           <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 block mb-2">
             {category}
           </span>

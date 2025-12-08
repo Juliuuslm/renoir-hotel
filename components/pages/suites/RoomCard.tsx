@@ -67,7 +67,7 @@ export const RoomCard = ({
             </div>
             <button
               onClick={onOpenBooking}
-              className="bg-neutral-900 text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg min-h-[44px]"
+              className="bg-neutral-900 text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-800 active:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg min-h-[44px]"
             >
               Reservar
             </button>

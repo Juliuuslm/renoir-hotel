@@ -56,7 +56,7 @@ export const BookingModal = () => {
           <button
             type="button"
             onClick={closeModal}
-            className="w-full bg-neutral-900 text-white py-5 text-xs tracking-[0.2em] uppercase hover:bg-yellow-600 transition-colors min-h-[44px]"
+            className="w-full bg-neutral-900 text-white py-5 text-xs tracking-[0.2em] uppercase hover:bg-yellow-600 active:bg-yellow-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors min-h-[44px]"
           >
             Verificar Disponibilidad
           </button>

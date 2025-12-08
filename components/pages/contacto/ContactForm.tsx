@@ -127,7 +127,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-neutral-900 text-white px-12 py-5 text-xs tracking-[0.2em] uppercase hover:bg-neutral-700 transition-all duration-300 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
+          className="bg-neutral-900 text-white px-12 py-5 text-xs tracking-[0.2em] uppercase hover:bg-neutral-700 active:bg-neutral-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
         >
           {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
         </button>
