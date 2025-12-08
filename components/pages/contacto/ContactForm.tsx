@@ -61,7 +61,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <form className="space-y-8" onSubmit={handleSubmit}>
+    <form className="space-y-6 sm:space-y-7 md:space-y-8" onSubmit={handleSubmit}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="group">
           <input
@@ -69,7 +69,7 @@ export const ContactForm = () => {
             placeholder="Nombre"
             value={formData.firstName}
             onChange={(e) => handleChange('firstName', e.target.value)}
-            className={`w-full border-b py-3 text-neutral-900 focus:outline-none transition-colors bg-transparent placeholder-neutral-400 ${
+            className={`w-full border-b py-3 text-neutral-900 focus:outline-none transition-colors bg-transparent placeholder-neutral-400 min-h-[44px] ${
               errors.firstName ? 'border-red-500' : 'border-neutral-300 focus:border-neutral-900'
             }`}
           />
@@ -81,7 +81,7 @@ export const ContactForm = () => {
             placeholder="Apellido"
             value={formData.lastName}
             onChange={(e) => handleChange('lastName', e.target.value)}
-            className="w-full border-b border-neutral-300 py-3 text-neutral-900 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder-neutral-400"
+            className="w-full border-b border-neutral-300 py-3 text-neutral-900 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder-neutral-400 min-h-[44px]"
           />
         </div>
       </div>
@@ -91,7 +91,7 @@ export const ContactForm = () => {
           placeholder="Correo Electrónico"
           value={formData.email}
           onChange={(e) => handleChange('email', e.target.value)}
-          className={`w-full border-b py-3 text-neutral-900 focus:outline-none transition-colors bg-transparent placeholder-neutral-400 ${
+          className={`w-full border-b py-3 text-neutral-900 focus:outline-none transition-colors bg-transparent placeholder-neutral-400 min-h-[44px] ${
             errors.email ? 'border-red-500' : 'border-neutral-300 focus:border-neutral-900'
           }`}
         />
@@ -101,7 +101,7 @@ export const ContactForm = () => {
         <select
           value={formData.subject}
           onChange={(e) => handleChange('subject', e.target.value)}
-          className="w-full border-b border-neutral-300 py-3 text-neutral-900 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent"
+          className="w-full border-b border-neutral-300 py-3 text-neutral-900 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent min-h-[44px]"
         >
           <option value="">Motivo del contacto</option>
           <option value="reservaciones">Reservaciones</option>
@@ -127,7 +127,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-neutral-900 text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-700 transition-all duration-300 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-neutral-900 text-white px-12 py-5 text-xs tracking-[0.2em] uppercase hover:bg-neutral-700 transition-all duration-300 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
         >
           {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
         </button>

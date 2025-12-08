@@ -28,7 +28,7 @@ export const TreatmentItem = ({ title, duration, price, desc, index }: Treatment
           <span className="w-px h-4 bg-neutral-300"></span>
           <span>{price}</span>
           <button
-            className="bg-transparent border border-neutral-300 rounded-full p-2 hover:bg-neutral-900 hover:border-neutral-900 hover:text-white transition-all"
+            className="bg-transparent border border-neutral-300 rounded-full p-3 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-neutral-900 hover:border-neutral-900 hover:text-white transition-all"
             aria-label="Reservar tratamiento"
           >
             <ArrowRight size={14} />

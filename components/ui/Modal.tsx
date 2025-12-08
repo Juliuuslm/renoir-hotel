@@ -38,13 +38,13 @@ export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
           <h3 className="font-serif text-2xl text-neutral-900">{title}</h3>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-neutral-100 rounded-full transition-colors"
+            className="p-3 sm:p-4 hover:bg-neutral-100 rounded-full transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Cerrar modal"
           >
             <X size={20} />
           </button>
         </div>
-        <div className="p-6 md:p-10">{children}</div>
+        <div className="p-4 sm:p-5 md:p-8 lg:p-10">{children}</div>
       </div>
     </div>
   );

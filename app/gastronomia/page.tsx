@@ -18,7 +18,7 @@ export default function GastronomiaPage() {
   return (
     <div className="animate-fadeIn">
       {/* Hero Section */}
-      <section className="relative h-[80vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] md:h-[80vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop"
@@ -41,7 +41,7 @@ export default function GastronomiaPage() {
             Culinaria
           </p>
           <h1
-            className={`font-serif text-6xl md:text-8xl transition-all duration-700 delay-500 ${
+            className={`font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl transition-all duration-700 delay-500 ${
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
@@ -51,10 +51,10 @@ export default function GastronomiaPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-20 md:py-32 bg-white text-center">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white text-center">
         <div className="container mx-auto px-6 max-w-4xl">
           <RevealText>
-            <h3 className="font-serif text-3xl md:text-5xl mb-8 text-neutral-900 leading-tight">
+            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 text-neutral-900 leading-tight">
               &ldquo;La cocina no es química. Es un arte. Requiere instinto y gusto, no medidas
               exactas.&rdquo;
             </h3>

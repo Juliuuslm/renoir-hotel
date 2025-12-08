@@ -44,7 +44,7 @@ export default function WellnessPage() {
   return (
     <div className="animate-fadeIn">
       {/* Hero Section */}
-      <section className="relative h-[80vh] w-full bg-stone-100 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] md:h-[80vh] w-full bg-stone-100 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop"
@@ -67,7 +67,7 @@ export default function WellnessPage() {
             Bienestar
           </p>
           <h1
-            className={`font-serif text-6xl md:text-9xl text-stone-800 transition-all duration-700 delay-500 ${
+            className={`font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-stone-800 transition-all duration-700 delay-500 ${
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
@@ -77,11 +77,11 @@ export default function WellnessPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-20 md:py-32 bg-stone-50 text-center">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-stone-50 text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Waves size={32} className="mx-auto text-stone-400 mb-6" strokeWidth={1} />
-            <h3 className="font-serif text-3xl md:text-4xl mb-8 text-stone-800 leading-relaxed">
+            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl mb-8 text-stone-800 leading-relaxed">
               &ldquo;El silencio es el lujo más escaso de la vida moderna. Aquí, lo
               cultivamos.&rdquo;
             </h3>
@@ -93,7 +93,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Treatments Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <RevealText>
             <div className="flex justify-between items-end mb-16 border-b border-black pb-4">
@@ -114,7 +114,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Facilities Section */}
-      <section className="py-20 md:py-32 bg-stone-100">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-stone-100">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <div className="md:col-span-1 p-8 md:p-12 bg-white shadow-sm border border-stone-200">
             <RevealText>

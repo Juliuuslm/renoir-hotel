@@ -67,7 +67,7 @@ export default function ExperienciasPage() {
   return (
     <div className="animate-fadeIn">
       {/* Hero Section */}
-      <section className="relative h-[70vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] sm:min-h-[65vh] md:h-[70vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?q=80&w=1974&auto=format&fit=crop"
@@ -89,7 +89,7 @@ export default function ExperienciasPage() {
             Lifestyle
           </p>
           <h1
-            className={`font-serif text-6xl md:text-8xl transition-all duration-700 delay-500 ${
+            className={`font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl transition-all duration-700 delay-500 ${
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
@@ -99,11 +99,11 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Intro */}
-      <section className="py-20 md:py-32 bg-white text-center">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Compass size={32} className="mx-auto text-neutral-400 mb-6" strokeWidth={1} />
-            <h3 className="font-serif text-3xl md:text-4xl mb-8 text-neutral-900">
+            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl mb-8 text-neutral-900">
               &ldquo;No somos solo un hotel, somos curadores de cultura.&rdquo;
             </h3>
             <p className="text-neutral-500 font-light text-lg">
@@ -116,7 +116,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Agenda Cultural */}
-      <section className="py-20 md:py-32 bg-neutral-50">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-neutral-50">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <RevealText>
@@ -143,7 +143,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Concierge Picks */}
-      <section className="py-20 md:py-32 bg-neutral-900 text-white">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-neutral-900 text-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -192,7 +192,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Ateliers */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white">
         <div className="container mx-auto px-6 text-center">
           <RevealText>
             <h2 className="font-serif text-4xl mb-12">Ateliers Creativos</h2>
@@ -214,7 +214,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 bg-neutral-900 text-white text-center">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-neutral-900 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
           <RevealText>
             <h2 className="font-serif text-5xl md:text-7xl mb-8">Su Historia Comienza Aquí</h2>

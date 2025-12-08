@@ -15,14 +15,14 @@ export const BookingModal = () => {
             <label className="text-xs uppercase tracking-widest text-neutral-500">Llegada</label>
             <input
               type="date"
-              className="w-full border-b border-neutral-300 py-2 focus:outline-none focus:border-neutral-900 font-serif text-lg"
+              className="w-full border-b border-neutral-300 py-3 sm:py-4 focus:outline-none focus:border-neutral-900 font-serif text-lg min-h-[44px]"
             />
           </div>
           <div className="space-y-2">
             <label className="text-xs uppercase tracking-widest text-neutral-500">Salida</label>
             <input
               type="date"
-              className="w-full border-b border-neutral-300 py-2 focus:outline-none focus:border-neutral-900 font-serif text-lg"
+              className="w-full border-b border-neutral-300 py-3 sm:py-4 focus:outline-none focus:border-neutral-900 font-serif text-lg min-h-[44px]"
             />
           </div>
         </div>
@@ -56,7 +56,7 @@ export const BookingModal = () => {
           <button
             type="button"
             onClick={closeModal}
-            className="w-full bg-neutral-900 text-white py-4 text-xs tracking-[0.2em] uppercase hover:bg-yellow-600 transition-colors"
+            className="w-full bg-neutral-900 text-white py-5 text-xs tracking-[0.2em] uppercase hover:bg-yellow-600 transition-colors min-h-[44px]"
           >
             Verificar Disponibilidad
           </button>

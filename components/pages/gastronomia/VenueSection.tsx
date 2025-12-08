@@ -31,7 +31,7 @@ export const VenueSection = ({
         <ParallaxImage src={image} alt={name} className="h-full w-full absolute inset-0" />
       </div>
       <div
-        className={`w-full md:w-1/2 p-12 md:p-20 flex flex-col justify-center ${
+        className={`w-full md:w-1/2 p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 flex flex-col justify-center ${
           type === 'dark' ? 'bg-neutral-900 text-white' : 'bg-neutral-50 text-neutral-900'
         }`}
       >

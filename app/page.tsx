@@ -48,7 +48,7 @@ export default function HomePage() {
   return (
     <div className="animate-fadeIn">
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden bg-neutral-900 text-white flex items-center justify-center">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden bg-neutral-900 text-white flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
@@ -73,7 +73,7 @@ export default function HomePage() {
             </p>
           </div>
           <h1
-            className={`font-serif text-6xl md:text-9xl tracking-tight mb-8 transition-all duration-1000 delay-500 transform ${
+            className={`font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight mb-8 transition-all duration-1000 delay-500 transform ${
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
@@ -95,11 +95,11 @@ export default function HomePage() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-32 md:py-48 bg-neutral-50 text-neutral-900">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-50 text-neutral-900">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-7">
             <RevealText>
-              <h2 className="font-serif text-4xl md:text-6xl leading-[1.1] mb-12">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-12">
                 El arte no es algo que se mira,{' '}
                 <br />
                 <span className="text-neutral-400 italic">es algo que se vive.</span>
@@ -126,7 +126,7 @@ export default function HomePage() {
       </section>
 
       {/* L'Essence Section - Quiénes somos */}
-      <section className="bg-white py-32 md:py-48 text-neutral-900">
+      <section className="bg-white py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 text-neutral-900">
         <div className="container mx-auto px-6 max-w-5xl">
           {/* Header */}
           <div className="text-center mb-16">
@@ -134,7 +134,7 @@ export default function HomePage() {
               <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
                 Notre Histoire
               </span>
-              <h2 className="font-serif text-5xl md:text-7xl">L&apos;Essence</h2>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">L&apos;Essence</h2>
             </RevealText>
           </div>
 
@@ -201,7 +201,7 @@ export default function HomePage() {
       </section>
 
       {/* Moments Section - Galería */}
-      <section className="bg-neutral-900 text-white py-32 md:py-48">
+      <section className="bg-neutral-900 text-white py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
         <div className="container mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16">
@@ -209,7 +209,7 @@ export default function HomePage() {
               <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
                 Vida en Renoir
               </span>
-              <h2 className="font-serif text-5xl md:text-7xl">Moments</h2>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">Moments</h2>
             </RevealText>
           </div>
 
@@ -230,7 +230,7 @@ export default function HomePage() {
       </section>
 
       {/* Santuarios Section - Preview Rediseñado */}
-      <section className="bg-neutral-50 py-32 md:py-48 text-neutral-900">
+      <section className="bg-neutral-50 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 text-neutral-900">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             {/* Columna Izquierda - Texto */}
@@ -239,7 +239,7 @@ export default function HomePage() {
                 <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
                   Alojamiento
                 </span>
-                <h2 className="font-serif text-5xl md:text-6xl leading-[1.1] mb-12">
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-12">
                   Nuestros{' '}
                   <span className="italic text-neutral-500">Santuarios</span>
                 </h2>
