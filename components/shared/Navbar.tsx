@@ -97,11 +97,18 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-neutral-900 z-40 transform transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] ${
-          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-        } flex items-center justify-center`}
+        className={`fixed inset-0 bg-neutral-900 z-40 transform transition-all duration-400 ease-out ${
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
       >
-        <div className="flex flex-col space-y-8 text-center text-white">
+        <div
+          className={`fixed inset-0 flex flex-col items-center justify-center text-center text-white transform transition-transform duration-400 ${
+            isMenuOpen ? 'translate-y-0' : 'translate-y-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex flex-col space-y-6 text-center text-white">
           <Link
             href="/"
             className="font-serif text-4xl hover:text-neutral-400 transition-colors py-2"
@@ -128,6 +135,7 @@ export const Navbar = () => {
           >
             Reservar Ahora
           </button>
+          </div>
         </div>
       </div>
     </>

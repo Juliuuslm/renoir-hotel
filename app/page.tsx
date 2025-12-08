@@ -139,7 +139,7 @@ export default function HomePage() {
           </div>
 
           {/* Grid 2 columnas: Historia + Filosofía */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-24">
             <RevealText delay={100}>
               <div>
                 <h3 className="font-serif text-2xl mb-6">Desde 1924</h3>
@@ -166,7 +166,7 @@ export default function HomePage() {
           </div>
 
           {/* Grid 3 pilares */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             <RevealText delay={300}>
               <div className="text-center">
                 <div className="w-12 h-12 bg-neutral-900 mx-auto mb-6"></div>
@@ -214,7 +214,7 @@ export default function HomePage() {
           </div>
 
           {/* Grid 2x2 asimétrico */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-6xl mx-auto">
             {galleryMoments.map((moment, index) => (
               <RevealText key={index} delay={index * 100}>
                 <GalleryCard

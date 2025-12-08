@@ -115,7 +115,7 @@ export default function WellnessPage() {
 
       {/* Facilities Section */}
       <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-stone-100">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <div className="md:col-span-1 p-8 md:p-12 bg-white shadow-sm border border-stone-200">
             <RevealText>
               <Heart size={24} className="text-stone-400 mb-6" />

@@ -197,7 +197,7 @@ export default function ExperienciasPage() {
           <RevealText>
             <h2 className="font-serif text-4xl mb-12">Ateliers Creativos</h2>
           </RevealText>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-7 lg:gap-8">
             {workshops.map((ws, i) => (
               <RevealText
                 key={i}

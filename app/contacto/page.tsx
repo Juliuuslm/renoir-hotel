@@ -127,7 +127,7 @@ export default function ContactoPage() {
       {/* FAQ rápido */}
       <section className="bg-neutral-100 py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 border-t border-neutral-200">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 text-center">
             {faqs.map((faq, i) => (
               <div key={i}>
                 <h4 className="font-serif text-xl mb-3">{faq.q}</h4>
