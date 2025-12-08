@@ -24,6 +24,7 @@ export const GalleryCard = ({ image, title, category, tall = false }: GalleryCar
           fill
           className="object-cover transition-all duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
           sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
         />
       </div>
 

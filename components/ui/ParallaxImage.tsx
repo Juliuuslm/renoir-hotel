@@ -22,6 +22,17 @@ export const ParallaxImage = ({ src, alt, className = '' }: ParallaxImageProps) 
   useEffect(() => {
     if (!containerRef.current || !imageRef.current) return;
 
+    // Deshabilitar parallax en mobile para mejor performance
+    // Solo activar en desktop (>= 768px)
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      // En mobile, no hacer parallax, solo escalar normal sin animación
+      gsap.set(imageRef.current, { scale: 1 });
+      console.log('[Performance] Parallax deshabilitado en mobile');
+      return;
+    }
+
+    // Parallax solo en desktop
     gsap.fromTo(
       imageRef.current,
       { scale: 1.15 },
@@ -45,7 +56,14 @@ export const ParallaxImage = ({ src, alt, className = '' }: ParallaxImageProps) 
   return (
     <div ref={containerRef} className={`overflow-hidden relative ${className}`}>
       <div ref={imageRef} className="w-full h-full">
-        <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
+        />
       </div>
     </div>
   );

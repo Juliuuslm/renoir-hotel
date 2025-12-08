@@ -22,6 +22,30 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
 
     const element = ref.current;
 
+    // Respetar preferencia de usuario para animaciones reducidas
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      // Solo fade in, sin movimiento, animación más corta
+      console.log('[Accessibility] Respetando prefers-reduced-motion');
+      gsap.fromTo(
+        element,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        }
+      );
+      return;
+    }
+
+    // Animación normal con movimiento
     gsap.fromTo(
       element,
       {

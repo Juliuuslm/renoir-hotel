@@ -20,6 +20,7 @@ export const EventCard = ({ day, month, title, category, image }: EventCardProps
         fill
         className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
         sizes="(max-width: 768px) 100vw, 33vw"
+        loading="lazy"
       />
       <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
         <div className="flex justify-between items-start text-white">

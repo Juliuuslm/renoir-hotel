@@ -11,6 +11,14 @@ if (typeof window !== 'undefined') {
 
 export const useSmoothScroll = () => {
   useEffect(() => {
+    // Deshabilitar Lenis en mobile para mejor performance
+    // Solo activar en desktop (>= 768px)
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      console.log('[Performance] Lenis smooth scroll deshabilitado en mobile');
+      return; // No inicializar Lenis en mobile
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
