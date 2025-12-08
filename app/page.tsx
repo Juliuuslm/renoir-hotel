@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Palette, Volume, Sparkles } from 'lucide-react';
 import { RevealText } from '@/components/ui/RevealText';
 import { ParallaxImage } from '@/components/ui/ParallaxImage';
 import { GalleryCard } from '@/components/pages/home/GalleryCard';
@@ -169,7 +169,9 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             <RevealText delay={300}>
               <div className="text-center">
-                <div className="w-12 h-12 bg-neutral-900 mx-auto mb-6"></div>
+                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
+                  <Palette size={48} className="text-neutral-900" strokeWidth={1.5} />
+                </div>
                 <h4 className="font-serif text-xl mb-3">Arte</h4>
                 <p className="text-neutral-500 text-sm font-light leading-relaxed">
                   Colecciones rotativas de artistas emergentes en colaboración con galerías locales
@@ -179,7 +181,9 @@ export default function HomePage() {
 
             <RevealText delay={400}>
               <div className="text-center">
-                <div className="w-12 h-12 bg-neutral-900 mx-auto mb-6"></div>
+                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
+                  <Volume size={48} className="text-neutral-900" strokeWidth={1.5} />
+                </div>
                 <h4 className="font-serif text-xl mb-3">Silencio</h4>
                 <p className="text-neutral-500 text-sm font-light leading-relaxed">
                   Arquitectura acústica diseñada para crear santuarios urbanos de calma
@@ -189,7 +193,9 @@ export default function HomePage() {
 
             <RevealText delay={500}>
               <div className="text-center">
-                <div className="w-12 h-12 bg-neutral-900 mx-auto mb-6"></div>
+                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
+                  <Sparkles size={48} className="text-neutral-900" strokeWidth={1.5} />
+                </div>
                 <h4 className="font-serif text-xl mb-3">Detalle</h4>
                 <p className="text-neutral-500 text-sm font-light leading-relaxed">
                   Amenidades exclusivas: sábanas de lino belga, amenities de perfumistas artesanales
