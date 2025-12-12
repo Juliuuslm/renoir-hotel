@@ -144,18 +144,32 @@ ffmpeg -i input.jpg -q:v 6 output.jpg
 
 ---
 
-## 📏 Especificaciones de Imágenes
+## 📊 Total de Imágenes Necesarias: 107 imágenes
 
-### Por Sección:
+### Resumen Ejecutivo por Sección:
+
+| Sección | Imágenes Necesarias | Detalles |
+|---------|-------------------|----------|
+| **🏨 Hero** | **5** | Lobby, exterior, entrada, restaurante, jardín |
+| **🛏️ Suites** | **26** | 2 Suites de lujo (4c/u) + 2 Deluxe (4c/u) + 2 Standard (2c/u) + Amenidades |
+| **🍽️ Gastronomía** | **18** | 5 espacios + 7 platos + 3 bebidas + 3 detalles |
+| **🧖 Wellness** | **20** | 4 espacios + 4 salas + 4 facilidades + 4 tratamientos + 4 detalles |
+| **🎭 Experiencias** | **20** | 5 culturales + 4 naturaleza + 4 eventos + 4 momentos + 3 detalles |
+| **📞 Contacto** | **12** | 4 ubicación + 3 recepción + 2 propiedades + 3 contacto |
+| **🔗 Favicon** | **6-8** | .ico + PNG (16/32/96) + Apple + Android + Manifest |
+| | | |
+| **TOTAL** | **~107 imágenes** | + 6-8 archivos favicon |
+
+### Especificaciones de Imágenes por Sección:
 
 | Sección | Ancho Recomendado | Altura Recomendada | Proporción | Calidad | Cantidad |
 |---------|-------------------|-------------------|-----------|---------|----------|
-| **Hero** | 2070px | 1080px | 16:9 | 80-85% | 3-5 |
-| **Suites** | 1200-2000px | 800-1500px | Variable | 75-85% | 20-30 |
-| **Gastronomía** | 1200-2000px | 800-1500px | Variable | 75-85% | 15-25 |
-| **Wellness** | 1200-2000px | 800-1500px | Variable | 75-85% | 15-20 |
-| **Experiencias** | 800-1200px | 600-1000px | Variable | 75-85% | 15-25 |
-| **Contacto** | 800-1200px | 600-1000px | Variable | 75-85% | 8-12 |
+| **Hero** | 2070px | 1080px | 16:9 | 80-85% | **5 imágenes** |
+| **Suites** | 1200-2000px | 800-1500px | Variable | 75-85% | **26 imágenes** |
+| **Gastronomía** | 1200-2000px | 800-1500px | Variable | 75-85% | **18 imágenes** |
+| **Wellness** | 1200-2000px | 800-1500px | Variable | 75-85% | **20 imágenes** |
+| **Experiencias** | 800-1200px | 600-1000px | Variable | 75-85% | **20 imágenes** |
+| **Contacto** | 800-1200px | 600-1000px | Variable | 75-85% | **12 imágenes** |
 
 ### Formatos:
 
@@ -231,6 +245,216 @@ Ejemplo: `public/images/suites/README.md`
 3. **Lighting**: Buena iluminación es crucial, especialmente para suites y gastronomía
 4. **Variedad**: Incluye diferentes ángulos y detalles
 5. **Actualizaciones**: Actualiza imágenes regularmente para mantener contenido fresco
+
+---
+
+## 🎯 Checklist de Imágenes por Sección
+
+Usa este checklist para saber cuántas imágenes necesitas para cada sección:
+
+### ✅ Hero Section (5 imágenes)
+- [ ] `lobby.jpg` - Vista del lobby principal
+- [ ] `exterior.jpg` - Fachada exterior
+- [ ] `entrance.jpg` - Entrada principal
+- [ ] `restaurant-view.jpg` - Vista desde restaurante
+- [ ] `garden.jpg` - Jardín o terraza
+
+**Total requerido: 5 imágenes**
+
+### ✅ Suites y Habitaciones (26 imágenes)
+#### The Atelier Suite (4 imágenes)
+- [ ] `atelier-suite-main.jpg`
+- [ ] `atelier-suite-bedroom.jpg`
+- [ ] `atelier-suite-bathroom.jpg`
+- [ ] `atelier-suite-art.jpg`
+
+#### Impressionist Suite (3 imágenes)
+- [ ] `impressionist-suite-main.jpg`
+- [ ] `impressionist-suite-view.jpg`
+- [ ] `impressionist-suite-details.jpg`
+
+#### Deluxe Suite 1 (4 imágenes)
+- [ ] `deluxe-suite-1-main.jpg`
+- [ ] `deluxe-suite-1-bedroom.jpg`
+- [ ] `deluxe-suite-1-bathroom.jpg`
+- [ ] `deluxe-suite-1-details.jpg`
+
+#### Deluxe Suite 2 (4 imágenes)
+- [ ] `deluxe-suite-2-main.jpg`
+- [ ] `deluxe-suite-2-bedroom.jpg`
+- [ ] `deluxe-suite-2-bathroom.jpg`
+- [ ] `deluxe-suite-2-details.jpg`
+
+#### Deluxe Room 1 (3 imágenes)
+- [ ] `deluxe-room-1-main.jpg`
+- [ ] `deluxe-room-1-bedroom.jpg`
+- [ ] `deluxe-room-1-bathroom.jpg`
+
+#### Deluxe Room 2 (3 imágenes)
+- [ ] `deluxe-room-2-main.jpg`
+- [ ] `deluxe-room-2-bedroom.jpg`
+- [ ] `deluxe-room-2-bathroom.jpg`
+
+#### Standard Room 1 (2 imágenes)
+- [ ] `standard-room-1-main.jpg`
+- [ ] `standard-room-1-bedroom.jpg`
+
+#### Standard Room 2 (2 imágenes)
+- [ ] `standard-room-2-main.jpg`
+- [ ] `standard-room-2-bedroom.jpg`
+
+#### Amenidades (2 imágenes)
+- [ ] `amenities-closet.jpg`
+- [ ] `amenities-minibar.jpg`
+
+**Total requerido: 26 imágenes**
+
+### ✅ Gastronomía (18 imágenes)
+#### Espacios (5 imágenes)
+- [ ] `restaurant-main.jpg`
+- [ ] `restaurant-ambiance.jpg`
+- [ ] `bar-area.jpg`
+- [ ] `private-dining.jpg`
+- [ ] `wine-cellar.jpg`
+
+#### Platillos (4 imágenes)
+- [ ] `signature-dish-1.jpg`
+- [ ] `signature-dish-2.jpg`
+- [ ] `signature-dish-3.jpg`
+- [ ] `chef-special.jpg`
+
+#### Entradas y Postres (3 imágenes)
+- [ ] `appetizer.jpg`
+- [ ] `dessert-1.jpg`
+- [ ] `dessert-2.jpg`
+
+#### Bebidas (3 imágenes)
+- [ ] `wine-selection.jpg`
+- [ ] `cocktail.jpg`
+- [ ] `beverages.jpg`
+
+#### Detalles (3 imágenes)
+- [ ] `plating-detail.jpg`
+- [ ] `ingredients.jpg`
+- [ ] `chef-at-work.jpg`
+
+**Total requerido: 18 imágenes**
+
+### ✅ Wellness y Spa (20 imágenes)
+#### Espacios Principales (4 imágenes)
+- [ ] `spa-entrance.jpg`
+- [ ] `spa-lounge.jpg`
+- [ ] `relaxation-area.jpg`
+- [ ] `water-features.jpg`
+
+#### Salas de Tratamiento (4 imágenes)
+- [ ] `treatment-room-1.jpg`
+- [ ] `treatment-room-2.jpg`
+- [ ] `massage-room.jpg`
+- [ ] `facial-room.jpg`
+
+#### Facilidades Especiales (4 imágenes)
+- [ ] `sauna.jpg`
+- [ ] `steam-room.jpg`
+- [ ] `pool.jpg`
+- [ ] `yoga-space.jpg`
+
+#### Tratamientos en Proceso (4 imágenes)
+- [ ] `massage-therapy.jpg`
+- [ ] `body-treatment.jpg`
+- [ ] `facial-treatment.jpg`
+- [ ] `herbal-ritual.jpg`
+
+#### Detalles y Amenidades (4 imágenes)
+- [ ] `essential-oils.jpg`
+- [ ] `stones.jpg`
+- [ ] `spa-plants.jpg`
+- [ ] `spa-amenities.jpg`
+
+**Total requerido: 20 imágenes**
+
+### ✅ Experiencias y Eventos (20 imágenes)
+#### Experiencias Culturales (5 imágenes)
+- [ ] `art-workshop.jpg`
+- [ ] `wine-tasting.jpg`
+- [ ] `cooking-class.jpg`
+- [ ] `music-evening.jpg`
+- [ ] `art-exhibition.jpg`
+
+#### Experiencias de Naturaleza (4 imágenes)
+- [ ] `garden-tour.jpg`
+- [ ] `meditation-session.jpg`
+- [ ] `outdoor-yoga.jpg`
+- [ ] `nature-experience.jpg`
+
+#### Eventos Especiales (4 imágenes)
+- [ ] `wedding-setup.jpg`
+- [ ] `corporate-event.jpg`
+- [ ] `intimate-dinner.jpg`
+- [ ] `gala-evening.jpg`
+
+#### Momentos y Conexión (4 imágenes)
+- [ ] `guests-enjoying.jpg`
+- [ ] `sunset-moment.jpg`
+- [ ] `social-gathering.jpg`
+- [ ] `group-moment.jpg`
+
+#### Detalles de Eventos (3 imágenes)
+- [ ] `event-decoration.jpg`
+- [ ] `event-ambiance.jpg`
+- [ ] `event-details.jpg`
+
+**Total requerido: 20 imágenes**
+
+### ✅ Contacto (12 imágenes)
+#### Ubicación y Mapas (4 imágenes)
+- [ ] `map-location.jpg`
+- [ ] `neighborhood.jpg`
+- [ ] `street-view.jpg`
+- [ ] `aerial-view.jpg`
+
+#### Recepción y Personal (3 imágenes)
+- [ ] `reception-desk.jpg`
+- [ ] `front-desk-staff.jpg`
+- [ ] `lobby-contact.jpg`
+
+#### Propiedades (2 imágenes)
+- [ ] `paris-property.jpg`
+- [ ] `mexico-city-property.jpg`
+
+#### Infraestructura de Contacto (3 imágenes)
+- [ ] `phone-service.jpg`
+- [ ] `office-space.jpg`
+- [ ] `concierge-service.jpg`
+
+**Total requerido: 12 imágenes**
+
+### 🔗 Favicon (6-8 archivos)
+- [ ] `favicon.ico`
+- [ ] `favicon-16x16.png`
+- [ ] `favicon-32x32.png`
+- [ ] `favicon-96x96.png`
+- [ ] `apple-touch-icon.png` (180x180)
+- [ ] `android-chrome-192x192.png`
+- [ ] `android-chrome-512x512.png`
+- [ ] `site.webmanifest`
+
+**Total requerido: 6-8 archivos**
+
+---
+
+## 📈 Resumen Final
+
+| Sección | Imágenes | Estado |
+|---------|----------|--------|
+| Hero | 5 | ☐ |
+| Suites | 26 | ☐ |
+| Gastronomía | 18 | ☐ |
+| Wellness | 20 | ☐ |
+| Experiencias | 20 | ☐ |
+| Contacto | 12 | ☐ |
+| **TOTAL** | **101** | ☐ |
+| Favicon | 6-8 | ☐ |
 
 ---
 
