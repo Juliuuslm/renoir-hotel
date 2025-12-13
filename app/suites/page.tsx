@@ -55,6 +55,7 @@ export default function SuitesPage() {
             priority
             sizes="100vw"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80" />
         </div>
         <div className="relative z-10 text-center text-white px-6 mt-12">
           <p

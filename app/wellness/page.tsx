@@ -56,9 +56,9 @@ export default function WellnessPage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-stone-100/30 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80" />
         </div>
-        <div className="relative z-10 text-center text-stone-900 px-6">
+        <div className="relative z-10 text-center text-white px-6">
           <p
             className={`text-xs tracking-[0.4em] uppercase mb-4 transition-all duration-700 delay-300 ${
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -67,7 +67,7 @@ export default function WellnessPage() {
             Bienestar
           </p>
           <h1
-            className={`font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-stone-800 transition-all duration-700 delay-500 ${
+            className={`font-serif text-7xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl text-white transition-all duration-700 delay-500 ${
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
