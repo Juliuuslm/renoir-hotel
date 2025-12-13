@@ -52,7 +52,7 @@ export const Navbar = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link
             href="/"
-            className="font-serif text-2xl tracking-[0.2em] font-bold z-50 relative hover:opacity-70 transition-opacity"
+            className="font-serif text-xl sm:text-2xl tracking-[0.2em] font-bold z-50 relative hover:opacity-70 transition-opacity"
             onClick={handleNavClick}
           >
             RENOIR
@@ -77,16 +77,17 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4 md:space-x-6">
             <button
               onClick={openBookingModal}
-              className="hidden md:block text-xs uppercase tracking-widest border border-current px-6 py-3 sm:px-8 sm:py-4 hover:bg-neutral-900 active:bg-neutral-800 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors min-h-[44px]"
+              className="hidden md:block text-xs uppercase tracking-widest border border-current px-4 md:px-6 py-3 lg:px-8 lg:py-4 hover:bg-neutral-900 active:bg-neutral-800 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors min-h-[44px]"
             >
               Reservar
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden z-50 relative p-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="md:hidden z-50 relative p-3 min-w-[44px] min-h-[44px] flex items-center justify-center transition-transform duration-300"
+              style={{ transform: isMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -111,16 +112,26 @@ export const Navbar = () => {
           <div className="flex flex-col space-y-6 text-center text-white">
           <Link
             href="/"
-            className="font-serif text-3xl sm:text-4xl hover:text-neutral-400 active:text-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-600 transition-colors py-2"
+            className="font-serif text-3xl sm:text-4xl hover:text-neutral-400 active:text-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-600 transition-all duration-500 py-2 opacity-0"
+            style={{
+              opacity: isMenuOpen ? 1 : 0,
+              transform: isMenuOpen ? 'translateY(0)' : 'translateY(10px)',
+              transitionDelay: isMenuOpen ? '100ms' : '0ms',
+            }}
             onClick={handleNavClick}
           >
             Inicio
           </Link>
-          {navLinks.map((item) => (
+          {navLinks.map((item, idx) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-serif text-3xl sm:text-4xl hover:text-neutral-400 active:text-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-600 transition-colors py-2"
+              className="font-serif text-3xl sm:text-4xl hover:text-neutral-400 active:text-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-600 transition-all duration-500 py-2 opacity-0"
+              style={{
+                opacity: isMenuOpen ? 1 : 0,
+                transform: isMenuOpen ? 'translateY(0)' : 'translateY(10px)',
+                transitionDelay: isMenuOpen ? `${(idx + 2) * 100}ms` : '0ms',
+              }}
               onClick={handleNavClick}
             >
               {item.label}
@@ -131,7 +142,12 @@ export const Navbar = () => {
               setIsMenuOpen(false);
               openBookingModal();
             }}
-            className="mt-8 border border-white px-8 py-4 text-xs uppercase tracking-widest hover:bg-white active:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors min-h-[44px]"
+            className="mt-8 border border-white px-8 py-4 text-xs uppercase tracking-widest hover:bg-white active:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-500 min-h-[44px] opacity-0"
+            style={{
+              opacity: isMenuOpen ? 1 : 0,
+              transform: isMenuOpen ? 'translateY(0)' : 'translateY(10px)',
+              transitionDelay: isMenuOpen ? `${(navLinks.length + 2) * 100}ms` : '0ms',
+            }}
           >
             Reservar Ahora
           </button>
