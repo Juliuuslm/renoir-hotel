@@ -2,12 +2,18 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-type ModalType = 'booking' | 'menu' | null;
+type ModalType = 'booking' | 'menu' | 'treatment' | 'facility' | 'event' | 'workshop' | 'suite-detail' | null;
 
 interface ModalContextType {
   activeModal: ModalType;
+  modalData: any;
   openBookingModal: () => void;
   openMenuModal: () => void;
+  openTreatmentModal: (data: any) => void;
+  openFacilityModal: (data: any) => void;
+  openEventModal: (data: any) => void;
+  openWorkshopModal: (data: any) => void;
+  openSuiteDetailModal: (data: any) => void;
   closeModal: () => void;
 }
 
@@ -15,13 +21,61 @@ const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [activeModal, setActiveModal] = useState<ModalType>(null);
+  const [modalData, setModalData] = useState<any>(null);
 
-  const openBookingModal = () => setActiveModal('booking');
-  const openMenuModal = () => setActiveModal('menu');
-  const closeModal = () => setActiveModal(null);
+  const openBookingModal = () => {
+    setActiveModal('booking');
+    setModalData(null);
+  };
+
+  const openMenuModal = () => {
+    setActiveModal('menu');
+    setModalData(null);
+  };
+
+  const openTreatmentModal = (data: any) => {
+    setActiveModal('treatment');
+    setModalData(data);
+  };
+
+  const openFacilityModal = (data: any) => {
+    setActiveModal('facility');
+    setModalData(data);
+  };
+
+  const openEventModal = (data: any) => {
+    setActiveModal('event');
+    setModalData(data);
+  };
+
+  const openWorkshopModal = (data: any) => {
+    setActiveModal('workshop');
+    setModalData(data);
+  };
+
+  const openSuiteDetailModal = (data: any) => {
+    setActiveModal('suite-detail');
+    setModalData(data);
+  };
+
+  const closeModal = () => {
+    setActiveModal(null);
+    setModalData(null);
+  };
 
   return (
-    <ModalContext.Provider value={{ activeModal, openBookingModal, openMenuModal, closeModal }}>
+    <ModalContext.Provider value={{
+      activeModal,
+      modalData,
+      openBookingModal,
+      openMenuModal,
+      openTreatmentModal,
+      openFacilityModal,
+      openEventModal,
+      openWorkshopModal,
+      openSuiteDetailModal,
+      closeModal,
+    }}>
       {children}
     </ModalContext.Provider>
   );

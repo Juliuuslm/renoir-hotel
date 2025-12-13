@@ -6,6 +6,11 @@ import { Footer } from '@/components/shared/Footer';
 import { ModalProvider } from '@/lib/modal-context';
 import { BookingModal } from '@/components/shared/BookingModal';
 import { MenuModal } from '@/components/shared/MenuModal';
+import { TreatmentModal } from '@/components/shared/TreatmentModal';
+import { FacilityModal } from '@/components/shared/FacilityModal';
+import { EventModal } from '@/components/shared/EventModal';
+import { WorkshopModal } from '@/components/shared/WorkshopModal';
+import { SuiteDetailModal } from '@/components/shared/SuiteDetailModal';
 import { HotelStructuredData } from '@/components/shared/StructuredData';
 import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider';
 import { WelcomeScreen } from '@/components/shared/WelcomeScreen';
@@ -78,6 +83,11 @@ export default function RootLayout({
             <Footer />
             <BookingModal />
             <MenuModal />
+            <TreatmentModal />
+            <FacilityModal />
+            <EventModal />
+            <WorkshopModal />
+            <SuiteDetailModal />
           </ModalProvider>
         </SmoothScrollProvider>
       </body>
