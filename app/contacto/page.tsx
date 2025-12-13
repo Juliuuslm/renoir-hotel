@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 import { RevealText } from '@/components/ui/RevealText';
 import { ContactForm } from '@/components/pages/contacto/ContactForm';
+import { PropertyCard } from '@/components/pages/contacto/PropertyCard';
+import { ConciergeServiceCard } from '@/components/pages/contacto/ConciergeServiceCard';
 
 export default function ContactoPage() {
   const [loaded, setLoaded] = useState(false);
@@ -37,6 +39,83 @@ export default function ContactoPage() {
             inquietud.
           </p>
         </RevealText>
+      </section>
+
+      {/* Nuestras Propiedades */}
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white border-b border-neutral-200">
+        <div className="container mx-auto px-6">
+          <RevealText>
+            <div className="mb-16">
+              <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
+                Ubicaciones
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-900">
+                Nuestras Propiedades
+              </h2>
+            </div>
+          </RevealText>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
+            <RevealText delay={100}>
+              <PropertyCard
+                image="/images/contact/mexico-city-property.jpg"
+                name="México City"
+                address="Calle de la Paz 45, Centro Histórico, 06000 Ciudad de México"
+                phone="+52 55 1234 5678"
+                hours="Abierto 24/7"
+                description="Nuestra propiedad insignia en el corazón histórico de la Ciudad de México, donde la arquitectura colonial se encuentra con el lujo contemporáneo."
+              />
+            </RevealText>
+            <RevealText delay={200}>
+              <PropertyCard
+                image="/images/contact/paris-property.jpg"
+                name="París"
+                address="Rue de la Paix 15, 75009 París, Francia"
+                phone="+33 1 4242 4242"
+                hours="Abierto 24/7"
+                description="Nuestro boutique hotel en París combina la elegancia francesa con la filosofía Renoir de bienestar y diseño reflexivo."
+              />
+            </RevealText>
+          </div>
+        </div>
+      </section>
+
+      {/* Servicios Concierge */}
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-50">
+        <div className="container mx-auto px-6">
+          <RevealText>
+            <div className="mb-16">
+              <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
+                Asistencia Personalizada
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-900">
+                Servicios Concierge
+              </h2>
+            </div>
+          </RevealText>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            <RevealText delay={100}>
+              <ConciergeServiceCard
+                image="/images/contact/concierge-service.jpg"
+                title="Reservas & Experiencias"
+                description="Diseñamos itinerarios personalizados, reservamos restaurantes exclusivos y coordinamos experiencias bespoke adaptadas a sus preferencias."
+              />
+            </RevealText>
+            <RevealText delay={200}>
+              <ConciergeServiceCard
+                image="/images/contact/reception-desk.jpg"
+                title="Asistencia 24/7"
+                description="Nuestro equipo está disponible constantemente para asegurar que cada detalle de su estancia sea perfecto y sin inconvenientes."
+              />
+            </RevealText>
+            <RevealText delay={300}>
+              <ConciergeServiceCard
+                image="/images/contact/phone-service.jpg"
+                title="Coordinación VIP"
+                description="Desde transporte privado hasta gestoría de negocios, gestionamos todos los aspectos logísticos de su viaje."
+              />
+            </RevealText>
+          </div>
+        </div>
       </section>
 
       <section className="container mx-auto px-6 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
