@@ -96,11 +96,11 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Intro */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white text-center">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Compass size={32} className="mx-auto text-neutral-400 mb-6" strokeWidth={1} />
-            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl mb-8 text-neutral-900">
+            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 text-neutral-900">
               &ldquo;No somos solo un hotel, somos curadores de cultura.&rdquo;
             </h3>
             <p className="text-neutral-500 font-light text-lg">
@@ -113,11 +113,11 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Agenda Cultural */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-neutral-50">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-50">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <RevealText>
-              <h2 className="font-serif text-4xl text-neutral-900">Agenda Cultural</h2>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-900">Agenda Cultural</h2>
             </RevealText>
             <RevealText delay={200}>
               <a
@@ -140,7 +140,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Concierge Picks */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-neutral-900 text-white">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-900 text-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -148,7 +148,7 @@ export default function ExperienciasPage() {
                 <span className="text-xs font-bold tracking-[0.2em] text-yellow-600 uppercase mb-4 block">
                   Guía Local
                 </span>
-                <h2 className="font-serif text-5xl mb-8">Gemas Ocultas</h2>
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8">Gemas Ocultas</h2>
                 <p className="text-neutral-400 text-lg font-light leading-relaxed mb-12">
                   Olvídese de las trampas para turistas. Esta es la ciudad que amamos, la ciudad
                   que vivimos.
@@ -189,10 +189,10 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Talleres Creativos */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white">
         <div className="container mx-auto px-6 text-center">
           <RevealText>
-            <h2 className="font-serif text-4xl mb-12">Talleres Creativos</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-12">Talleres Creativos</h2>
           </RevealText>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-7 lg:gap-8">
             {workshops.map((ws, i) => (
@@ -211,10 +211,10 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-neutral-900 text-white text-center">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-900 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
           <RevealText>
-            <h2 className="font-serif text-5xl md:text-7xl mb-8">Su Historia Comienza Aquí</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8">Su Historia Comienza Aquí</h2>
             <p className="text-neutral-400 text-lg mb-12">
               Descubra el arte de vivir en Hotel Renoir. Una experiencia inmersiva en el corazón
               de la ciudad.

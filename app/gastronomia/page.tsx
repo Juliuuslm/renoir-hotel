@@ -51,7 +51,7 @@ export default function GastronomiaPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white text-center">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white text-center">
         <div className="container mx-auto px-6 max-w-4xl">
           <RevealText>
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 text-neutral-900 leading-tight">

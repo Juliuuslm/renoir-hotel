@@ -77,11 +77,11 @@ export default function WellnessPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-stone-50 text-center">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-stone-50 text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Waves size={32} className="mx-auto text-stone-400 mb-6" strokeWidth={1} />
-            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl mb-8 text-stone-800 leading-relaxed">
+            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 text-stone-800 leading-relaxed">
               &ldquo;El silencio es el lujo más escaso de la vida moderna. Aquí, lo
               cultivamos.&rdquo;
             </h3>
@@ -93,11 +93,11 @@ export default function WellnessPage() {
       </section>
 
       {/* Treatments Section */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <RevealText>
             <div className="flex justify-between items-end mb-16 border-b border-black pb-4">
-              <h2 className="font-serif text-5xl text-neutral-900">Tratamientos</h2>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-900">Tratamientos</h2>
               <span className="text-xs uppercase tracking-widest text-neutral-400">
                 Menú de Temporada
               </span>
@@ -114,7 +114,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Facilities Section */}
-      <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-stone-100">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-stone-100">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <div className="md:col-span-1 p-8 md:p-12 bg-white shadow-sm border border-stone-200">
             <RevealText>

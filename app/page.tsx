@@ -73,7 +73,7 @@ export default function HomePage() {
             </p>
           </div>
           <h1
-            className={`font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight mb-8 transition-all duration-1000 delay-500 transform ${
+            className={`font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-8 transition-all duration-1000 delay-500 transform ${
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
@@ -99,14 +99,14 @@ export default function HomePage() {
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-7">
             <RevealText>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-12">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-12">
                 El arte no es algo que se mira,{' '}
                 <br />
                 <span className="text-neutral-400 italic">es algo que se vive.</span>
               </h2>
             </RevealText>
             <RevealText delay={200}>
-              <div className="space-y-6 text-neutral-600 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+              <div className="space-y-6 text-neutral-600 text-lg font-light leading-relaxed max-w-2xl">
                 <p>
                   En Renoir, creemos que la hospitalidad es la forma más elevada de expresión
                   artística. Cada rincón ha sido curado no solo para ser visto, sino para ser
@@ -142,7 +142,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-24">
             <RevealText delay={100}>
               <div>
-                <h3 className="font-serif text-2xl mb-6">Desde 1924</h3>
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-3xl mb-6">Desde 1924</h3>
                 <p className="text-neutral-600 font-light leading-relaxed text-lg">
                   Fundado en París por el coleccionista Auguste Villiers, Renoir nació como un
                   refugio para artistas e intelectuales de la Belle Époque. En 1952, nuestra
@@ -154,7 +154,7 @@ export default function HomePage() {
 
             <RevealText delay={200}>
               <div>
-                <h3 className="font-serif text-2xl mb-6">Nuestra Filosofía</h3>
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-3xl mb-6">Nuestra Filosofía</h3>
                 <p className="text-neutral-600 font-light leading-relaxed text-lg">
                   Creemos que el verdadero lujo reside en los detalles imperceptibles: la textura
                   de una sábana italiana, el silencio arquitectónico de nuestros espacios, el
