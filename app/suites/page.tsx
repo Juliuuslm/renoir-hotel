@@ -7,9 +7,30 @@ import { RevealText } from '@/components/ui/RevealText';
 import { RoomCard } from '@/components/pages/suites/RoomCard';
 import { useModal } from '@/lib/modal-context';
 
+// Galería de imágenes por suite
+const suiteGalleries = {
+  atelier: [
+    '/images/suites/atelier-suite-main.jpg',
+    '/images/suites/atelier-suite-bedroom.jpg',
+    '/images/suites/atelier-suite-bathroom.jpg',
+    '/images/suites/atelier-suite-art.JPG',
+  ],
+  impressionist: [
+    '/images/suites/impressionist-suite-main.jpg',
+    '/images/suites/impressionist-suite-view.jpg',
+    '/images/suites/impressionist-suite-details.jpg',
+  ],
+  penthouse: [
+    '/images/suites/deluxe-suite-1-main.jpg',
+    '/images/suites/deluxe-suite-1-bedroom.jpg',
+    '/images/suites/deluxe-suite-1-bathroom.jpg',
+    '/images/suites/deluxe-suite-1-details.jpg',
+  ],
+};
+
 export default function SuitesPage() {
   const [loaded, setLoaded] = useState(false);
-  const { openBookingModal } = useModal();
+  const { openBookingModal, openSuiteDetailModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,6 +43,7 @@ export default function SuitesPage() {
       price: '$450 USD',
       description: 'Un espacio bañado en luz natural, diseñado para la creatividad y el descanso.',
       image: '/images/suites/atelier-suite-main.jpg',
+      gallery: suiteGalleries.atelier,
       features: ['45m² de Espacio', 'Vista a la Ciudad', 'Baño de Mármol', 'Escritorio Ejecutivo'],
     },
     {
@@ -29,6 +51,7 @@ export default function SuitesPage() {
       price: '$680 USD',
       description: 'Inspirada en los jardines de Giverny con terraza privada.',
       image: '/images/suites/impressionist-suite-main.jpg',
+      gallery: suiteGalleries.impressionist,
       features: ['65m² + Terraza', 'Jardín Privado', 'Tina de Inmersión', 'Sala de Estar'],
     },
     {
@@ -36,6 +59,7 @@ export default function SuitesPage() {
       price: '$1,200 USD',
       description: 'La joya de la corona con vistas panorámicas.',
       image: '/images/suites/deluxe-suite-1-main.jpg',
+      gallery: suiteGalleries.penthouse,
       features: ['120m² Panorámicos', 'Mayordomo 24/7', 'Cocina Completa', 'Terraza 360°'],
     },
   ];
@@ -100,6 +124,7 @@ export default function SuitesPage() {
             reverse={idx % 2 !== 0}
             index={idx}
             onOpenBooking={openBookingModal}
+            onOpenSuiteDetail={openSuiteDetailModal}
           />
         ))}
       </section>

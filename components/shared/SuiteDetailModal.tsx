@@ -1,19 +1,31 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useModal } from '@/lib/modal-context';
-import { X, Check } from 'lucide-react';
+import { X, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const SuiteDetailModal = () => {
   const { activeModal, modalData, closeModal, openBookingModal } = useModal();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  if (activeModal !== 'suite-detail' || !modalData) return null;
+  // Reset image index when modal closes
+  useEffect(() => {
+    if (activeModal !== 'suite-detail') {
+      setCurrentImageIndex(0);
+    }
+  }, [activeModal]);
+
+  if (activeModal !== 'suite-detail' || !modalData) {
+    return null;
+  }
 
   const {
     title = 'Renoir Suite',
     price = '$450 USD',
     description = 'Una suite diseñada con los más altos estándares de lujo.',
     image = '/images/suites/atelier-suite-main.jpg',
+    gallery = [],
     features = [],
     amenities = [
       'Minibar premium',
@@ -25,6 +37,17 @@ export const SuiteDetailModal = () => {
     ],
   } = modalData;
 
+  const galleryImages = gallery.length > 0 ? gallery : [image];
+  const currentImage = galleryImages[currentImageIndex];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
   return (
     <div
       className="fixed inset-0 bg-neutral-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4"
@@ -34,17 +57,43 @@ export const SuiteDetailModal = () => {
         className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header Image */}
-        <div className="relative h-[400px] w-full bg-neutral-100">
+        {/* Header Image Carousel */}
+        <div className="relative h-[400px] w-full bg-neutral-100 group">
           <Image
-            src={image}
+            src={currentImage}
             alt={title}
             fill
-            className="object-cover"
+            className="object-cover transition-opacity duration-300"
           />
+
+          {/* Navigation Buttons */}
+          {galleryImages.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
+                aria-label="Imagen anterior"
+              >
+                <ChevronLeft size={24} className="text-neutral-900" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
+                aria-label="Siguiente imagen"
+              >
+                <ChevronRight size={24} className="text-neutral-900" />
+              </button>
+
+              {/* Image Counter */}
+              <div className="absolute bottom-4 right-4 bg-neutral-900/70 text-white px-3 py-1 rounded-full text-sm font-medium">
+                {currentImageIndex + 1} / {galleryImages.length}
+              </div>
+            </>
+          )}
+
           <button
             onClick={closeModal}
-            className="absolute top-4 right-4 p-2 bg-white/90 hover:bg-white rounded-full transition-colors"
+            className="absolute top-4 right-4 p-2 bg-white/90 hover:bg-white rounded-full transition-colors z-20"
             aria-label="Cerrar modal"
           >
             <X size={24} />

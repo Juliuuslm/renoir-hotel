@@ -10,9 +10,11 @@ interface RoomCardProps {
   features: string[];
   price: string;
   image: string;
+  gallery?: string[];
   reverse?: boolean;
   index: number;
   onOpenBooking: () => void;
+  onOpenSuiteDetail?: (data: any) => void;
 }
 
 const getFeatureIcon = (feature: string) => {
@@ -37,10 +39,32 @@ export const RoomCard = ({
   features,
   price,
   image,
+  gallery = [],
   reverse = false,
   index,
   onOpenBooking,
+  onOpenSuiteDetail,
 }: RoomCardProps) => {
+  const handleViewDetails = () => {
+    if (onOpenSuiteDetail) {
+      onOpenSuiteDetail({
+        title,
+        description,
+        price,
+        image,
+        gallery,
+        features,
+        amenities: [
+          'Minibar premium',
+          'Cafetera de especialidad',
+          'Ropa de cama de lino belga',
+          'Amenities de perfumistas artesanales',
+          'Servicio de turndown',
+          'Wi-Fi de alta velocidad',
+        ],
+      });
+    }
+  };
   return (
     <div
       className={`flex flex-col md:flex-row ${
@@ -85,10 +109,10 @@ export const RoomCard = ({
               <span className="font-serif text-2xl text-neutral-900">{price}</span>
             </div>
             <button
-              onClick={onOpenBooking}
+              onClick={handleViewDetails}
               className="bg-neutral-900 text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-neutral-800 active:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg min-h-[44px]"
             >
-              Reservar
+              Ver Detalles
             </button>
           </div>
         </RevealText>
