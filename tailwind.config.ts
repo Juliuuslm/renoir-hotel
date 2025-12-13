@@ -37,6 +37,7 @@ const config: Config = {
         splashLogoReveal: 'splashLogoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         splashTextReveal: 'splashTextReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         splashFadeOut: 'splashFadeOut 0.8s ease-in forwards',
+        ctaPulse: 'ctaPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -62,6 +63,10 @@ const config: Config = {
         splashFadeOut: {
           from: { opacity: '1', transform: 'scale(1)' },
           to: { opacity: '0', transform: 'scale(0.98)' },
+        },
+        ctaPulse: {
+          '0%, 100%': { boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)' },
+          '50%': { boxShadow: '0 20px 35px -10px rgba(0, 0, 0, 0.5)' },
         },
       },
     },

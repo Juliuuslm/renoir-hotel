@@ -86,9 +86,15 @@ export default function HomePage() {
           >
             <button
               onClick={openBookingModal}
-              className="bg-white text-neutral-900 px-10 py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-neutral-100 active:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="group relative bg-white text-neutral-900 px-10 py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-neutral-100 active:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 animate-ctaPulse overflow-hidden"
             >
-              Reservar Estancia →
+              {/* Efecto de brillo */}
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 group-hover:animate-pulse transition-opacity duration-300" />
+
+              <span className="relative flex items-center justify-center gap-2">
+                Reservar Estancia
+                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </span>
             </button>
           </div>
         </div>
