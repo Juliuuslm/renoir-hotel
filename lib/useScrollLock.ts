@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 /**
  * Hook para bloquear/desbloquear el scroll de la página
+ * Maneja Lenis + scroll estándar
  * Permite scroll DENTRO del modal pero bloquea scroll de la página principal
  */
 export const useScrollLock = (isLocked: boolean) => {
@@ -9,90 +10,71 @@ export const useScrollLock = (isLocked: boolean) => {
     const htmlElement = document.documentElement;
     const bodyElement = document.body;
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const lenis = (window as any).lenis;
 
     if (isLocked) {
-      // Solo bloquear overflow en html y body - SIN position:fixed
-      // Esto permite que elementos dentro (el modal) puedan scrollear
+      // Bloquear overflow en html y body
       htmlElement.style.overflow = 'hidden';
       bodyElement.style.overflow = 'hidden';
       bodyElement.style.paddingRight = `${scrollbarWidth}px`;
 
-      // Si Lenis está activo, pausarlo
-      try {
-        if ((window as any).lenis && (window as any).lenis.stop) {
-          (window as any).lenis.stop();
+      // PAUSAR Lenis completamente - esto es crítico
+      // Lenis intercepta todos los eventos de scroll, asi que pausarlo es esencial
+      if (lenis) {
+        try {
+          // Pausar Lenis
+          lenis.stop();
+
+          // Deshabilitar smooth wheel si es posible
+          if (lenis.options) {
+            lenis.options.smoothWheel = false;
+          }
+        } catch (e) {
+          console.error('Error pausing Lenis:', e);
         }
-      } catch (e) {
-        // Ignorar error si Lenis no existe
       }
 
-      // Bloquear scroll wheel en document, pero permitir si está dentro del modal
-      const handleWheel = (e: WheelEvent) => {
-        const target = e.target as HTMLElement;
-
-        // Subir el árbol DOM para ver si estamos en un elemento scrolleable
-        let current: HTMLElement | null = target;
-        while (current && current !== bodyElement) {
-          const style = window.getComputedStyle(current);
-          // Si encontramos un elemento con overflow-y auto/scroll y con contenido scrolleable
-          if ((style.overflowY === 'auto' || style.overflowY === 'scroll') &&
-              current.scrollHeight > current.clientHeight) {
-            // Permitir scroll en este elemento
-            return;
-          }
-          current = current.parentElement;
-        }
-
-        // Si no estamos en un area scrolleable, bloquear
-        e.preventDefault();
-      };
-
-      const handleTouchMove = (e: TouchEvent) => {
-        const target = e.target as HTMLElement;
-
-        // Subir el árbol DOM para ver si estamos en un elemento scrolleable
-        let current: HTMLElement | null = target;
-        while (current && current !== bodyElement) {
-          const style = window.getComputedStyle(current);
-          // Si encontramos un elemento con overflow-y auto/scroll y con contenido scrolleable
-          if ((style.overflowY === 'auto' || style.overflowY === 'scroll') &&
-              current.scrollHeight > current.clientHeight) {
-            // Permitir scroll en este elemento
-            return;
-          }
-          current = current.parentElement;
-        }
-
-        // Si no estamos en un area scrolleable, bloquear
-        e.preventDefault();
-      };
-
-      document.addEventListener('wheel', handleWheel, { passive: false });
-      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      // El scroll dentro del modal funciona porque:
+      // 1. El modal tiene overflow-y-auto en su contenedor
+      // 2. Lenis está completamente pausado y no intercepta eventos
+      // 3. El navegador permite scroll nativo en elementos con overflow-y-auto
+      // 4. No hay event listeners interfiriendo
 
       // Cleanup
       return () => {
-        document.removeEventListener('wheel', handleWheel);
-        document.removeEventListener('touchmove', handleTouchMove);
-
         // Restaurar estilos
         htmlElement.style.overflow = '';
         bodyElement.style.overflow = '';
         bodyElement.style.paddingRight = '';
+
+        // Reanudar Lenis
+        if (lenis) {
+          try {
+            lenis.start();
+            if (lenis.options) {
+              lenis.options.smoothWheel = true;
+            }
+          } catch (e) {
+            console.error('Error resuming Lenis:', e);
+          }
+        }
       };
     } else {
-      // Restaurar estilos
+      // Cuando se desbloquea - restaurar todo
       htmlElement.style.overflow = '';
       bodyElement.style.overflow = '';
       bodyElement.style.paddingRight = '';
 
-      // Reanudar Lenis
-      try {
-        if ((window as any).lenis && (window as any).lenis.start) {
-          (window as any).lenis.start();
+      // Reanudar Lenis si estaba pausado
+      if (lenis) {
+        try {
+          lenis.start();
+          if (lenis.options) {
+            lenis.options.smoothWheel = true;
+          }
+        } catch (e) {
+          console.error('Error resuming Lenis:', e);
         }
-      } catch (e) {
-        // Ignorar error si Lenis no existe
       }
     }
   }, [isLocked]);

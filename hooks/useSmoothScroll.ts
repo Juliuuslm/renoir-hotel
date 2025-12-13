@@ -25,6 +25,9 @@ export const useSmoothScroll = () => {
       smoothWheel: true,
     });
 
+    // Guardar la instancia de Lenis en window para acceder desde otros hooks
+    (window as any).lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -46,6 +49,7 @@ export const useSmoothScroll = () => {
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000);
       });
+      (window as any).lenis = null;
     };
   }, []);
 };
