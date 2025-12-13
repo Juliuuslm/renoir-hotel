@@ -238,6 +238,18 @@ export default function HomePage() {
               </RevealText>
             ))}
           </div>
+
+          {/* CTA para ver más momentos */}
+          <div className="flex justify-center mt-16">
+            <RevealText delay={400}>
+              <button
+                onClick={openBookingModal}
+                className="border border-white text-white px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white active:bg-neutral-100 hover:text-neutral-900 active:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300"
+              >
+                Ver Más Momentos
+              </button>
+            </RevealText>
+          </div>
         </div>
       </section>
 

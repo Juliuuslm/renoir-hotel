@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Compass, MapPin, Palette, Camera, Wine, Coffee } from 'lucide-react';
+import { Compass, MapPin, Palette, Camera, Wine, Coffee, ArrowRight } from 'lucide-react';
 import { RevealText } from '@/components/ui/RevealText';
 import { ParallaxImage } from '@/components/ui/ParallaxImage';
 import { EventCard } from '@/components/pages/experiencias/EventCard';
+import { useModal } from '@/lib/modal-context';
 
 export default function ExperienciasPage() {
   const [loaded, setLoaded] = useState(false);
+  const { openWorkshopModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -197,14 +199,22 @@ export default function ExperienciasPage() {
           </RevealText>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-7 lg:gap-8">
             {workshops.map((ws, i) => (
-              <RevealText
-                key={i}
-                delay={i * 100}
-                className="p-8 md:p-12 border border-neutral-100 hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="text-neutral-900 mb-6 flex justify-center">{ws.icon}</div>
-                <h4 className="font-serif text-lg mb-2">{ws.title}</h4>
-                <p className="text-xs uppercase tracking-widest text-neutral-400">{ws.desc}</p>
+              <RevealText key={i} delay={i * 100}>
+                <div
+                  className="group p-8 md:p-12 border border-neutral-100 hover:shadow-lg hover:bg-neutral-50 transition-all duration-300 cursor-pointer flex flex-col"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => openWorkshopModal({ title: ws.title, description: ws.desc })}
+                >
+                  <div className="text-neutral-900 mb-6 flex justify-center group-hover:text-yellow-600 transition-colors">
+                    {ws.icon}
+                  </div>
+                  <h4 className="font-serif text-lg mb-2 flex-grow">{ws.title}</h4>
+                  <p className="text-xs uppercase tracking-widest text-neutral-400 mb-6">{ws.desc}</p>
+                  <div className="flex items-center text-yellow-600 text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                    Detalles <ArrowRight size={16} className="ml-2" />
+                  </div>
+                </div>
               </RevealText>
             ))}
           </div>
