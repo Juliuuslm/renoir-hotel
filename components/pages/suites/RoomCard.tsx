@@ -2,6 +2,7 @@
 
 import { RevealText } from '@/components/ui/RevealText';
 import { ParallaxImage } from '@/components/ui/ParallaxImage';
+import { Bed, Eye, Droplets, Briefcase } from 'lucide-react';
 
 interface RoomCardProps {
   title: string;
@@ -13,6 +14,22 @@ interface RoomCardProps {
   index: number;
   onOpenBooking: () => void;
 }
+
+const getFeatureIcon = (feature: string) => {
+  if (feature.toLowerCase().includes('espacio') || feature.toLowerCase().includes('m²')) {
+    return <Bed size={18} />;
+  }
+  if (feature.toLowerCase().includes('vista')) {
+    return <Eye size={18} />;
+  }
+  if (feature.toLowerCase().includes('baño') || feature.toLowerCase().includes('tina')) {
+    return <Droplets size={18} />;
+  }
+  if (feature.toLowerCase().includes('escritorio') || feature.toLowerCase().includes('sala')) {
+    return <Briefcase size={18} />;
+  }
+  return <Bed size={18} />;
+};
 
 export const RoomCard = ({
   title,
@@ -50,8 +67,10 @@ export const RoomCard = ({
         <RevealText delay={300}>
           <div className="grid grid-cols-2 gap-y-6 gap-x-4 mb-12 border-t border-neutral-100 pt-8">
             {features.map((feature, i) => (
-              <div key={i} className="flex items-center text-neutral-500 text-sm">
-                <span className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></span>
+              <div key={i} className="flex items-center text-neutral-600 text-sm font-light">
+                <span className="text-yellow-600 mr-3 flex-shrink-0">
+                  {getFeatureIcon(feature)}
+                </span>
                 {feature}
               </div>
             ))}
