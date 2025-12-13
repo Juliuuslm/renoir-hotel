@@ -8,9 +8,22 @@ interface TreatmentItemProps {
   price: string;
   desc: string;
   index: number;
+  gallery?: string[];
+  onOpenTreatmentModal?: (data: any) => void;
 }
 
-export const TreatmentItem = ({ title, duration, price, desc, index }: TreatmentItemProps) => {
+export const TreatmentItem = ({ title, duration, price, desc, index, gallery = [], onOpenTreatmentModal }: TreatmentItemProps) => {
+  const handleViewDetails = () => {
+    if (onOpenTreatmentModal) {
+      onOpenTreatmentModal({
+        title,
+        duration,
+        price,
+        desc,
+        gallery,
+      });
+    }
+  };
   return (
     <div className="group border-b border-neutral-200 hover:bg-neutral-50 active:bg-neutral-100 transition-colors duration-300">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center px-6 py-6 md:px-8 md:py-8">
@@ -31,8 +44,9 @@ export const TreatmentItem = ({ title, duration, price, desc, index }: Treatment
           </div>
           <span>{price}</span>
           <button
+            onClick={handleViewDetails}
             className="bg-transparent border border-neutral-300 rounded-full p-3 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-neutral-900 active:bg-neutral-800 hover:border-neutral-900 hover:text-white active:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all self-start md:self-auto"
-            aria-label="Reservar tratamiento"
+            aria-label="Ver detalles del tratamiento"
           >
             <ArrowRight size={14} />
           </button>

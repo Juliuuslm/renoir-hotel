@@ -6,9 +6,37 @@ import { Waves, Heart, Activity } from 'lucide-react';
 import { RevealText } from '@/components/ui/RevealText';
 import { TreatmentItem } from '@/components/pages/wellness/TreatmentItem';
 import { FacilityCard } from '@/components/pages/wellness/FacilityCard';
+import { useModal } from '@/lib/modal-context';
+
+// Galerías de imágenes por tratamiento
+const treatmentGalleries = {
+  massage: [
+    '/images/wellness/massage-therapy.jpg',
+    '/images/wellness/massage-room.jpg',
+    '/images/wellness/essential-oils.jpg',
+    '/images/wellness/spa-amenities.jpg',
+  ],
+  volcanic: [
+    '/images/wellness/stones.jpg',
+    '/images/wellness/steam-room.jpg',
+    '/images/wellness/water-features.jpg',
+    '/images/wellness/spa-plants.jpg',
+  ],
+  facial: [
+    '/images/wellness/facial-treatment.jpg',
+    '/images/wellness/facial-room.jpg',
+  ],
+  clay: [
+    '/images/wellness/body-treatment.jpg',
+    '/images/wellness/herbal-ritual.jpg',
+    '/images/wellness/treatment-room-1.jpg',
+    '/images/wellness/treatment-room-2.jpg',
+  ],
+};
 
 export default function WellnessPage() {
   const [loaded, setLoaded] = useState(false);
+  const { openTreatmentModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,24 +49,28 @@ export default function WellnessPage() {
       duration: '90 min',
       price: '$220',
       desc: 'Masaje de tejido profundo con aceites esenciales de lavanda y bergamota.',
+      gallery: treatmentGalleries.massage,
     },
     {
       title: 'Ritual de Piedras Volcánicas',
       duration: '75 min',
       price: '$180',
       desc: 'Piedras de basalto calientes combinadas con aromaterapia mexicana.',
+      gallery: treatmentGalleries.volcanic,
     },
     {
       title: 'Facial Oxigenante',
       duration: '60 min',
       price: '$150',
       desc: 'Infusión de oxígeno puro y sueros botánicos para rejuvenecer la piel.',
+      gallery: treatmentGalleries.facial,
     },
     {
       title: 'Envoltura de Barro y Mezcal',
       duration: '90 min',
       price: '$240',
       desc: 'Exfoliación corporal inspirada en tradiciones locales de bienestar.',
+      gallery: treatmentGalleries.clay,
     },
   ];
 
@@ -107,7 +139,11 @@ export default function WellnessPage() {
           <div className="flex flex-col">
             {treatments.map((item, idx) => (
               <RevealText key={idx} delay={idx * 100}>
-                <TreatmentItem {...item} index={idx} />
+                <TreatmentItem
+                  {...item}
+                  index={idx}
+                  onOpenTreatmentModal={openTreatmentModal}
+                />
               </RevealText>
             ))}
           </div>
