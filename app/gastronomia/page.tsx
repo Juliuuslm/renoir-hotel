@@ -49,8 +49,8 @@ export default function GastronomiaPage() {
           </h1>
           <button
             onClick={openMenuModal}
-            className={`mt-8 border border-white text-white px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white active:bg-neutral-100 hover:text-neutral-900 active:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-700 delay-700 ${
-              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            className={`mt-8 border border-white text-white px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white active:bg-neutral-100 hover:text-neutral-900 active:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-colors duration-300 ${
+              loaded ? 'opacity-100 translate-y-0 delay-0' : 'opacity-0 translate-y-4 delay-700 transition-all duration-700'
             }`}
           >
             Reservar Mesa
