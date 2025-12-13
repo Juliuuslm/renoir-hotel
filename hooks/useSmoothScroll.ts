@@ -23,6 +23,10 @@ export const useSmoothScroll = () => {
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      prevent: (node) => {
+        // No aplicar smooth scroll si estamos dentro de un modal
+        return node.closest('[data-lenis-prevent]') !== null;
+      },
     });
 
     // Guardar la instancia de Lenis en window para acceder desde otros hooks

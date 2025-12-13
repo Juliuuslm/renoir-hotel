@@ -65,6 +65,7 @@ export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
 
       {/* Modal Content */}
       <div
+        data-lenis-prevent
         className={`
           relative bg-white w-full
           max-h-[90vh] sm:max-h-[85vh] overflow-hidden

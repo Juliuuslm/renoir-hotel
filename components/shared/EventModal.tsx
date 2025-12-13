@@ -26,6 +26,7 @@ export const EventModal = () => {
       onClick={closeModal}
     >
       <div
+        data-lenis-prevent
         className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >

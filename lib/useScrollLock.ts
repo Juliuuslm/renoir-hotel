@@ -18,27 +18,20 @@ export const useScrollLock = (isLocked: boolean) => {
       bodyElement.style.overflow = 'hidden';
       bodyElement.style.paddingRight = `${scrollbarWidth}px`;
 
-      // PAUSAR Lenis completamente - esto es crítico
-      // Lenis intercepta todos los eventos de scroll, asi que pausarlo es esencial
+      // Pausar Lenis para evitar animaciones de scroll en la página principal
       if (lenis) {
         try {
-          // Pausar Lenis
           lenis.stop();
-
-          // Deshabilitar smooth wheel si es posible
-          if (lenis.options) {
-            lenis.options.smoothWheel = false;
-          }
         } catch (e) {
           console.error('Error pausing Lenis:', e);
         }
       }
 
       // El scroll dentro del modal funciona porque:
-      // 1. El modal tiene overflow-y-auto en su contenedor
-      // 2. Lenis está completamente pausado y no intercepta eventos
-      // 3. El navegador permite scroll nativo en elementos con overflow-y-auto
-      // 4. No hay event listeners interfiriendo
+      // 1. El modal tiene data-lenis-prevent que excluye eventos de Lenis
+      // 2. El modal tiene overflow-y-auto en su contenedor
+      // 3. Lenis no intercepta eventos dentro de [data-lenis-prevent]
+      // 4. El navegador permite scroll nativo en el modal
 
       // Cleanup
       return () => {
@@ -51,9 +44,6 @@ export const useScrollLock = (isLocked: boolean) => {
         if (lenis) {
           try {
             lenis.start();
-            if (lenis.options) {
-              lenis.options.smoothWheel = true;
-            }
           } catch (e) {
             console.error('Error resuming Lenis:', e);
           }
@@ -69,9 +59,6 @@ export const useScrollLock = (isLocked: boolean) => {
       if (lenis) {
         try {
           lenis.start();
-          if (lenis.options) {
-            lenis.options.smoothWheel = true;
-          }
         } catch (e) {
           console.error('Error resuming Lenis:', e);
         }
