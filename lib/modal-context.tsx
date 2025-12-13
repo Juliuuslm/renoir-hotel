@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, ReactNode } from 'react';
+import { useScrollLock } from './useScrollLock';
 
 type ModalType = 'booking' | 'menu' | 'treatment' | 'facility' | 'event' | 'workshop' | 'suite-detail' | null;
 
@@ -22,6 +23,9 @@ const ModalContext = createContext<ModalContextType | undefined>(undefined);
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [activeModal, setActiveModal] = useState<ModalType>(null);
   const [modalData, setModalData] = useState<any>(null);
+
+  // Usar hook para manejar scroll lock
+  useScrollLock(!!activeModal);
 
   const openBookingModal = () => {
     setActiveModal('booking');
