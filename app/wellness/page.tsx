@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Waves, Heart, Activity } from 'lucide-react';
 import { RevealText } from '@/components/ui/RevealText';
 import { TreatmentItem } from '@/components/pages/wellness/TreatmentItem';
+import { FacilityCard } from '@/components/pages/wellness/FacilityCard';
 
 export default function WellnessPage() {
   const [loaded, setLoaded] = useState(false);
@@ -109,6 +110,64 @@ export default function WellnessPage() {
                 <TreatmentItem {...item} index={idx} />
               </RevealText>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Spa Facilities Gallery */}
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-stone-50">
+        <div className="container mx-auto px-6">
+          <RevealText>
+            <div className="mb-16">
+              <span className="text-xs font-bold tracking-[0.2em] text-stone-400 uppercase block mb-4">
+                Espacios y Equipamiento
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-stone-900">Nuestras Instalaciones</h2>
+            </div>
+          </RevealText>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            <RevealText delay={100}>
+              <FacilityCard
+                image="/images/wellness/massage-room.jpg"
+                title="Salas de Masaje"
+                description="Espacios diseñados específicamente para relajación profunda con aromaterapia y música ambiental."
+              />
+            </RevealText>
+            <RevealText delay={200}>
+              <FacilityCard
+                image="/images/wellness/facial-room.jpg"
+                title="Tratamientos Faciales"
+                description="Cabinas privadas equipadas con tecnología de última generación para tratamientos especializados."
+              />
+            </RevealText>
+            <RevealText delay={300}>
+              <FacilityCard
+                image="/images/wellness/sauna.jpg"
+                title="Sauna y Vapor"
+                description="Espacios de termorregulación con vistas al jardín para la purificación total del cuerpo."
+              />
+            </RevealText>
+            <RevealText delay={400}>
+              <FacilityCard
+                image="/images/wellness/yoga-space.jpg"
+                title="Estudio de Yoga"
+                description="Salón luminoso con pisos de madera natural, perfecto para sesiones matutinas y meditación."
+              />
+            </RevealText>
+            <RevealText delay={500}>
+              <FacilityCard
+                image="/images/wellness/pool.jpg"
+                title="Piscina Termal"
+                description="Agua climatizada a temperatura corporal con efecto flotante para máxima relajación."
+              />
+            </RevealText>
+            <RevealText delay={600}>
+              <FacilityCard
+                image="/images/wellness/relaxation-area.jpg"
+                title="Área de Descanso"
+                description="Lounge privado con luminoterapia para recuperación completa tras los tratamientos."
+              />
+            </RevealText>
           </div>
         </div>
       </section>
