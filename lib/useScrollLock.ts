@@ -6,41 +6,80 @@ import { useEffect } from 'react';
  */
 export const useScrollLock = (isLocked: boolean) => {
   useEffect(() => {
+    const htmlElement = document.documentElement;
+    const bodyElement = document.body;
+
     if (isLocked) {
-      // Calcular ancho de scrollbar para evitar layout shift
+      // Guardar scroll actual
+      const scrollY = window.scrollY || window.pageYOffset;
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-      // Aplicar a html para máxima compatibilidad
-      document.documentElement.style.overflow = 'hidden';
-      document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+      // Aplicar estilos inline directamente
+      htmlElement.style.overflow = 'hidden';
+      htmlElement.style.height = '100vh';
+      htmlElement.style.width = '100vw';
 
-      // También en body por compatibilidad
-      document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      bodyElement.style.overflow = 'hidden';
+      bodyElement.style.height = '100vh';
+      bodyElement.style.width = '100vw';
+      bodyElement.style.position = 'fixed';
+      bodyElement.style.top = '0';
+      bodyElement.style.left = '0';
+      bodyElement.style.right = '0';
+      bodyElement.style.bottom = '0';
+      bodyElement.style.paddingRight = `${scrollbarWidth}px`;
 
-      // Si Lenis está activo (window.lenis), pausarlo
-      if ((window as any).lenis) {
-        (window as any).lenis.stop();
+      // Si Lenis está activo, pausarlo
+      try {
+        if ((window as any).lenis && (window as any).lenis.stop) {
+          (window as any).lenis.stop();
+        }
+      } catch (e) {
+        // Ignorar error si Lenis no existe
       }
-    } else {
-      // Restaurar estilos
-      document.documentElement.style.overflow = '';
-      document.documentElement.style.paddingRight = '';
-      document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
 
-      // Reanudar Lenis si estaba pausado
-      if ((window as any).lenis) {
-        (window as any).lenis.start();
+      // Retorno de cleanup
+      return () => {
+        // Restaurar estilos del body
+        bodyElement.style.position = '';
+        bodyElement.style.top = '';
+        bodyElement.style.left = '';
+        bodyElement.style.right = '';
+        bodyElement.style.bottom = '';
+        bodyElement.style.overflow = '';
+        bodyElement.style.height = '';
+        bodyElement.style.width = '';
+        bodyElement.style.paddingRight = '';
+
+        // Restaurar estilos del html
+        htmlElement.style.overflow = '';
+        htmlElement.style.height = '';
+        htmlElement.style.width = '';
+      };
+    } else {
+      // Cuando se desbloquea
+      bodyElement.style.position = '';
+      bodyElement.style.top = '';
+      bodyElement.style.left = '';
+      bodyElement.style.right = '';
+      bodyElement.style.bottom = '';
+      bodyElement.style.overflow = '';
+      bodyElement.style.height = '';
+      bodyElement.style.width = '';
+      bodyElement.style.paddingRight = '';
+
+      htmlElement.style.overflow = '';
+      htmlElement.style.height = '';
+      htmlElement.style.width = '';
+
+      // Reanudar Lenis
+      try {
+        if ((window as any).lenis && (window as any).lenis.start) {
+          (window as any).lenis.start();
+        }
+      } catch (e) {
+        // Ignorar error si Lenis no existe
       }
     }
-
-    // Cleanup
-    return () => {
-      document.documentElement.style.overflow = '';
-      document.documentElement.style.paddingRight = '';
-      document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
-    };
   }, [isLocked]);
 };
