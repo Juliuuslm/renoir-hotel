@@ -26,14 +26,42 @@ export default function ContactoPage() {
   ];
 
   return (
-    <div className="animate-fadeIn bg-neutral-50 min-h-screen">
-      {/* Hero Contact Minimal */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 px-6 text-center">
-        <RevealText>
-          <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase mb-4 block">
+    <div className="animate-fadeIn">
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] md:h-[80vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/contact/street-view.jpg"
+            alt="Hotel Entrance"
+            fill
+            className={`object-cover transition-transform duration-[3s] ${
+              loaded ? 'scale-100 opacity-60' : 'scale-110 opacity-0'
+            }`}
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80" />
+        </div>
+        <div className="relative z-10 text-center text-white px-6">
+          <p
+            className={`text-xs tracking-[0.4em] uppercase mb-4 transition-all duration-700 delay-300 ${
+              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             Conecte
-          </span>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-neutral-900 mb-8">ENCUÉNTRENOS</h1>
+          </p>
+          <h1
+            className={`font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl transition-all duration-700 delay-500 ${
+              loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}
+          >
+            ENCUÉNTRENOS
+          </h1>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 px-6 text-center bg-neutral-50">
+        <RevealText>
           <p className="text-neutral-500 max-w-xl mx-auto text-lg font-light">
             Estamos a su disposición para diseñar su estancia perfecta o responder cualquier
             inquietud.
