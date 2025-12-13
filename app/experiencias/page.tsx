@@ -188,11 +188,11 @@ export default function ExperienciasPage() {
         </div>
       </section>
 
-      {/* Ateliers */}
+      {/* Talleres Creativos */}
       <section className="py-10 sm:py-12 md:py-20 lg:py-28 xl:py-32 bg-white">
         <div className="container mx-auto px-6 text-center">
           <RevealText>
-            <h2 className="font-serif text-4xl mb-12">Ateliers Creativos</h2>
+            <h2 className="font-serif text-4xl mb-12">Talleres Creativos</h2>
           </RevealText>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-7 lg:gap-8">
             {workshops.map((ws, i) => (

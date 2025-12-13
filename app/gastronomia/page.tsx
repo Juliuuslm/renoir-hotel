@@ -62,9 +62,9 @@ export default function GastronomiaPage() {
         </div>
       </section>
 
-      {/* L'Orangerie */}
+      {/* La Naranjería */}
       <VenueSection
-        name="L'Orangerie"
+        name="La Naranjería"
         description="Un espacio inundado de luz natural, rodeado de cítricos. Desayunos artesanales y almuerzos mediterráneos en un ambiente de serenidad botánica."
         hours="Desayuno: 7:00 AM - 12:00 PM"
         type="light"
@@ -72,10 +72,10 @@ export default function GastronomiaPage() {
         onOpenMenu={openMenuModal}
       />
 
-      {/* Le Noir */}
+      {/* El Negro */}
       <VenueSection
-        name="Le Noir"
-        description="Cuando cae la noche, Le Noir abre sus puertas. Un speakeasy de alta cocina donde la mixología se encuentra con sabores audaces bajo una atmósfera de terciopelo."
+        name="El Negro"
+        description="Cuando cae la noche, El Negro abre sus puertas. Un speakeasy de alta cocina donde la mixología se encuentra con sabores audaces bajo una atmósfera de terciopelo."
         hours="Cena: 7:00 PM - 1:00 AM"
         type="dark"
         reverse={true}

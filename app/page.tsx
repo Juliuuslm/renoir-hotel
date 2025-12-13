@@ -17,29 +17,29 @@ export default function HomePage() {
     setLoaded(true);
   }, []);
 
-  // Galería de imágenes para sección Moments
+  // Galería de imágenes para sección Momentos
   const galleryMoments = [
     {
       image: '/images/hero/lobby.jpg',
-      title: 'Le Lobby',
+      title: 'El Lobby',
       category: 'Espacios',
       tall: true,
     },
     {
       image: '/images/wellness/spa-entrance.jpg',
-      title: 'Morning Light',
-      category: 'Atmosfera',
+      title: 'Luz de Mañana',
+      category: 'Atmósfera',
       tall: false,
     },
     {
       image: '/images/hero/garden.jpg',
-      title: 'Garden Terrace',
+      title: 'Terraza del Jardín',
       category: 'Exteriores',
       tall: false,
     },
     {
       image: '/images/wellness/relaxation-area.jpg',
-      title: 'Le Spa',
+      title: 'El Spa',
       category: 'Bienestar',
       tall: true,
     },
@@ -125,16 +125,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* L'Essence Section - Quiénes somos */}
+      {/* La Esencia Section - Quiénes somos */}
       <section className="bg-white py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 text-neutral-900">
         <div className="container mx-auto px-6 max-w-5xl">
           {/* Header */}
           <div className="text-center mb-16">
             <RevealText>
               <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
-                Notre Histoire
+                Nuestra Historia
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">L&apos;Essence</h2>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">La Esencia</h2>
             </RevealText>
           </div>
 
@@ -206,7 +206,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Moments Section - Galería */}
+      {/* Momentos Section - Galería */}
       <section className="bg-neutral-900 text-white py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
         <div className="container mx-auto px-6">
           {/* Header */}
@@ -215,7 +215,7 @@ export default function HomePage() {
               <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
                 Vida en Renoir
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">Moments</h2>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">Momentos</h2>
             </RevealText>
           </div>
 
