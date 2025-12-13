@@ -46,7 +46,7 @@ export const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled || !isHome
             ? 'bg-white/95 backdrop-blur-md py-4 text-neutral-900 border-b border-neutral-100 shadow-sm'
-            : 'bg-transparent py-8 text-white'
+            : 'bg-white/5 backdrop-blur-md py-8 text-white border-b border-white/10'
         }`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">

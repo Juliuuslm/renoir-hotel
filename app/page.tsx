@@ -60,7 +60,7 @@ export default function HomePage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70" />
         </div>
         <div className="relative z-10 text-center px-4">
           <div
@@ -77,7 +77,7 @@ export default function HomePage() {
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
-            RENOIR
+            El Silencio del Lujo
           </h1>
           <div
             className={`transition-all duration-1000 delay-700 transform ${
@@ -86,9 +86,9 @@ export default function HomePage() {
           >
             <button
               onClick={openBookingModal}
-              className="border border-white/30 px-8 py-3 text-xs tracking-[0.2em] uppercase hover:bg-white active:bg-neutral-100 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300"
+              className="bg-white text-neutral-900 px-10 py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-neutral-100 active:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Reservar Estancia
+              Reservar Estancia →
             </button>
           </div>
         </div>
