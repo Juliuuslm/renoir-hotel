@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { RevealText } from '@/components/ui/RevealText';
 import { VenueSection } from '@/components/pages/gastronomia/VenueSection';
+import { CulinaryCard } from '@/components/pages/gastronomia/CulinaryCard';
 import { useModal } from '@/lib/modal-context';
 
 export default function GastronomiaPage() {
@@ -90,6 +91,179 @@ export default function GastronomiaPage() {
         image="/images/gastronomia/bar-area.jpg"
         onOpenMenu={openMenuModal}
       />
+
+      {/* Especialidades Culinarias */}
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white">
+        <div className="container mx-auto px-6">
+          <RevealText>
+            <div className="mb-16">
+              <span className="text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase block mb-4">
+                Nuestras Creaciones
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-900">
+                Especialidades Culinarias
+              </h2>
+            </div>
+          </RevealText>
+
+          {/* Platillos Principales */}
+          <div className="mb-20">
+            <RevealText delay={100}>
+              <h3 className="font-serif text-2xl text-neutral-900 mb-8 pb-4 border-b border-neutral-200">
+                Platillos Principales
+              </h3>
+            </RevealText>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+              <RevealText delay={150}>
+                <CulinaryCard
+                  image="/images/gastronomia/signature-dish-1.jpg"
+                  title="Creación Emblema"
+                  category="Platillo Insignia"
+                  featured={true}
+                />
+              </RevealText>
+              <RevealText delay={200}>
+                <CulinaryCard
+                  image="/images/gastronomia/signature-dish-2.jpg"
+                  title="Inspiración Chef"
+                  category="Especialidad del Chef"
+                  featured={true}
+                />
+              </RevealText>
+              <RevealText delay={250}>
+                <CulinaryCard
+                  image="/images/gastronomia/signature-dish-3.jpg"
+                  title="Propuesta Premium"
+                  category="Edición Limitada"
+                  featured={true}
+                />
+              </RevealText>
+              <RevealText delay={300}>
+                <CulinaryCard
+                  image="/images/gastronomia/chef-special.jpg"
+                  title="Especial del Chef"
+                  category="Selección Diaria"
+                />
+              </RevealText>
+              <RevealText delay={350}>
+                <CulinaryCard
+                  image="/images/gastronomia/chef-at-work.jpg"
+                  title="Arte en Acción"
+                  category="Pasión Culinaria"
+                />
+              </RevealText>
+            </div>
+          </div>
+
+          {/* Aperitivos y Entradas */}
+          <div className="mb-20">
+            <RevealText delay={100}>
+              <h3 className="font-serif text-2xl text-neutral-900 mb-8 pb-4 border-b border-neutral-200">
+                Aperitivos y Entradas
+              </h3>
+            </RevealText>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+              <RevealText delay={150}>
+                <CulinaryCard
+                  image="/images/gastronomia/appetizer.jpg"
+                  title="Tapas Gourmet"
+                  category="Aperitivos"
+                  featured={true}
+                />
+              </RevealText>
+              <RevealText delay={200}>
+                <CulinaryCard
+                  image="/images/gastronomia/ingredients.jpg"
+                  title="Ingredientes Premium"
+                  category="Materia Prima"
+                />
+              </RevealText>
+              <RevealText delay={250}>
+                <CulinaryCard
+                  image="/images/gastronomia/plating-detail.jpg"
+                  title="Arte de la Presentación"
+                  category="Detalles Exquisitos"
+                />
+              </RevealText>
+            </div>
+          </div>
+
+          {/* Postres */}
+          <div className="mb-20">
+            <RevealText delay={100}>
+              <h3 className="font-serif text-2xl text-neutral-900 mb-8 pb-4 border-b border-neutral-200">
+                Postres y Dulces
+              </h3>
+            </RevealText>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+              <RevealText delay={150}>
+                <CulinaryCard
+                  image="/images/gastronomia/dessert-1.jpg"
+                  title="Tentación de Chocolate"
+                  category="Postres Clásicos"
+                  featured={true}
+                />
+              </RevealText>
+              <RevealText delay={200}>
+                <CulinaryCard
+                  image="/images/gastronomia/dessert-2.jpg"
+                  title="Creación Artesanal"
+                  category="Repostería Fina"
+                  featured={true}
+                />
+              </RevealText>
+            </div>
+          </div>
+
+          {/* Bebidas y Vinos */}
+          <div>
+            <RevealText delay={100}>
+              <h3 className="font-serif text-2xl text-neutral-900 mb-8 pb-4 border-b border-neutral-200">
+                Bebidas y Selección de Vinos
+              </h3>
+            </RevealText>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+              <RevealText delay={150}>
+                <CulinaryCard
+                  image="/images/gastronomia/beverages.jpg"
+                  title="Bebidas Exclusivas"
+                  category="Coctelería"
+                  featured={true}
+                />
+              </RevealText>
+              <RevealText delay={200}>
+                <CulinaryCard
+                  image="/images/gastronomia/cocktai.jpg"
+                  title="Mixología Artesanal"
+                  category="Cócteles Clásicos"
+                  featured={true}
+                />
+              </RevealText>
+              <RevealText delay={250}>
+                <CulinaryCard
+                  image="/images/gastronomia/wine-selection.jpg"
+                  title="Bodega Selecta"
+                  category="Vinos Internacionales"
+                />
+              </RevealText>
+              <RevealText delay={300}>
+                <CulinaryCard
+                  image="/images/gastronomia/wine-cellar.jpg"
+                  title="La Bodega"
+                  category="Colección Única"
+                />
+              </RevealText>
+              <RevealText delay={350}>
+                <CulinaryCard
+                  image="/images/gastronomia/private-dining.jpg"
+                  title="Experiencia Privada"
+                  category="Reservas Especiales"
+                />
+              </RevealText>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
