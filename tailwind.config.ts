@@ -33,6 +33,10 @@ const config: Config = {
       animation: {
         fadeIn: 'fadeIn 0.8s ease-out forwards',
         fadeInUp: 'fadeInUp 0.5s ease-out forwards',
+        splashFadeIn: 'splashFadeIn 0.6s ease-out forwards',
+        splashLogoReveal: 'splashLogoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        splashTextReveal: 'splashTextReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        splashFadeOut: 'splashFadeOut 0.8s ease-in forwards',
       },
       keyframes: {
         fadeIn: {
@@ -42,6 +46,22 @@ const config: Config = {
         fadeInUp: {
           from: { opacity: '0', transform: 'translateY(20px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        splashFadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        splashLogoReveal: {
+          from: { opacity: '0', transform: 'scale(0.95) translateY(10px)' },
+          to: { opacity: '1', transform: 'scale(1) translateY(0)' },
+        },
+        splashTextReveal: {
+          from: { opacity: '0', transform: 'translateY(20px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        splashFadeOut: {
+          from: { opacity: '1', transform: 'scale(1)' },
+          to: { opacity: '0', transform: 'scale(0.98)' },
         },
       },
     },

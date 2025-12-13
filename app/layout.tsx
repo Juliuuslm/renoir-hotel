@@ -8,6 +8,7 @@ import { BookingModal } from '@/components/shared/BookingModal';
 import { MenuModal } from '@/components/shared/MenuModal';
 import { HotelStructuredData } from '@/components/shared/StructuredData';
 import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider';
+import { WelcomeScreen } from '@/components/shared/WelcomeScreen';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -69,6 +70,7 @@ export default function RootLayout({
         <HotelStructuredData />
       </head>
       <body className="font-sans text-neutral-900 bg-neutral-50 selection:bg-neutral-900 selection:text-white min-h-screen flex flex-col">
+        <WelcomeScreen />
         <SmoothScrollProvider>
           <ModalProvider>
             <Navbar />
