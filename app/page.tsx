@@ -20,25 +20,25 @@ export default function HomePage() {
   // Galería de imágenes para sección Moments
   const galleryMoments = [
     {
-      image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/hero/lobby.jpg',
       title: 'Le Lobby',
       category: 'Espacios',
       tall: true,
     },
     {
-      image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/wellness/spa-entrance.jpg',
       title: 'Morning Light',
       category: 'Atmosfera',
       tall: false,
     },
     {
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2080&auto=format&fit=crop',
+      image: '/images/hero/garden.jpg',
       title: 'Garden Terrace',
       category: 'Exteriores',
       tall: false,
     },
     {
-      image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/wellness/relaxation-area.jpg',
       title: 'Le Spa',
       category: 'Bienestar',
       tall: true,
@@ -51,7 +51,7 @@ export default function HomePage() {
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden bg-neutral-900 text-white flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
+            src="/images/hero/lobby.jpg"
             alt="Hotel Renoir Lobby"
             fill
             className={`object-cover transition-transform duration-[3s] ease-out ${
@@ -117,7 +117,7 @@ export default function HomePage() {
           </div>
           <div className="md:col-span-5 relative mt-12 md:mt-0">
             <ParallaxImage
-              src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2070&auto=format&fit=crop"
+              src="/images/hero/entrance.jpg"
               alt="Interior detail"
               className="h-[500px] w-full"
             />
@@ -269,12 +269,12 @@ export default function HomePage() {
             {/* Columna Derecha - Imágenes */}
             <div className="md:col-span-7 grid grid-cols-2 gap-6">
               <ParallaxImage
-                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop"
+                src="/images/suites/atelier-suite-main.jpg"
                 alt="The Atelier Suite"
                 className="h-[300px]"
               />
               <ParallaxImage
-                src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop"
+                src="/images/suites/impressionist-suite-main.jpg"
                 alt="Impressionist Suite"
                 className="h-[300px]"
               />

@@ -21,24 +21,21 @@ export default function SuitesPage() {
       title: 'The Atelier',
       price: '$450 USD',
       description: 'Un espacio bañado en luz natural, diseñado para la creatividad y el descanso.',
-      image:
-        'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop',
+      image: '/images/suites/atelier-suite-main.jpg',
       features: ['45m² de Espacio', 'Vista a la Ciudad', 'Baño de Mármol', 'Escritorio Ejecutivo'],
     },
     {
       title: 'Impressionist Suite',
       price: '$680 USD',
       description: 'Inspirada en los jardines de Giverny con terraza privada.',
-      image:
-        'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/suites/impressionist-suite-main.jpg',
       features: ['65m² + Terraza', 'Jardín Privado', 'Tina de Inmersión', 'Sala de Estar'],
     },
     {
       title: 'Renoir Penthouse',
       price: '$1,200 USD',
       description: 'La joya de la corona con vistas panorámicas.',
-      image:
-        'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2400&auto=format&fit=crop',
+      image: '/images/suites/deluxe-suite-1-main.jpg',
       features: ['120m² Panorámicos', 'Mayordomo 24/7', 'Cocina Completa', 'Terraza 360°'],
     },
   ];
@@ -49,7 +46,7 @@ export default function SuitesPage() {
       <section className="relative min-h-[60vh] sm:min-h-[70vh] md:h-[80vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070&auto=format&fit=crop"
+            src="/images/suites/atelier-suite-bedroom.jpg"
             alt="Bed detail"
             fill
             className={`object-cover transition-transform duration-[3s] ${

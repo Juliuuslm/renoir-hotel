@@ -21,24 +21,21 @@ export default function ExperienciasPage() {
       day: '14',
       title: 'Jazz & Vinilos',
       category: 'Música',
-      image:
-        'https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=2064&auto=format&fit=crop',
+      image: '/images/experiencias/music-evening.jpg',
     },
     {
       month: 'OCT',
       day: '18',
       title: 'Vernissage: Luz',
       category: 'Arte',
-      image:
-        'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?q=80&w=2066&auto=format&fit=crop',
+      image: '/images/experiencias/art-exhibition.JPG',
     },
     {
       month: 'OCT',
       day: '22',
       title: 'Cata de Agaves',
       category: 'Gastronomía',
-      image:
-        'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/experiencias/wine-tasting.jpg',
     },
   ];
 
@@ -70,7 +67,7 @@ export default function ExperienciasPage() {
       <section className="relative min-h-[60vh] sm:min-h-[65vh] md:h-[70vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?q=80&w=1974&auto=format&fit=crop"
+            src="/images/experiencias/art-workshop.jpg"
             alt="Art Gallery"
             fill
             className={`object-cover transition-transform duration-[3s] ${
@@ -174,14 +171,14 @@ export default function ExperienciasPage() {
             <div className="relative h-[600px] w-full">
               <div className="absolute top-0 right-0 w-2/3 h-2/3 z-10">
                 <ParallaxImage
-                  src="https://images.unsplash.com/photo-1518182170546-0766ac6f593c?q=80&w=2072&auto=format&fit=crop"
+                  src="/images/experiencias/garden-tour.jpg"
                   alt="Local spot 1"
                   className="w-full h-full shadow-2xl"
                 />
               </div>
               <div className="absolute bottom-0 left-0 w-2/3 h-2/3 z-20 transform translate-x-8 -translate-y-8">
                 <ParallaxImage
-                  src="https://images.unsplash.com/photo-1512618846387-92080344d184?q=80&w=2074&auto=format&fit=crop"
+                  src="/images/experiencias/cooking-class.jpg"
                   alt="Local spot 2"
                   className="w-full h-full shadow-2xl border-4 border-neutral-900"
                 />

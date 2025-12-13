@@ -47,7 +47,7 @@ export default function WellnessPage() {
       <section className="relative min-h-[60vh] sm:min-h-[70vh] md:h-[80vh] w-full bg-stone-100 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop"
+            src="/images/wellness/spa-entrance.jpg"
             alt="Spa Atmosphere"
             fill
             className={`object-cover transition-transform duration-[3s] ${

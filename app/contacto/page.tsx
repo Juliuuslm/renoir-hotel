@@ -46,7 +46,7 @@ export default function ContactoPage() {
             {/* Mapa visual de fondo (Abstracto) */}
             <div className="absolute inset-0 opacity-40 grayscale">
               <Image
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1774&auto=format&fit=crop"
+                src="/images/contact/map-location.jpg"
                 alt="Map Texture"
                 fill
                 className="object-cover"

@@ -21,7 +21,7 @@ export default function GastronomiaPage() {
       <section className="relative min-h-[60vh] sm:min-h-[70vh] md:h-[80vh] w-full bg-neutral-900 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop"
+            src="/images/gastronomia/restaurant-main.jpg"
             alt="Dining"
             fill
             className={`object-cover transition-transform duration-[3s] ${
@@ -68,7 +68,7 @@ export default function GastronomiaPage() {
         description="Un espacio inundado de luz natural, rodeado de cítricos. Desayunos artesanales y almuerzos mediterráneos en un ambiente de serenidad botánica."
         hours="Desayuno: 7:00 AM - 12:00 PM"
         type="light"
-        image="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop"
+        image="/images/gastronomia/restaurant-ambiance.jpg"
         onOpenMenu={openMenuModal}
       />
 
@@ -79,7 +79,7 @@ export default function GastronomiaPage() {
         hours="Cena: 7:00 PM - 1:00 AM"
         type="dark"
         reverse={true}
-        image="https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=2070&auto=format&fit=crop"
+        image="/images/gastronomia/bar-area.jpg"
         onOpenMenu={openMenuModal}
       />
     </div>
