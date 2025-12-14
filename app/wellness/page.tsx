@@ -129,7 +129,7 @@ export default function WellnessPage() {
       <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <RevealText>
-            <div className="flex justify-between items-end mb-16 border-b border-black pb-4">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 sm:gap-0 mb-16 border-b border-black pb-4">
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-900">Tratamientos</h2>
               <span className="text-xs uppercase tracking-widest text-neutral-400">
                 Menú de Temporada
