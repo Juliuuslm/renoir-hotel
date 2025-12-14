@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Para SSG puro (static export)
+  // Removido: output: 'export' para permitir servidor dinámico de Next.js
+  // Esto permite que Next.js se ejecute como servidor en Dokploy
   images: {
     loader: 'custom',
     loaderFile: './lib/image-loader.ts',
