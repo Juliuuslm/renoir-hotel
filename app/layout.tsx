@@ -12,6 +12,7 @@ import { EventModal } from '@/components/shared/EventModal';
 import { WorkshopModal } from '@/components/shared/WorkshopModal';
 import { SuiteDetailModal } from '@/components/shared/SuiteDetailModal';
 import { GalleryLightboxModal } from '@/components/shared/GalleryLightboxModal';
+import { DishDetailModal } from '@/components/shared/DishDetailModal';
 import { HotelStructuredData } from '@/components/shared/StructuredData';
 import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider';
 import { WelcomeScreen } from '@/components/shared/WelcomeScreen';
@@ -90,6 +91,7 @@ export default function RootLayout({
             <WorkshopModal />
             <SuiteDetailModal />
             <GalleryLightboxModal />
+            <DishDetailModal />
           </ModalProvider>
         </SmoothScrollProvider>
       </body>

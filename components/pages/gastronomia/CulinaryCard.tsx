@@ -7,13 +7,25 @@ interface CulinaryCardProps {
   title: string;
   category?: string;
   featured?: boolean;
+  onClick?: () => void;
 }
 
-export const CulinaryCard = ({ image, title, category, featured = false }: CulinaryCardProps) => {
+export const CulinaryCard = ({ image, title, category, featured = false, onClick }: CulinaryCardProps) => {
   const height = featured ? 'h-[350px] md:h-[450px]' : 'h-[250px] md:h-[300px]';
 
   return (
-    <div className={`group relative overflow-hidden bg-neutral-900 cursor-pointer tap-highlight ${height}`}>
+    <div
+      className={`group relative overflow-hidden bg-neutral-900 cursor-pointer tap-highlight ${height}`}
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && onClick) {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+    >
       {/* Imagen */}
       <div className="relative w-full h-full">
         <Image

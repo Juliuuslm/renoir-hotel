@@ -9,7 +9,7 @@ import { useModal } from '@/lib/modal-context';
 
 export default function GastronomiaPage() {
   const [loaded, setLoaded] = useState(false);
-  const { openMenuModal } = useModal();
+  const { openMenuModal, openDishDetailModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -120,6 +120,22 @@ export default function GastronomiaPage() {
                   title="Creación Emblema"
                   category="Platillo Insignia"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Creación Emblema",
+                    image: "/images/gastronomia/signature-dish-1.jpg",
+                    category: "Platillo Insignia",
+                    description: "Nuestro platillo insignia que combina técnicas francesas con ingredientes mexicanos de temporada. Una sinfonía de sabores que celebra lo mejor de dos tradiciones culinarias.",
+                    price: "$65 USD",
+                    prepTime: "35-40 min",
+                    ingredients: [
+                      "Foie gras artesanal",
+                      "Trufa negra mexicana",
+                      "Mole de temporada",
+                      "Verduras orgánicas del huerto local"
+                    ],
+                    pairing: "Vino tinto Reserva Cabernet Sauvignon",
+                    chefNote: "Este platillo representa nuestra filosofía: honrar las raíces mientras innovamos sin miedo."
+                  })}
                 />
               </RevealText>
               <RevealText delay={200}>
@@ -128,6 +144,22 @@ export default function GastronomiaPage() {
                   title="Inspiración Chef"
                   category="Especialidad del Chef"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Inspiración Chef",
+                    image: "/images/gastronomia/signature-dish-2.jpg",
+                    category: "Especialidad del Chef",
+                    description: "La creación más personal del Chef. Un platillo que evoluciona con las estaciones y refleja su estado emocional en la cocina. Hoy, una celebración del contraste entre texturas.",
+                    price: "$72 USD",
+                    prepTime: "40-45 min",
+                    ingredients: [
+                      "Pez espada a la sal",
+                      "Espuma de yema de huevo",
+                      "Encurtidos de Oaxaca",
+                      "Aceite infusionado en ajo negro"
+                    ],
+                    pairing: "Vino blanco Grüner Veltliner Austriaco",
+                    chefNote: "Cada noche es una oportunidad de sorprender. Este es mi favorito."
+                  })}
                 />
               </RevealText>
               <RevealText delay={250}>
@@ -136,6 +168,22 @@ export default function GastronomiaPage() {
                   title="Propuesta Premium"
                   category="Edición Limitada"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Propuesta Premium",
+                    image: "/images/gastronomia/signature-dish-3.jpg",
+                    category: "Edición Limitada",
+                    description: "Solo disponible bajo pedido especial. Un platillo que experimenta con técnicas ahumadas y cocciones bajo temperatura controlada.",
+                    price: "$85 USD",
+                    prepTime: "50-60 min",
+                    ingredients: [
+                      "Costilla de res de 45 días de maduración",
+                      "Humo de mezquite artesanal",
+                      "Salsa de ciruela y ancho",
+                      "Cebollas dulces caramelizadas"
+                    ],
+                    pairing: "Vino tinto Valpolicella Ripasso Italiano",
+                    chefNote: "Reserva con 48 horas de anticipación. Vale cada minuto de espera."
+                  })}
                 />
               </RevealText>
               <RevealText delay={300}>
@@ -143,6 +191,17 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/chef-special.jpg"
                   title="Especial del Chef"
                   category="Selección Diaria"
+                  onClick={() => openDishDetailModal({
+                    title: "Especial del Chef",
+                    image: "/images/gastronomia/chef-special.jpg",
+                    category: "Selección Diaria",
+                    description: "Cambia diariamente según los ingredientes más frescos disponibles. Nuestro Chef crea sobre la marcha, respondiendo a la inspiración del momento.",
+                    price: "$45-$60 USD",
+                    prepTime: "30-35 min",
+                    ingredients: ["Ingredientes de la cosecha del día"],
+                    pairing: "Consulte al sommelier para recomendación",
+                    chefNote: "Llame con anticipación para saber qué estamos cocinando hoy."
+                  })}
                 />
               </RevealText>
               <RevealText delay={350}>
@@ -150,6 +209,17 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/chef-at-work.jpg"
                   title="Arte en Acción"
                   category="Pasión Culinaria"
+                  onClick={() => openDishDetailModal({
+                    title: "Arte en Acción",
+                    image: "/images/gastronomia/chef-at-work.jpg",
+                    category: "Pasión Culinaria",
+                    description: "Nuestro Chef prepara este platillo frente a usted. Una experiencia multisensorial donde verá, huelerá y saborearáel proceso de creación en vivo.",
+                    price: "$95 USD por persona",
+                    prepTime: "45-60 min",
+                    ingredients: ["Ingredientes selectos según creación del Chef"],
+                    pairing: "Degustación de 3 vinos maridaje perfecto",
+                    chefNote: "Máximo 4 personas por sesión. Una experiencia verdaderamente única."
+                  })}
                 />
               </RevealText>
             </div>
@@ -169,6 +239,24 @@ export default function GastronomiaPage() {
                   title="Tapas Gourmet"
                   category="Aperitivos"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Tapas Gourmet",
+                    image: "/images/gastronomia/appetizer.jpg",
+                    category: "Aperitivos",
+                    description: "Selección de 6 tapas diseñadas para abrir el apetito y el paladar. Cada tapaes una expresión diferente de sabor, textura y temperatura.",
+                    price: "$28 USD",
+                    prepTime: "15-20 min",
+                    ingredients: [
+                      "Jamón ibérico de bellota",
+                      "Quesos artesanales españoles",
+                      "Croquetas caseras",
+                      "Camarones al ajillo",
+                      "Pan tostado con tomate",
+                      "Aceitunas marinadas"
+                    ],
+                    pairing: "Vermouth español o Prosecco",
+                    chefNote: "Perfectas para compartir. Ordene dos para un verdadero festín."
+                  })}
                 />
               </RevealText>
               <RevealText delay={200}>
@@ -176,6 +264,24 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/ingredients.jpg"
                   title="Ingredientes Premium"
                   category="Materia Prima"
+                  onClick={() => openDishDetailModal({
+                    title: "Ingredientes Premium",
+                    image: "/images/gastronomia/ingredients.jpg",
+                    category: "Materia Prima",
+                    description: "Una tabla curada de nuestros ingredientes más selectos. Perfecta para conocer la calidad de las materias primas que usamos en cada platillo.",
+                    price: "$42 USD",
+                    prepTime: "10 min",
+                    ingredients: [
+                      "Jamón ibérico 36 meses",
+                      "Queso de cabra Valenciano",
+                      "Conservas de mariscos gallegos",
+                      "Pimentón de la Vera",
+                      "Aceite extra virgen Arbequina",
+                      "Pan artesanal tostado"
+                    ],
+                    pairing: "Vino blanco Albariño",
+                    chefNote: "Diseñado para apreciar la belleza de ingredientes sin complicaciones."
+                  })}
                 />
               </RevealText>
               <RevealText delay={250}>
@@ -183,6 +289,23 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/plating-detail.jpg"
                   title="Arte de la Presentación"
                   category="Detalles Exquisitos"
+                  onClick={() => openDishDetailModal({
+                    title: "Arte de la Presentación",
+                    image: "/images/gastronomia/plating-detail.jpg",
+                    category: "Detalles Exquisitos",
+                    description: "Una entrada que es arte visual. Cada elemento está colocado con precisión para crear una composición que es tan hermosa para los ojos como deliciosa para el paladar.",
+                    price: "$38 USD",
+                    prepTime: "20-25 min",
+                    ingredients: [
+                      "Camarón fresco de Veracruz",
+                      "Verduras de color brillante",
+                      "Microgreens decorativas",
+                      "Glaseado de cítricos",
+                      "Flores comestibles"
+                    ],
+                    pairing: "Sauvignon Blanc de Nueva Zelanda",
+                    chefNote: "La plata es nuestra lienzo. Cada plato es una obra maestra única."
+                  })}
                 />
               </RevealText>
             </div>
@@ -202,6 +325,23 @@ export default function GastronomiaPage() {
                   title="Tentación de Chocolate"
                   category="Postres Clásicos"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Tentación de Chocolate",
+                    image: "/images/gastronomia/dessert-1.jpg",
+                    category: "Postres Clásicos",
+                    description: "Un postre clásico reinventado. Chocolate belga oscuro con cremosidad de ganache y contraste de frambuesa agria. Un equilibrio perfecto de indulgencia.",
+                    price: "$16 USD",
+                    prepTime: "10 min",
+                    ingredients: [
+                      "Chocolate belga 70% cacao",
+                      "Ganache de crema de leche",
+                      "Frambuesa fresca",
+                      "Coulis de fruta roja",
+                      "Helado de vainilla artesanal"
+                    ],
+                    pairing: "Café espresso o Tawny Port",
+                    chefNote: "Para los amantes del chocolate verdadero. Sin excesos, solo perfección."
+                  })}
                 />
               </RevealText>
               <RevealText delay={200}>
@@ -210,6 +350,17 @@ export default function GastronomiaPage() {
                   title="Creación Artesanal"
                   category="Repostería Fina"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Creación Artesanal",
+                    image: "/images/gastronomia/dessert-2.jpg",
+                    category: "Repostería Fina",
+                    description: "Nuestro pastelero crea este postre único, cambiando sabores y técnicas cada semana. Una exploración constante de texturas y sabores dulces.",
+                    price: "$14 USD",
+                    prepTime: "15 min",
+                    ingredients: ["Ingredientes selectos según creación semanal del pastelero"],
+                    pairing: "Moscato d'Asti o vino dulce de cosecha tardía",
+                    chefNote: "Pregunte a su servidor cuál es la creación de esta semana. Siempre sorprende."
+                  })}
                 />
               </RevealText>
             </div>
@@ -229,6 +380,17 @@ export default function GastronomiaPage() {
                   title="Bebidas Exclusivas"
                   category="Coctelería"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Bebidas Exclusivas",
+                    image: "/images/gastronomia/beverages.jpg",
+                    category: "Coctelería",
+                    description: "Cócteles creados por nuestro mixólogo maestro. Cada bebida es una obra de arte de sabores balanceados, colores vibrantes y presentación impeccable.",
+                    price: "$14 USD",
+                    prepTime: "8-10 min",
+                    ingredients: ["Ingredientes seleccionados según cocktail"],
+                    pairing: "Acompañante perfecto para nuestros platillos",
+                    chefNote: "Pregunte por nuestro cocktail de la casa, cambia frecuentemente según inspiración."
+                  })}
                 />
               </RevealText>
               <RevealText delay={200}>
@@ -237,6 +399,17 @@ export default function GastronomiaPage() {
                   title="Mixología Artesanal"
                   category="Cócteles Clásicos"
                   featured={true}
+                  onClick={() => openDishDetailModal({
+                    title: "Mixología Artesanal",
+                    image: "/images/gastronomia/cocktai.jpg",
+                    category: "Cócteles Clásicos",
+                    description: "Los clásicos reinterpretados. Martini, Margarita, Old Fashioned... pero nunca igual dos veces. Nuestro bartender agrega su toque personal a cada bebida.",
+                    price: "$13 USD",
+                    prepTime: "8 min",
+                    ingredients: ["Espíritus premium y licores artesanales"],
+                    pairing: "Aperitivo o digestivo",
+                    chefNote: "Díganos su sabor favorito y crearemos un cóctel personalizado para usted."
+                  })}
                 />
               </RevealText>
               <RevealText delay={250}>
@@ -244,6 +417,17 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/wine-selection.jpg"
                   title="Bodega Selecta"
                   category="Vinos Internacionales"
+                  onClick={() => openDishDetailModal({
+                    title: "Bodega Selecta",
+                    image: "/images/gastronomia/wine-selection.jpg",
+                    category: "Vinos Internacionales",
+                    description: "Selección cuidadosa de vinos de todo el mundo. Desde pequeños productores boutique hasta viñedos reconocidos internacionalmente.",
+                    price: "$30-$150 USD",
+                    prepTime: "5 min",
+                    ingredients: ["Vinos de Francia, Italia, España, Argentina, Chile, Nueva Zelanda"],
+                    pairing: "Consulte a nuestro sommelier para recomendación",
+                    chefNote: "Nuestro sommelier tiene pasión por encontrar el maridaje perfecto para su comida."
+                  })}
                 />
               </RevealText>
               <RevealText delay={300}>
@@ -251,6 +435,17 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/wine-cellar.jpg"
                   title="La Bodega"
                   category="Colección Única"
+                  onClick={() => openDishDetailModal({
+                    title: "La Bodega",
+                    image: "/images/gastronomia/wine-cellar.jpg",
+                    category: "Colección Única",
+                    description: "Acceso a nuestra bodega privada de vinos raros y añejos. Botellas que cuentan historias de décadas, regiones y tradiciones vinícolas.",
+                    price: "$200+ USD",
+                    prepTime: "5 min",
+                    ingredients: ["Vinos antiguos y colecciones privadas"],
+                    pairing: "Una experiencia de cata completa disponible",
+                    chefNote: "Por cita previa. Una verdadera inmersión en el arte del vino."
+                  })}
                 />
               </RevealText>
               <RevealText delay={350}>
@@ -258,6 +453,17 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/private-dining.jpg"
                   title="Experiencia Privada"
                   category="Reservas Especiales"
+                  onClick={() => openDishDetailModal({
+                    title: "Experiencia Privada",
+                    image: "/images/gastronomia/private-dining.jpg",
+                    category: "Reservas Especiales",
+                    description: "Cena privada diseñada a medida para su grupo. Menú personalizado, maridaje elegido, y una experiencia gastronómica completamente personalizada.",
+                    price: "$120-$200 USD por persona",
+                    prepTime: "A conveniencia de ustedes",
+                    ingredients: ["Seleccionados según preferencias del grupo"],
+                    pairing: "Vinos elegidos para complementar el menú personalizado",
+                    chefNote: "Mínimo 8 personas. El límite es su imaginación. Hagamos magia juntos."
+                  })}
                 />
               </RevealText>
             </div>

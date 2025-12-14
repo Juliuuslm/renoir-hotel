@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 import { useScrollLock } from './useScrollLock';
 
-type ModalType = 'booking' | 'menu' | 'treatment' | 'facility' | 'event' | 'workshop' | 'suite-detail' | 'gallery-lightbox' | null;
+type ModalType = 'booking' | 'menu' | 'treatment' | 'facility' | 'event' | 'workshop' | 'suite-detail' | 'gallery-lightbox' | 'dish-detail' | null;
 
 interface ModalContextType {
   activeModal: ModalType;
@@ -16,6 +16,7 @@ interface ModalContextType {
   openWorkshopModal: (data: any) => void;
   openSuiteDetailModal: (data: any) => void;
   openGalleryLightboxModal: (data: any) => void;
+  openDishDetailModal: (data: any) => void;
   closeModal: () => void;
 }
 
@@ -68,6 +69,11 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
     setModalData(data);
   };
 
+  const openDishDetailModal = (data: any) => {
+    setActiveModal('dish-detail');
+    setModalData(data);
+  };
+
   const closeModal = () => {
     setActiveModal(null);
     setModalData(null);
@@ -85,6 +91,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
       openWorkshopModal,
       openSuiteDetailModal,
       openGalleryLightboxModal,
+      openDishDetailModal,
       closeModal,
     }}>
       {children}
