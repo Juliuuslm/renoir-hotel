@@ -11,7 +11,7 @@ import { useModal } from '@/lib/modal-context';
 
 export default function HomePage() {
   const [loaded, setLoaded] = useState(false);
-  const { openBookingModal, openGalleryLightboxModal } = useModal();
+  const { openBookingModal, openGalleryLightboxModal, openPillarDetailModal } = useModal();
 
   useEffect(() => {
     setLoaded(true);
@@ -174,39 +174,212 @@ export default function HomePage() {
           {/* Grid 3 pilares */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             <RevealText delay={300}>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
+              <button
+                onClick={() => openPillarDetailModal({
+                  pillar: 'arte',
+                  title: 'Arte',
+                  subtitle: 'Expresión Curada',
+                  description: 'En Renoir, el arte no es una decoración, es una narrativa viva. Colaboramos con galerías locales emergentes para traer colecciones rotativas que cambien cada temporada. Cada pieza ha sido seleccionada para resonar con la filosofía de nuestro espacio: autenticidad, innovación y belleza intencional.',
+                  details: [
+                    {
+                      title: 'Colecciones Rotativas',
+                      description: 'Trabajamos con galerías emergentes de CDMX para traer nuevas perspectivas cada 3 meses. Las colecciones exploran desde pintura contemporánea hasta instalaciones multimedia.'
+                    },
+                    {
+                      title: 'Artistas Residentes',
+                      description: 'Ofrecemos espacios de residencia para artistas mexicanos en colaboración con instituciones como el MUAC. Nuestros huéspedes tienen acceso a charlas y privados con los creadores.'
+                    }
+                  ],
+                  highlights: [
+                    'Exposiciones trimestrales con artistas emergentes mexicanos',
+                    'Catálogo de arte disponible para compra exclusiva',
+                    'Eventos privados de inauguración para huéspedes',
+                    'Colecciones en las suites que rotan con nuevas obras',
+                    'Colaboraciones con coleccionistas privados y marchantes'
+                  ]
+                })}
+                className="group text-center cursor-pointer tap-highlight transition-transform duration-300 hover:scale-105"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if ((e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    openPillarDetailModal({
+                      pillar: 'arte',
+                      title: 'Arte',
+                      subtitle: 'Expresión Curada',
+                      description: 'En Renoir, el arte no es una decoración, es una narrativa viva. Colaboramos con galerías locales emergentes para traer colecciones rotativas que cambien cada temporada. Cada pieza ha sido seleccionada para resonar con la filosofía de nuestro espacio: autenticidad, innovación y belleza intencional.',
+                      details: [
+                        {
+                          title: 'Colecciones Rotativas',
+                          description: 'Trabajamos con galerías emergentes de CDMX para traer nuevas perspectivas cada 3 meses. Las colecciones exploran desde pintura contemporánea hasta instalaciones multimedia.'
+                        },
+                        {
+                          title: 'Artistas Residentes',
+                          description: 'Ofrecemos espacios de residencia para artistas mexicanos en colaboración con instituciones como el MUAC. Nuestros huéspedes tienen acceso a charlas y privados con los creadores.'
+                        }
+                      ],
+                      highlights: [
+                        'Exposiciones trimestrales con artistas emergentes mexicanos',
+                        'Catálogo de arte disponible para compra exclusiva',
+                        'Eventos privados de inauguración para huéspedes',
+                        'Colecciones en las suites que rotan con nuevas obras',
+                        'Colaboraciones con coleccionistas privados y marchantes'
+                      ]
+                    });
+                  }
+                }}
+              >
+                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 group-active:scale-95 transition-transform duration-300">
                   <Palette size={48} className="text-neutral-900" strokeWidth={1.5} />
                 </div>
                 <h4 className="font-serif text-xl mb-3">Arte</h4>
                 <p className="text-neutral-500 text-sm font-light leading-relaxed">
                   Colecciones rotativas de artistas emergentes en colaboración con galerías locales
                 </p>
-              </div>
+              </button>
             </RevealText>
 
             <RevealText delay={400}>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
+              <button
+                onClick={() => openPillarDetailModal({
+                  pillar: 'silencio',
+                  title: 'Silencio',
+                  subtitle: 'Santuario Acústico',
+                  description: 'El silencio verdadero es un lujo en la ciudad. Cada rincón de Renoir ha sido diseñado arquitectónicamente para ser un santuario de calma. Desde pisos de maderas especiales que absorben sonido hasta paredes con aislamiento acústico de vanguardia, el silencio no es accidental—es intencional.',
+                  details: [
+                    {
+                      title: 'Arquitectura Acústica',
+                      description: 'Nuestras suites utilizan sistemas de aislamiento acústico de clase A, capas de vidrio laminado y materiales de absorción seleccionados específicamente. El resultado: un ambiente donde el sonido externo disminuye a 30 decibeles.'
+                    },
+                    {
+                      title: 'Espacios de Meditación',
+                      description: 'Contamos con salas diseñadas para meditación, yoga y retiro personal. Cada espacio sigue principios de acústica sagrada inspirada en templos antiguos, con ratios de reflexión de sonido perfectamente calibrados.'
+                    }
+                  ],
+                  highlights: [
+                    'Cristales laminados de 8mm para máximo aislamiento',
+                    'Sistemas de cancelación activa de ruido en áreas seleccionadas',
+                    'Pisos flotantes que minimizan transmisión de vibración',
+                    'Espacios de meditación con acústica natural optimizada',
+                    'Iluminación sin zumbido (eliminación de luz de frecuencia 50/60Hz)',
+                    'Protocolo de silencio en pasillos (señalización sutil sin alarmas audibles)'
+                  ]
+                })}
+                className="group text-center cursor-pointer tap-highlight transition-transform duration-300 hover:scale-105"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if ((e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    openPillarDetailModal({
+                      pillar: 'silencio',
+                      title: 'Silencio',
+                      subtitle: 'Santuario Acústico',
+                      description: 'El silencio verdadero es un lujo en la ciudad. Cada rincón de Renoir ha sido diseñado arquitectónicamente para ser un santuario de calma. Desde pisos de maderas especiales que absorben sonido hasta paredes con aislamiento acústico de vanguardia, el silencio no es accidental—es intencional.',
+                      details: [
+                        {
+                          title: 'Arquitectura Acústica',
+                          description: 'Nuestras suites utilizan sistemas de aislamiento acústico de clase A, capas de vidrio laminado y materiales de absorción seleccionados específicamente. El resultado: un ambiente donde el sonido externo disminuye a 30 decibeles.'
+                        },
+                        {
+                          title: 'Espacios de Meditación',
+                          description: 'Contamos con salas diseñadas para meditación, yoga y retiro personal. Cada espacio sigue principios de acústica sagrada inspirada en templos antiguos, con ratios de reflexión de sonido perfectamente calibrados.'
+                        }
+                      ],
+                      highlights: [
+                        'Cristales laminados de 8mm para máximo aislamiento',
+                        'Sistemas de cancelación activa de ruido en áreas seleccionadas',
+                        'Pisos flotantes que minimizan transmisión de vibración',
+                        'Espacios de meditación con acústica natural optimizada',
+                        'Iluminación sin zumbido (eliminación de luz de frecuencia 50/60Hz)',
+                        'Protocolo de silencio en pasillos (señalización sutil sin alarmas audibles)'
+                      ]
+                    });
+                  }
+                }}
+              >
+                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 group-active:scale-95 transition-transform duration-300">
                   <Volume size={48} className="text-neutral-900" strokeWidth={1.5} />
                 </div>
                 <h4 className="font-serif text-xl mb-3">Silencio</h4>
                 <p className="text-neutral-500 text-sm font-light leading-relaxed">
                   Arquitectura acústica diseñada para crear santuarios urbanos de calma
                 </p>
-              </div>
+              </button>
             </RevealText>
 
             <RevealText delay={500}>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
+              <button
+                onClick={() => openPillarDetailModal({
+                  pillar: 'detalle',
+                  title: 'Detalle',
+                  subtitle: 'Lujo Imperceptible',
+                  description: 'El verdadero lujo reside en aquello que casi no se nota pero absolutamente se siente. Cada detalle de Renoir—desde la textura de nuestras sábanas italianas hasta la formula del perfume ambiental—ha sido seleccionado para una experiencia sensorial completa. El detalle es donde la excelencia se convierte en arte.',
+                  details: [
+                    {
+                      title: 'Textiles Artesanales',
+                      description: 'Nuestras sábanas son 100% lino belga Damasco de 400+ hilos, tejidas en talleres artesanales de Bélgica. Pillows rellenos de plumas de ganso de Baviera y almohadas de espuma de memoria con grafeno.'
+                    },
+                    {
+                      title: 'Perfumería Bespoke',
+                      description: 'Trabajamos con perfumistas artesanales de Grasse para crear fragancias únicas para Renoir. Cada aroma ha sido diseñado para evocar emociones específicas en diferentes espacios del hotel.'
+                    }
+                  ],
+                  highlights: [
+                    'Sábanas de lino belga Damasco 400+ hilos',
+                    'Amenities de perfumistas artesanales de Grasse (Francia)',
+                    'Toiletries de marca suiza Susanne Kaufmann',
+                    'Agua destilada de manantial en cada suite',
+                    'Productos de baño con ingredientes botánicos raros',
+                    'Texturas curadas: telas, tapetes, cortinas seleccionadas por sommeliers de textura',
+                    'Temperatura del agua por preferencia guardada en sistema de IA',
+                    'Aromadifusores que cambian según hora del día'
+                  ]
+                })}
+                className="group text-center cursor-pointer tap-highlight transition-transform duration-300 hover:scale-105"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if ((e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    openPillarDetailModal({
+                      pillar: 'detalle',
+                      title: 'Detalle',
+                      subtitle: 'Lujo Imperceptible',
+                      description: 'El verdadero lujo reside en aquello que casi no se nota pero absolutamente se siente. Cada detalle de Renoir—desde la textura de nuestras sábanas italianas hasta la formula del perfume ambiental—ha sido seleccionado para una experiencia sensorial completa. El detalle es donde la excelencia se convierte en arte.',
+                      details: [
+                        {
+                          title: 'Textiles Artesanales',
+                          description: 'Nuestras sábanas son 100% lino belga Damasco de 400+ hilos, tejidas en talleres artesanales de Bélgica. Pillows rellenos de plumas de ganso de Baviera y almohadas de espuma de memoria con grafeno.'
+                        },
+                        {
+                          title: 'Perfumería Bespoke',
+                          description: 'Trabajamos con perfumistas artesanales de Grasse para crear fragancias únicas para Renoir. Cada aroma ha sido diseñado para evocar emociones específicas en diferentes espacios del hotel.'
+                        }
+                      ],
+                      highlights: [
+                        'Sábanas de lino belga Damasco 400+ hilos',
+                        'Amenities de perfumistas artesanales de Grasse (Francia)',
+                        'Toiletries de marca suiza Susanne Kaufmann',
+                        'Agua destilada de manantial en cada suite',
+                        'Productos de baño con ingredientes botánicos raros',
+                        'Texturas curadas: telas, tapetes, cortinas seleccionadas por sommeliers de textura',
+                        'Temperatura del agua por preferencia guardada en sistema de IA',
+                        'Aromadifusores que cambian según hora del día'
+                      ]
+                    });
+                  }
+                }}
+              >
+                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 group-active:scale-95 transition-transform duration-300">
                   <Sparkles size={48} className="text-neutral-900" strokeWidth={1.5} />
                 </div>
                 <h4 className="font-serif text-xl mb-3">Detalle</h4>
                 <p className="text-neutral-500 text-sm font-light leading-relaxed">
                   Amenidades exclusivas: sábanas de lino belga, amenities de perfumistas artesanales
                 </p>
-              </div>
+              </button>
             </RevealText>
           </div>
         </div>
