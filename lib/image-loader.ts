@@ -17,6 +17,11 @@ export default function unsplashLoader({
     return src;
   }
 
+  // Si no hay width (ej: cuando se usa fill en Image), devolver sin optimizar
+  if (!width || typeof width !== 'number') {
+    return src;
+  }
+
   try {
     const url = new URL(src);
     const params = new URLSearchParams(url.search);
