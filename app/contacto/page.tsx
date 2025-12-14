@@ -204,17 +204,23 @@ export default function ContactoPage() {
       <section id="contacto-form" className="container mx-auto px-6 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
         <div className="bg-white shadow-xl flex flex-col lg:flex-row overflow-hidden">
           {/* Lado Izquierdo: Info + Mapa Visual */}
-          <div className="lg:w-1/2 relative bg-neutral-900 text-white p-12 lg:p-20 flex flex-col justify-between">
-            {/* Mapa visual de fondo (Abstracto) */}
-            <div className="absolute inset-0 opacity-40 grayscale">
-              <Image
-                src="/images/contact/map-location.jpg"
-                alt="Map Texture"
-                fill
-                className="object-cover"
-                sizes="50vw"
-              />
-            </div>
+          <div className="lg:w-1/2 relative bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-900 text-white p-12 lg:p-20 flex flex-col justify-between overflow-hidden">
+            {/* Patrón Geométrico Sutil de Fondo */}
+            <svg className="absolute inset-0 w-full h-full opacity-15" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <pattern id="geometric-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <path d="M0,0 L60,60 M60,0 L0,60" stroke="currentColor" strokeWidth="1" fill="none" />
+                  <circle cx="30" cy="30" r="3" fill="currentColor" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#geometric-pattern)" />
+            </svg>
+
+            {/* Líneas decorativas sutiles */}
+            <svg className="absolute inset-0 w-full h-full opacity-10" preserveAspectRatio="none">
+              <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+              <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+            </svg>
             <div className="relative z-10">
               <h3 className="font-serif text-3xl sm:text-4xl md:text-4xl mb-12">Renoir Hotel</h3>
 
