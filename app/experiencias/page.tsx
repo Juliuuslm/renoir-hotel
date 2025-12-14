@@ -324,9 +324,14 @@ export default function ExperienciasPage() {
               Descubra el arte de vivir en Hotel Renoir. Una experiencia inmersiva en el corazón
               de la ciudad.
             </p>
-            <button className="bg-white text-neutral-900 px-12 py-5 text-sm tracking-[0.2em] uppercase hover:bg-yellow-500 hover:text-white transition-all duration-300">
+            <a
+              href="https://wa.me/525574533388?text=Hola%20aurrora33,%20me%20gusto%20su%20diseño"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-neutral-900 px-12 py-5 text-sm tracking-[0.2em] uppercase hover:bg-yellow-500 hover:text-white transition-all duration-300 font-semibold"
+            >
               Reservar Estancia Completa
-            </button>
+            </a>
           </RevealText>
         </div>
       </section>
