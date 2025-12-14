@@ -7,6 +7,7 @@ import { RevealText } from '@/components/ui/RevealText';
 import { ContactForm } from '@/components/pages/contacto/ContactForm';
 import { PropertyCard } from '@/components/pages/contacto/PropertyCard';
 import { ConciergeServiceCard } from '@/components/pages/contacto/ConciergeServiceCard';
+import { Sparkles, Clock, MessageSquare } from 'lucide-react';
 
 export default function ContactoPage() {
   const [loaded, setLoaded] = useState(false);
@@ -60,13 +61,67 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 px-6 text-center bg-neutral-50">
-        <RevealText>
-          <p className="text-neutral-500 max-w-xl mx-auto text-lg font-light">
-            Estamos a su disposición para diseñar su estancia perfecta o responder cualquier
-            inquietud.
-          </p>
-        </RevealText>
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 px-6 text-center bg-gradient-to-br from-neutral-50 via-white to-yellow-50/30 relative overflow-hidden">
+        {/* Decorative element */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-stone-100 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4" />
+
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <RevealText>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-neutral-900 mb-6">
+              Diseñe Su Experiencia Perfecta
+            </h2>
+          </RevealText>
+
+          <RevealText delay={100}>
+            <p className="text-neutral-600 max-w-2xl mx-auto text-lg font-light mb-16">
+              Nuestro equipo está listo para personalizar cada detalle de su estancia con dedicación y atención sin límites.
+            </p>
+          </RevealText>
+
+          {/* 3 Pilares */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-16">
+            <RevealText delay={150}>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-neutral-100/50 hover:border-yellow-300/50 transition-all duration-300 hover:shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-full mb-6">
+                  <Sparkles size={28} className="text-yellow-700" />
+                </div>
+                <h3 className="font-serif text-xl text-neutral-900 mb-3">Estancia Personalizada</h3>
+                <p className="text-neutral-600 font-light">Diseñamos cada momento según sus preferencias y necesidades.</p>
+              </div>
+            </RevealText>
+
+            <RevealText delay={200}>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-neutral-100/50 hover:border-yellow-300/50 transition-all duration-300 hover:shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-full mb-6">
+                  <Clock size={28} className="text-yellow-700" />
+                </div>
+                <h3 className="font-serif text-xl text-neutral-900 mb-3">Disponibles 24/7</h3>
+                <p className="text-neutral-600 font-light">Nuestro equipo de concierge está siempre listo para asistirle.</p>
+              </div>
+            </RevealText>
+
+            <RevealText delay={250}>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-neutral-100/50 hover:border-yellow-300/50 transition-all duration-300 hover:shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-full mb-6">
+                  <MessageSquare size={28} className="text-yellow-700" />
+                </div>
+                <h3 className="font-serif text-xl text-neutral-900 mb-3">Respuesta Inmediata</h3>
+                <p className="text-neutral-600 font-light">Cualquier inquietud será respondida con profesionalismo y detalle.</p>
+              </div>
+            </RevealText>
+          </div>
+
+          {/* CTA Button */}
+          <RevealText delay={300}>
+            <a
+              href="#contacto-form"
+              className="inline-block bg-neutral-900 text-white px-10 py-4 text-sm uppercase tracking-[0.2em] font-semibold hover:bg-neutral-800 active:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 rounded-lg"
+            >
+              Comience la Conversación
+            </a>
+          </RevealText>
+        </div>
       </section>
 
       {/* Nuestras Propiedades */}
@@ -146,7 +201,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
+      <section id="contacto-form" className="container mx-auto px-6 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
         <div className="bg-white shadow-xl flex flex-col lg:flex-row overflow-hidden">
           {/* Lado Izquierdo: Info + Mapa Visual */}
           <div className="lg:w-1/2 relative bg-neutral-900 text-white p-12 lg:p-20 flex flex-col justify-between">
