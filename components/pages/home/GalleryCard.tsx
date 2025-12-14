@@ -7,9 +7,10 @@ interface GalleryCardProps {
   title: string;
   category: string;
   tall?: boolean;
+  onClick?: () => void;
 }
 
-export const GalleryCard = ({ image, title, category, tall = false }: GalleryCardProps) => {
+export const GalleryCard = ({ image, title, category, tall = false, onClick }: GalleryCardProps) => {
   const heightClass = tall
     ? 'h-[400px] md:h-[600px]'
     : 'h-[300px] md:h-[400px]';
@@ -19,6 +20,13 @@ export const GalleryCard = ({ image, title, category, tall = false }: GalleryCar
       className={`group relative overflow-hidden bg-neutral-800 cursor-pointer tap-highlight ${heightClass}`}
       role="button"
       tabIndex={0}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && onClick) {
+          e.preventDefault();
+          onClick();
+        }
+      }}
     >
       {/* Imagen con hover effects */}
       <div className="relative w-full h-full">

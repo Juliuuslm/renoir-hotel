@@ -11,7 +11,7 @@ import { useModal } from '@/lib/modal-context';
 
 export default function HomePage() {
   const [loaded, setLoaded] = useState(false);
-  const { openBookingModal } = useModal();
+  const { openBookingModal, openGalleryLightboxModal } = useModal();
 
   useEffect(() => {
     setLoaded(true);
@@ -234,6 +234,10 @@ export default function HomePage() {
                   title={moment.title}
                   category={moment.category}
                   tall={moment.tall}
+                  onClick={() => openGalleryLightboxModal({
+                    images: galleryMoments,
+                    initialIndex: index
+                  })}
                 />
               </RevealText>
             ))}
