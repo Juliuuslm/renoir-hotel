@@ -63,7 +63,7 @@ export const Footer = () => {
           <p>
             Built with love and AI by{' '}
             <a
-              href="https://wa.me/525574533388"
+              href="https://wa.me/525574533388?text=Hola%20aurora33,%20me%20gusta%20su%20dise%C3%B1o.%20Me%20podr%C3%ADan%20dar%20informes."
               target="_blank"
               rel="noopener noreferrer"
               className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors cursor-pointer"

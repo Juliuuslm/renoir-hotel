@@ -342,7 +342,7 @@ export default function WellnessPage() {
                 Acceso exclusivo a todas las instalaciones del spa.
               </p>
               <a
-                href="https://wa.me/525574533388?text=Hola%20aurrora33,%20me%20gusto%20su%20diseño"
+                href="https://wa.me/525574533388?text=Hola%20aurora33,%20me%20gusta%20su%20dise%C3%B1o.%20Me%20podr%C3%ADan%20dar%20informes."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full bg-white text-stone-900 px-12 py-4 text-xs uppercase tracking-widest hover:bg-stone-200 transition-colors text-center font-semibold"
