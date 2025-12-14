@@ -62,7 +62,14 @@ export const Footer = () => {
           <p>&copy; 2025 Renoir Hotel. Todos los derechos reservados.</p>
           <p>
             Built with love and AI by{' '}
-            <span className="text-yellow-500 font-semibold">Aurora33</span>
+            <a
+              href="https://wa.me/525574533388"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors cursor-pointer"
+            >
+              Aurora33
+            </a>
           </p>
         </div>
       </div>
