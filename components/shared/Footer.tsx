@@ -46,20 +46,24 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm text-neutral-300">
               <li>Calle de la Paz 45, CDMX</li>
               <li>
-                <a href="mailto:concierge@renoirhotel.com" className="hover:text-white transition-colors">
-                  concierge@renoirhotel.com
+                <a href="mailto:contacto@aurora33.org" className="hover:text-white transition-colors">
+                  contacto@aurora33.org
                 </a>
               </li>
               <li>
-                <a href="tel:+525512345678" className="hover:text-white transition-colors">
-                  +52 55 1234 5678
+                <a href="tel:+525574533388" className="hover:text-white transition-colors">
+                  +52 55 7453 3388
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-500 tracking-wider uppercase">
-          <p>&copy; 2024 Renoir Hotel. Todos los derechos reservados.</p>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 tracking-wider uppercase">
+          <p>&copy; 2025 Renoir Hotel. Todos los derechos reservados.</p>
+          <p>
+            Built with love and AI by{' '}
+            <span className="text-yellow-500 font-semibold">Aurora33</span>
+          </p>
         </div>
       </div>
     </footer>

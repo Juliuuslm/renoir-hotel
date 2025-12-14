@@ -143,7 +143,7 @@ export default function ContactoPage() {
                 image="/images/contact/mexico-city-property.jpg"
                 name="México City"
                 address="Calle de la Paz 45, Centro Histórico, 06000 Ciudad de México"
-                phone="+52 55 1234 5678"
+                phone="+52 55 7453 3388"
                 hours="Abierto 24/7"
                 description="Nuestra propiedad insignia en el corazón histórico de la Ciudad de México, donde la arquitectura colonial se encuentra con el lujo contemporáneo."
               />
@@ -248,8 +248,8 @@ export default function ContactoPage() {
                       Teléfono
                     </p>
                     <p className="font-serif text-xl">
-                      <a href="tel:+525512345678" className="hover:text-yellow-600 transition-colors">
-                        +52 55 1234 5678
+                      <a href="tel:+525574533388" className="hover:text-yellow-600 transition-colors">
+                        +52 55 7453 3388
                       </a>
                     </p>
                   </div>
@@ -263,10 +263,10 @@ export default function ContactoPage() {
                     </p>
                     <p className="font-serif text-xl">
                       <a
-                        href="mailto:concierge@renoirhotel.com"
+                        href="mailto:contacto@aurora33.org"
                         className="hover:text-yellow-600 transition-colors"
                       >
-                        concierge@renoirhotel.com
+                        contacto@aurora33.org
                       </a>
                     </p>
                   </div>

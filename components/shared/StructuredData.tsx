@@ -14,8 +14,8 @@ export const HotelStructuredData = () => {
       postalCode: '06000',
       addressCountry: 'MX',
     },
-    telephone: '+52 55 1234 5678',
-    email: 'concierge@renoirhotel.com',
+    telephone: '+52 55 7453 3388',
+    email: 'contacto@aurora33.org',
     starRating: {
       '@type': 'Rating',
       ratingValue: '5',
