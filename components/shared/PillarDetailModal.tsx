@@ -44,7 +44,7 @@ export const PillarDetailModal = () => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Image or Color Block */}
-        <div className="relative h-[300px] w-full bg-gradient-to-br from-neutral-900 to-neutral-800">
+        <div className="relative h-[200px] sm:h-[250px] md:h-[300px] w-full bg-gradient-to-br from-neutral-900 to-neutral-800">
           {image && (
             <Image
               src={image}

@@ -36,7 +36,7 @@ export const DishDetailModal = () => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Image */}
-        <div className="relative h-[350px] w-full bg-neutral-900">
+        <div className="relative h-[250px] sm:h-[300px] md:h-[350px] w-full bg-neutral-900">
           {image && (
             <Image
               src={image}
