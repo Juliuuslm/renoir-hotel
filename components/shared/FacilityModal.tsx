@@ -2,14 +2,28 @@
 
 import Image from 'next/image';
 import { useModal } from '@/lib/modal-context';
-import { X } from 'lucide-react';
+import { X, Clock, Users, Thermometer } from 'lucide-react';
 
 export const FacilityModal = () => {
   const { activeModal, modalData, closeModal, openBookingModal } = useModal();
 
   if (activeModal !== 'facility' || !modalData) return null;
 
-  const { title, description, image } = modalData;
+  const {
+    title,
+    description,
+    image,
+    hours,
+    capacity,
+    temperature,
+    amenities = [
+      'Ambiente climatizado y confortable',
+      'Equipo profesional de última generación',
+      'Personal certificado y experimentado',
+      'Disponible para huéspedes del hotel',
+    ],
+    additionalInfo,
+  } = modalData;
 
   return (
     <div
@@ -50,28 +64,67 @@ export const FacilityModal = () => {
             {description}
           </p>
 
+          {/* Info Grid - Hours, Capacity, Temperature */}
+          {(hours || capacity || temperature) && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 p-6 bg-stone-50 rounded-lg">
+              {hours && (
+                <div className="flex items-start space-x-3">
+                  <Clock className="text-stone-400 flex-shrink-0 mt-1" size={20} />
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-stone-500 font-semibold">
+                      Horarios
+                    </p>
+                    <p className="text-stone-900 font-serif text-lg">{hours}</p>
+                  </div>
+                </div>
+              )}
+              {capacity && (
+                <div className="flex items-start space-x-3">
+                  <Users className="text-stone-400 flex-shrink-0 mt-1" size={20} />
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-stone-500 font-semibold">
+                      Capacidad
+                    </p>
+                    <p className="text-stone-900 font-serif text-lg">{capacity}</p>
+                  </div>
+                </div>
+              )}
+              {temperature && (
+                <div className="flex items-start space-x-3">
+                  <Thermometer className="text-stone-400 flex-shrink-0 mt-1" size={20} />
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-stone-500 font-semibold">
+                      Temperatura
+                    </p>
+                    <p className="text-stone-900 font-serif text-lg">{temperature}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Features Info Box */}
           <div className="bg-stone-50 p-6 rounded-lg mb-8">
             <h3 className="font-serif text-lg text-stone-900 mb-4">Características</h3>
             <ul className="space-y-3 text-stone-600">
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-3 mt-1">✓</span>
-                <span>Ambiente climatizado y confortable</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-3 mt-1">✓</span>
-                <span>Equipo profesional de última generación</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-3 mt-1">✓</span>
-                <span>Personal certificado y experimentado</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-3 mt-1">✓</span>
-                <span>Disponible para huéspedes del hotel</span>
-              </li>
+              {amenities.map((amenity: string, idx: number) => (
+                <li key={idx} className="flex items-start">
+                  <span className="text-yellow-600 mr-3 mt-1">✓</span>
+                  <span>{amenity}</span>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Additional Info */}
+          {additionalInfo && (
+            <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 rounded-r-lg mb-10">
+              <p className="text-xs uppercase tracking-widest text-yellow-800 mb-2 font-semibold">
+                Información Adicional
+              </p>
+              <p className="text-stone-700 font-light italic">{additionalInfo}</p>
+            </div>
+          )}
 
           {/* CTA */}
           <button

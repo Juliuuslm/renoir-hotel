@@ -36,7 +36,7 @@ const treatmentGalleries = {
 
 export default function WellnessPage() {
   const [loaded, setLoaded] = useState(false);
-  const { openTreatmentModal } = useModal();
+  const { openTreatmentModal, openFacilityModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -167,6 +167,23 @@ export default function WellnessPage() {
                 image="/images/wellness/massage-room.jpg"
                 title="Salas de Masaje"
                 description="Espacios diseñados específicamente para relajación profunda con aromaterapia y música ambiental."
+                onClick={() => openFacilityModal({
+                  title: 'Salas de Masaje',
+                  description: 'Nuestras salas de masaje son santuarios de tranquilidad, diseñadas acústicamente para maximizar la relajación. Cada espacio cuenta con sistemas de aromaterapia personalizada y música ambiental seleccionada por expertos en resonancia sonora.',
+                  image: '/images/wellness/massage-room.jpg',
+                  hours: 'Lunes - Domingo, 9:00 AM - 9:00 PM',
+                  capacity: 'Máximo 2 personas por sesión',
+                  temperature: '24°C (controlada por cliente)',
+                  amenities: [
+                    'Sistemas de aromaterapia personalizada',
+                    'Música ambiental de relajación',
+                    'Iluminación dinámica regulable',
+                    'Masajes con aceites botánicos premium',
+                    'Toallas climatizadas',
+                    'Almohadas terapéuticas de memoria'
+                  ],
+                  additionalInfo: 'Se requiere reserva con mínimo 24 horas de anticipación. Disponibles sesiones de pareja con coordinación especial.'
+                })}
               />
             </RevealText>
             <RevealText delay={200}>
@@ -174,6 +191,23 @@ export default function WellnessPage() {
                 image="/images/wellness/facial-room.jpg"
                 title="Tratamientos Faciales"
                 description="Cabinas privadas equipadas con tecnología de última generación para tratamientos especializados."
+                onClick={() => openFacilityModal({
+                  title: 'Tratamientos Faciales',
+                  description: 'Nuestras cabinas de tratamiento facial cuentan con la tecnología más avanzada del mundo. Cada sesión es personalizada según el tipo de piel y objetivos específicos del cliente, con productos botánicos de lujo.',
+                  image: '/images/wellness/facial-room.jpg',
+                  hours: 'Lunes - Domingo, 9:00 AM - 8:00 PM',
+                  capacity: '1 persona por sesión',
+                  temperature: '22°C',
+                  amenities: [
+                    'Tecnología de oxigenación avanzada',
+                    'Sueros y serums botánicos premium',
+                    'Masaje facial drenante',
+                    'Vaporizadores de ozono',
+                    'Lámparas de LED terapéutica',
+                    'Productos personalizados según tipo de piel'
+                  ],
+                  additionalInfo: 'Incluye consulta de 15 minutos previa para evaluar tipo de piel. Se recomiendan sesiones mensuales para resultados óptimos.'
+                })}
               />
             </RevealText>
             <RevealText delay={300}>
@@ -181,6 +215,23 @@ export default function WellnessPage() {
                 image="/images/wellness/sauna.jpg"
                 title="Sauna y Vapor"
                 description="Espacios de termorregulación con vistas al jardín para la purificación total del cuerpo."
+                onClick={() => openFacilityModal({
+                  title: 'Sauna y Vapor',
+                  description: 'Nuestros espacios de sauna y vapor son templos de purificación, diseñados con maderas exóticas y sistemas de humedad controlada. Cada sesión promueve desintoxicación profunda y renovación celular.',
+                  image: '/images/wellness/sauna.jpg',
+                  hours: 'Lunes - Domingo, 8:00 AM - 9:00 PM',
+                  capacity: 'Máximo 8 personas por sesión',
+                  temperature: 'Sauna: 85°C | Vapor: 45°C',
+                  amenities: [
+                    'Sauna finlandesa tradicional',
+                    'Cabina de vapor con eucalipto',
+                    'Control individual de temperatura',
+                    'Duchas contrastantes (caliente/fría)',
+                    'Toallas y batas de lino',
+                    'Vistas al jardín botánico'
+                  ],
+                  additionalInfo: 'Se recomienda no exceder 20 minutos por sesión. Hidratación incluida con agua mineral.'
+                })}
               />
             </RevealText>
             <RevealText delay={400}>
@@ -188,6 +239,22 @@ export default function WellnessPage() {
                 image="/images/wellness/yoga-space.jpg"
                 title="Estudio de Yoga"
                 description="Salón luminoso con pisos de madera natural, perfecto para sesiones matutinas y meditación."
+                onClick={() => openFacilityModal({
+                  title: 'Estudio de Yoga',
+                  description: 'Nuestro estudio de yoga es un espacio sagrado diseñado con principios de feng shui y acústica natural. Las ventanas maximizan la luz natural, mientras el piso de madera crea una conexión directa con la tierra.',
+                  image: '/images/wellness/yoga-space.jpg',
+                  hours: 'Lunes - Domingo, 6:00 AM - 8:00 PM',
+                  capacity: 'Máximo 12 personas',
+                  amenities: [
+                    'Pisos de madera de roble blanco',
+                    'Iluminación natural controlada',
+                    'Espejos de espacio completo',
+                    'Sistema de sonido profesional',
+                    'Yoga mats y accesorios premium',
+                    'Vistas al jardín zen'
+                  ],
+                  additionalInfo: 'Clases diarias a las 7:00 AM y 6:00 PM. Instructores certificados disponibles para sesiones privadas.'
+                })}
               />
             </RevealText>
             <RevealText delay={500}>
@@ -195,6 +262,23 @@ export default function WellnessPage() {
                 image="/images/wellness/pool.jpg"
                 title="Piscina Termal"
                 description="Agua climatizada a temperatura corporal con efecto flotante para máxima relajación."
+                onClick={() => openFacilityModal({
+                  title: 'Piscina Termal',
+                  description: 'Nuestra piscina termal mantiene una temperatura constante de 37°C (temperatura corporal), creando la ilusión perfecta de flotación. El agua está enriquecida con sales minerales y cuenta con chorros de hidroterapia estratégicamente posicionados.',
+                  image: '/images/wellness/pool.jpg',
+                  hours: 'Lunes - Domingo, 7:00 AM - 9:00 PM',
+                  capacity: 'Máximo 6 personas',
+                  temperature: '37°C (temperatura corporal)',
+                  amenities: [
+                    'Agua termal con sales minerales',
+                    'Chorros de hidroterapia',
+                    'Iluminación submarina de cromoterapia',
+                    'Área de descanso adyacente',
+                    'Toallas climatizadas',
+                    'Acceso privado'
+                  ],
+                  additionalInfo: 'Horarios privados disponibles. Evitar uso después de consumir alcohol. Ducha previa requerida.'
+                })}
               />
             </RevealText>
             <RevealText delay={600}>
@@ -202,6 +286,22 @@ export default function WellnessPage() {
                 image="/images/wellness/relaxation-area.jpg"
                 title="Área de Descanso"
                 description="Lounge privado con luminoterapia para recuperación completa tras los tratamientos."
+                onClick={() => openFacilityModal({
+                  title: 'Área de Descanso',
+                  description: 'Después de los tratamientos, nuestro área de descanso permite una recuperación completa. Cuenta con luminoterapia controlada, aromaterapia personalizada y silencio absoluto para integración profunda de los beneficios del tratamiento.',
+                  image: '/images/wellness/relaxation-area.jpg',
+                  hours: 'Lunes - Domingo, 9:00 AM - 9:00 PM',
+                  capacity: 'Máximo 4 personas',
+                  amenities: [
+                    'Camas de descanso ergonómicas',
+                    'Lámparas de luminoterapia (SAD)',
+                    'Aromaterapia personalizada',
+                    'Mantas de lino de lujo',
+                    'Té y agua mineral',
+                    'Aislamiento acústico completo'
+                  ],
+                  additionalInfo: 'Acceso incluido con cualquier tratamiento de spa. Duración máxima recomendada: 30-45 minutos.'
+                })}
               />
             </RevealText>
           </div>

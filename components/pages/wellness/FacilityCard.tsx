@@ -6,11 +6,23 @@ interface FacilityCardProps {
   image: string;
   title: string;
   description: string;
+  onClick?: () => void;
 }
 
-export const FacilityCard = ({ image, title, description }: FacilityCardProps) => {
+export const FacilityCard = ({ image, title, description, onClick }: FacilityCardProps) => {
   return (
-    <div className="group overflow-hidden bg-white border border-stone-200 hover:shadow-lg transition-all duration-300">
+    <button
+      onClick={onClick}
+      className="group w-full text-left overflow-hidden bg-white border border-stone-200 hover:shadow-lg transition-all duration-300 cursor-pointer tap-highlight"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && onClick) {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+    >
       {/* Image Container */}
       <div className="relative h-[250px] md:h-[300px] w-full overflow-hidden bg-stone-100">
         <Image
@@ -32,6 +44,6 @@ export const FacilityCard = ({ image, title, description }: FacilityCardProps) =
           {description}
         </p>
       </div>
-    </div>
+    </button>
   );
 };
