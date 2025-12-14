@@ -10,7 +10,7 @@ import { useModal } from '@/lib/modal-context';
 
 export default function ExperienciasPage() {
   const [loaded, setLoaded] = useState(false);
-  const { openWorkshopModal } = useModal();
+  const { openWorkshopModal, openLocationDetailModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -159,14 +159,108 @@ export default function ExperienciasPage() {
               </RevealText>
               <div className="space-y-12">
                 {picks.map((item, i) => (
-                  <RevealText key={i} delay={i * 100} className="flex space-x-4">
-                    <div className="mt-1 text-yellow-600">
-                      <MapPin size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-serif text-xl mb-1">{item.title}</h4>
-                      <p className="text-sm text-neutral-500">{item.desc}</p>
-                    </div>
+                  <RevealText key={i} delay={i * 100}>
+                    <button
+                      onClick={() => {
+                        if (i === 0) {
+                          // Mercado de Antigüedades
+                          openLocationDetailModal({
+                            title: 'El Mercado de Antigüedades',
+                            description: 'Un laberinto de tesoros ocultos en pleno centro histórico de la ciudad. Este mercado de fin de semana es un ritual obligatorio para coleccionistas, anticuarios y curiosos que buscan piezas únicas. Desde muebles de época hasta arte decorativo, cada puesto cuenta una historia diferente.',
+                            image: '/images/experiencias/antiques-market.jpg',
+                            address: 'Calle Claudio Bernardo 1, Centro Histórico, CDMX',
+                            hours: 'Sábados 9:00 AM - 3:00 PM',
+                            distance: '8 minutos en auto / 20 minutos en taxi',
+                            contactInfo: 'Sr. Aurelio - Puesto 45 | Tel: +52 (55) 5510-8473',
+                            howToGetThere: [
+                              'Nuestro concierge puede coordinar transporte privado. Partida desde el hotel a las 8:45 AM',
+                              'Conducir hacia el sur hasta la calle Claudio Bernardo',
+                              'El estacionamiento oficial está disponible a una cuadra del mercado',
+                              'Busque el puesto 45 donde Sr. Aurelio reserva piezas exclusivas para huéspedes del hotel'
+                            ],
+                            tips: [
+                              'Lleve efectivo en pesos mexicanos - muchos vendedores no aceptan tarjetas',
+                              'Llegue antes de las 11:00 AM para las mejores selecciones',
+                              'Negocie precios de forma amable - es parte de la tradición del mercado',
+                              'Sr. Aurelio tiene acceso a un área privada con piezas de coleccionista. Mencione que es huésped de Renoir',
+                              'El mercado cierra al mediodía en días lluviosos'
+                            ],
+                            conciergeNote: 'Aurelio es un personaje pintoresco con 30 años en el mercado. Tiene una conexión especial con Renoir y suele guardar piezas exclusivas para nuestros huéspedes. Si busca algo específico (por ejemplo, arte deco de los 20s), avíseme con tiempo y él lo buscará para usted. También ofrece envío internacional.'
+                          });
+                        } else if (i === 1) {
+                          // Librería Porrúa
+                          openLocationDetailModal({
+                            title: 'Librería Porrúa',
+                            description: 'Una joya literaria en el corazón del caos capitalino. Fundada en 1928, esta librería es más que una tienda de libros - es un refugio de silencio y conocimiento. Con más de 100,000 títulos en español, es una peregrinación obligatoria para lectores, escritores y curiosos.',
+                            image: '/images/experiencias/libreria-porrua.jpg',
+                            address: 'Avenida Madero 4, Centro Histórico, CDMX',
+                            hours: 'Lunes - Sábado 10:00 AM - 8:00 PM | Domingo 11:00 AM - 7:00 PM',
+                            distance: '5 minutos en auto / 15 minutos caminando',
+                            contactInfo: 'Tel: +52 (55) 5521-4670 | info@porrua.mx',
+                            howToGetThere: [
+                              'La librería está a solo 4 cuadras del hotel - es un paseo perfecto por el Centro',
+                              'Salga por la puerta sur hacia Avenida Madero',
+                              'Camine hacia el oriente (hacia el Zócalo)',
+                              'La entrada principal está en el piso de planta baja - busque el letrero clásico de Porrúa',
+                              'El café en el tercer piso es accesible solo a clientes de la librería'
+                            ],
+                            tips: [
+                              'Visite el café en el tercer piso - sirven excelente café de especialidad y pan de pastelería mexicana',
+                              'Los empleados son muy conocedores - no dude en pedir recomendaciones de lectura',
+                              'La sección de literatura latinoamericana es una de las más completas de América',
+                              'Lleve efectivo si compra libros antiguos o de coleccionista',
+                              'Ideal para visitar por la mañana cuando está menos concurrido'
+                            ],
+                            conciergeNote: 'Porrúa es nuestro lugar favorito para enviar a huéspedes que buscan desconexión. El ambiente es contemplativo, los empleados son eruditos, y el café es sublime. Si busca un libro específico sobre arte, arquitectura mexicana o literatura latinoamericana, ellos pueden buscarlo en toda América. También organizan presentaciones de libros regularmente.'
+                          });
+                        } else {
+                          // Jardín Botánico Secreto
+                          openLocationDetailModal({
+                            title: 'Jardín Botánico Secreto',
+                            description: 'Un santuario botánico escondido del caos de la ciudad. Accessible solo para iniciados, este jardín privado es una experiencia de pura naturaleza. Con más de 3,000 especies de plantas, incluyendo orquídeas raras y suculentas endémicas de México, es un paraíso para botánicos y amantes de la naturaleza.',
+                            image: '/images/experiencias/botanical-garden.jpg',
+                            address: 'Calle Avenida Paseo de la Reforma 505 (Acceso Privado)',
+                            hours: 'Martes - Domingo 10:00 AM - 5:00 PM | Cerrado lunes',
+                            distance: '12 minutos en auto | Acceso solo con llave privada',
+                            contactInfo: 'Contactar directamente con nuestro concierge para acceso',
+                            howToGetThere: [
+                              'Nuestro concierge proporciona una llave de acceso privado exclusiva para huéspedes',
+                              'Transporte privado recomendado - el jardín está en una zona residencial tranquila',
+                              'La entrada privada está oculta tras una puerta verde discreta',
+                              'Se requiere mostrar la llave de acceso y identificación para entrar',
+                              'Estacionamiento privado disponible dentro del jardín'
+                            ],
+                            tips: [
+                              'Lleve una cámara - es uno de los espacios más fotogénicos de la ciudad',
+                              'Visite al atardecer para ver la iluminación natural en toda su gloria',
+                              'Use zapatos cómodos - el jardín es grande y hay mucho que explorar',
+                              'El florista residente puede ayudar con identificación de plantas',
+                              'Hay un área de picnic privada con vista al dosel de árboles'
+                            ],
+                            conciergeNote: 'Este es nuestro regalo secreto para huéspedes especiales. El jardín fue diseñado por un botánico alemán a principios del siglo XX y mantiene su carácter histórico. El florista residente, Maestro Rafael, es un experto en orquídeas mexicanas. Si tienen interés especial en horticultura, coordinaremos una charla privada con él. El jardín es perfecto para meditación, fotografía o un picnic tranquilo.'
+                          });
+                        }
+                      }}
+                      className="group w-full flex space-x-4 cursor-pointer tap-highlight hover:opacity-80 transition-opacity"
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          // Trigger the same logic as onClick
+                        }
+                      }}
+                    >
+                      <div className="mt-1 text-yellow-600 flex-shrink-0">
+                        <MapPin size={20} />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="font-serif text-xl mb-1 group-hover:text-yellow-600 transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-neutral-500">{item.desc}</p>
+                      </div>
+                    </button>
                   </RevealText>
                 ))}
               </div>

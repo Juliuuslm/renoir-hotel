@@ -14,6 +14,7 @@ import { SuiteDetailModal } from '@/components/shared/SuiteDetailModal';
 import { GalleryLightboxModal } from '@/components/shared/GalleryLightboxModal';
 import { DishDetailModal } from '@/components/shared/DishDetailModal';
 import { PillarDetailModal } from '@/components/shared/PillarDetailModal';
+import { LocationDetailModal } from '@/components/shared/LocationDetailModal';
 import { HotelStructuredData } from '@/components/shared/StructuredData';
 import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider';
 import { WelcomeScreen } from '@/components/shared/WelcomeScreen';
@@ -94,6 +95,7 @@ export default function RootLayout({
             <GalleryLightboxModal />
             <DishDetailModal />
             <PillarDetailModal />
+            <LocationDetailModal />
           </ModalProvider>
         </SmoothScrollProvider>
       </body>
