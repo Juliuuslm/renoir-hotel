@@ -341,9 +341,14 @@ export default function WellnessPage() {
               <p className="text-sm text-stone-400 mb-8 font-light">
                 Acceso exclusivo a todas las instalaciones del spa.
               </p>
-              <button className="bg-white text-stone-900 px-12 py-4 text-xs uppercase tracking-widest hover:bg-stone-200 transition-colors w-full">
+              <a
+                href="https://wa.me/525574533388?text=Hola%20aurrora33,%20me%20gusto%20su%20diseño"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full bg-white text-stone-900 px-12 py-4 text-xs uppercase tracking-widest hover:bg-stone-200 transition-colors text-center font-semibold"
+              >
                 Solicitar Info
-              </button>
+              </a>
             </RevealText>
           </div>
         </div>

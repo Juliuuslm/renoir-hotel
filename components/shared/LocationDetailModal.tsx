@@ -164,12 +164,14 @@ export const LocationDetailModal = () => {
             >
               Reservar Transporte
             </button>
-            <button
-              onClick={closeModal}
-              className="bg-neutral-100 text-neutral-900 px-8 py-4 text-sm uppercase tracking-[0.2em] font-semibold hover:bg-neutral-200 active:bg-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 rounded-lg"
+            <a
+              href="https://wa.me/525574533388?text=Hola%20aurrora33,%20me%20gusto%20su%20diseño"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full bg-neutral-100 text-neutral-900 px-8 py-4 text-sm uppercase tracking-[0.2em] font-semibold hover:bg-neutral-200 active:bg-neutral-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 transition-all duration-300 rounded-lg text-center"
             >
               Contactar Concierge
-            </button>
+            </a>
           </div>
         </div>
       </div>
