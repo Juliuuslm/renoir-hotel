@@ -40,6 +40,11 @@ export const metadata: Metadata = {
   description: 'Un santuario de calma y sofisticación donde el diseño se encuentra con la hospitalidad de lujo. Hotel boutique de 24 suites en el corazón de Ciudad de México.',
   keywords: ['hotel de lujo', 'hotel boutique CDMX', 'hotel Ciudad de México', 'spa', 'gastronomía', 'hotel diseño'],
   authors: [{ name: 'Renoir Hotel' }],
+  icons: {
+    icon: '/favicon/favicon-renoir.png',
+    apple: '/favicon/favicon-renoir.png',
+    shortcut: '/favicon/favicon-renoir.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'es_MX',
