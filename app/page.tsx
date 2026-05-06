@@ -23,25 +23,21 @@ export default function HomePage() {
       image: '/images/hero/lobby.jpg',
       title: 'El Lobby',
       category: 'Espacios',
-      tall: true,
     },
     {
       image: '/images/wellness/spa-entrance.jpg',
       title: 'Luz de Mañana',
       category: 'Atmósfera',
-      tall: false,
     },
     {
       image: '/images/hero/garden.jpg',
       title: 'Terraza del Jardín',
       category: 'Exteriores',
-      tall: false,
     },
     {
       image: '/images/wellness/relaxation-area.jpg',
       title: 'El Spa',
       category: 'Bienestar',
-      tall: true,
     },
   ];
 
@@ -101,7 +97,7 @@ export default function HomePage() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-50 text-neutral-900">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-neutral-50 text-neutral-900">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-7">
             <RevealText>
@@ -132,7 +128,7 @@ export default function HomePage() {
       </section>
 
       {/* La Esencia Section - Quiénes somos */}
-      <section className="bg-white py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 text-neutral-900">
+      <section className="bg-white py-10 sm:py-14 md:py-18 lg:py-24 text-neutral-900">
         <div className="container mx-auto px-6 max-w-5xl">
           {/* Header */}
           <div className="text-center mb-16">
@@ -386,7 +382,7 @@ export default function HomePage() {
       </section>
 
       {/* Momentos Section - Galería */}
-      <section className="bg-neutral-900 text-white py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
+      <section className="bg-neutral-900 text-white py-10 sm:py-14 md:py-18 lg:py-24">
         <div className="container mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16">
@@ -399,14 +395,13 @@ export default function HomePage() {
           </div>
 
           {/* Grid 2x2 asimétrico */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {galleryMoments.map((moment, index) => (
               <RevealText key={index} delay={index * 100}>
                 <GalleryCard
                   image={moment.image}
                   title={moment.title}
                   category={moment.category}
-                  tall={moment.tall}
                   onClick={() => openGalleryLightboxModal({
                     images: galleryMoments,
                     initialIndex: index
@@ -431,7 +426,7 @@ export default function HomePage() {
       </section>
 
       {/* Santuarios Section - Preview Rediseñado */}
-      <section className="bg-neutral-50 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 text-neutral-900">
+      <section className="bg-neutral-50 py-10 sm:py-14 md:py-18 lg:py-24 text-neutral-900">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             {/* Columna Izquierda - Texto */}

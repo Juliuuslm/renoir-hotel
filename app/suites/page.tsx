@@ -100,7 +100,7 @@ export default function SuitesPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-50 flex justify-center">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-neutral-50 flex justify-center">
         <div className="max-w-3xl px-6 text-center">
           <RevealText>
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 text-neutral-800 italic">

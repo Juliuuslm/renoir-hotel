@@ -60,7 +60,7 @@ export default function GastronomiaPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white text-center">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-white text-center">
         <div className="container mx-auto px-6 max-w-4xl">
           <RevealText>
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 text-neutral-900 leading-tight">
@@ -93,7 +93,7 @@ export default function GastronomiaPage() {
       />
 
       {/* Especialidades Culinarias */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-white">
         <div className="container mx-auto px-6">
           <RevealText>
             <div className="mb-16">
@@ -113,13 +113,12 @@ export default function GastronomiaPage() {
                 Platillos Principales
               </h3>
             </RevealText>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <RevealText delay={150}>
                 <CulinaryCard
                   image="/images/gastronomia/signature-dish-1.jpg"
                   title="Creación Emblema"
                   category="Platillo Insignia"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Creación Emblema",
                     image: "/images/gastronomia/signature-dish-1.jpg",
@@ -143,7 +142,6 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/signature-dish-2.jpg"
                   title="Inspiración Chef"
                   category="Especialidad del Chef"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Inspiración Chef",
                     image: "/images/gastronomia/signature-dish-2.jpg",
@@ -167,7 +165,6 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/signature-dish-3.jpg"
                   title="Propuesta Premium"
                   category="Edición Limitada"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Propuesta Premium",
                     image: "/images/gastronomia/signature-dish-3.jpg",
@@ -222,6 +219,24 @@ export default function GastronomiaPage() {
                   })}
                 />
               </RevealText>
+              <RevealText delay={400}>
+                <CulinaryCard
+                  image="/images/gastronomia/restaurant-ambiance.jpg"
+                  title="El Ambiente"
+                  category="Experiencia Completa"
+                  onClick={() => openDishDetailModal({
+                    title: "El Ambiente",
+                    image: "/images/gastronomia/restaurant-ambiance.jpg",
+                    category: "Experiencia Completa",
+                    description: "La gastronomía no termina en el plato. En La Naranjería, cada detalle del entorno forma parte de la experiencia: la luz natural, los aromas del jardín y la atmósfera cuidada son ingredientes invisibles de cada comida.",
+                    price: "Incluido con cualquier servicio",
+                    prepTime: "Desde que llega",
+                    ingredients: ["Luz natural", "Jardín botánico", "Música de fondo curada", "Servicio personalizado"],
+                    pairing: "Cualquiera de nuestras creaciones",
+                    chefNote: "El contexto transforma el sabor. Nuestro espacio fue diseñado para eso."
+                  })}
+                />
+              </RevealText>
             </div>
           </div>
 
@@ -232,13 +247,12 @@ export default function GastronomiaPage() {
                 Aperitivos y Entradas
               </h3>
             </RevealText>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <RevealText delay={150}>
                 <CulinaryCard
                   image="/images/gastronomia/appetizer.jpg"
                   title="Tapas Gourmet"
                   category="Aperitivos"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Tapas Gourmet",
                     image: "/images/gastronomia/appetizer.jpg",
@@ -318,13 +332,12 @@ export default function GastronomiaPage() {
                 Postres y Dulces
               </h3>
             </RevealText>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <RevealText delay={150}>
                 <CulinaryCard
                   image="/images/gastronomia/dessert-1.jpg"
                   title="Tentación de Chocolate"
                   category="Postres Clásicos"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Tentación de Chocolate",
                     image: "/images/gastronomia/dessert-1.jpg",
@@ -349,7 +362,6 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/dessert-2.jpg"
                   title="Creación Artesanal"
                   category="Repostería Fina"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Creación Artesanal",
                     image: "/images/gastronomia/dessert-2.jpg",
@@ -373,13 +385,12 @@ export default function GastronomiaPage() {
                 Bebidas y Selección de Vinos
               </h3>
             </RevealText>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <RevealText delay={150}>
                 <CulinaryCard
                   image="/images/gastronomia/beverages.jpg"
                   title="Bebidas Exclusivas"
                   category="Coctelería"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Bebidas Exclusivas",
                     image: "/images/gastronomia/beverages.jpg",
@@ -398,7 +409,6 @@ export default function GastronomiaPage() {
                   image="/images/gastronomia/cocktai.jpg"
                   title="Mixología Artesanal"
                   category="Cócteles Clásicos"
-                  featured={true}
                   onClick={() => openDishDetailModal({
                     title: "Mixología Artesanal",
                     image: "/images/gastronomia/cocktai.jpg",
@@ -463,6 +473,24 @@ export default function GastronomiaPage() {
                     ingredients: ["Seleccionados según preferencias del grupo"],
                     pairing: "Vinos elegidos para complementar el menú personalizado",
                     chefNote: "Mínimo 8 personas. El límite es su imaginación. Hagamos magia juntos."
+                  })}
+                />
+              </RevealText>
+              <RevealText delay={400}>
+                <CulinaryCard
+                  image="/images/gastronomia/bar-area.jpg"
+                  title="El Negro After Hours"
+                  category="Ambiente Nocturno"
+                  onClick={() => openDishDetailModal({
+                    title: "El Negro After Hours",
+                    image: "/images/gastronomia/bar-area.jpg",
+                    category: "Ambiente Nocturno",
+                    description: "Cuando la cocina cierra, el bar despierta en su máxima expresión. El Negro After Hours es el espacio donde la noche toma su propio ritmo: música en vivo selecta, cócteles de autor y conversaciones que se extienden hasta el amanecer.",
+                    price: "$18-$28 USD por cóctel",
+                    prepTime: "A partir de las 11:00 PM",
+                    ingredients: ["Spirits de autor", "Vermouths artesanales", "Bitters caseros", "Hielos esculpidos"],
+                    pairing: "Tablas de quesos y embutidos selectos",
+                    chefNote: "El bar tiene su propia alma. Venga sin prisa y con curiosidad."
                   })}
                 />
               </RevealText>

@@ -17,7 +17,7 @@ export const WelcomeScreen = () => {
       const prefersReducedMotion = window.matchMedia(
         '(prefers-reduced-motion: reduce)'
       ).matches;
-      const displayDuration = prefersReducedMotion ? 1500 : 3500;
+      const displayDuration = prefersReducedMotion ? 1000 : 1800;
       const exitDuration = prefersReducedMotion ? 400 : 800;
 
       // Auto-close timer

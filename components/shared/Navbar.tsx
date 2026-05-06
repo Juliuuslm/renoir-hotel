@@ -27,6 +27,7 @@ export const Navbar = () => {
   }, [isMenuOpen]);
 
   const navLinks = [
+    { href: '/', label: 'Inicio' },
     { href: '/suites', label: 'Suites' },
     { href: '/gastronomia', label: 'Gastronomía' },
     { href: '/wellness', label: 'Wellness' },

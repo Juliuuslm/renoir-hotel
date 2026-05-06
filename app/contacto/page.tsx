@@ -61,7 +61,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 px-6 text-center bg-gradient-to-br from-neutral-50 via-white to-yellow-50/30 relative overflow-hidden">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 px-6 text-center bg-gradient-to-br from-neutral-50 via-white to-yellow-50/30 relative overflow-hidden">
         {/* Decorative element */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-stone-100 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/4" />
@@ -125,7 +125,7 @@ export default function ContactoPage() {
       </section>
 
       {/* Nuestras Propiedades */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white border-b border-neutral-200">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-white border-b border-neutral-200">
         <div className="container mx-auto px-6">
           <RevealText>
             <div className="mb-16">
@@ -163,7 +163,7 @@ export default function ContactoPage() {
       </section>
 
       {/* Servicios Concierge */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-50">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-neutral-50">
         <div className="container mx-auto px-6">
           <RevealText>
             <div className="mb-16">
@@ -201,7 +201,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <section id="contacto-form" className="container mx-auto px-6 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48">
+      <section id="contacto-form" className="container mx-auto px-6 py-10 sm:py-14 md:py-18 lg:py-24">
         <div className="bg-white shadow-xl flex flex-col lg:flex-row overflow-hidden">
           {/* Lado Izquierdo: Info + Mapa Visual */}
           <div className="lg:w-1/2 relative bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-900 text-white p-12 lg:p-20 flex flex-col justify-between overflow-hidden">
@@ -263,10 +263,10 @@ export default function ContactoPage() {
                     </p>
                     <p className="font-serif text-xl">
                       <a
-                        href="mailto:contacto@aurora33.org"
+                        href="mailto:hola@aurora33.org"
                         className="hover:text-yellow-600 transition-colors"
                       >
-                        contacto@aurora33.org
+                        hola@aurora33.org
                       </a>
                     </p>
                   </div>
@@ -293,7 +293,7 @@ export default function ContactoPage() {
       </section>
 
       {/* FAQ rápido */}
-      <section className="bg-neutral-100 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 border-t border-neutral-200">
+      <section className="bg-neutral-100 py-10 sm:py-14 md:py-18 lg:py-24 border-t border-neutral-200">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 text-center">
             {faqs.map((faq, i) => (

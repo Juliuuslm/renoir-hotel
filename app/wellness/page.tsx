@@ -110,7 +110,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Intro Quote */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-stone-50 text-center">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-stone-50 text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Waves size={32} className="mx-auto text-stone-400 mb-6" strokeWidth={1} />
@@ -126,7 +126,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Treatments Section */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <RevealText>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 sm:gap-0 mb-16 border-b border-black pb-4">
@@ -151,7 +151,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Spa Facilities Gallery */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-stone-50">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-stone-50">
         <div className="container mx-auto px-6">
           <RevealText>
             <div className="mb-16">
@@ -309,7 +309,7 @@ export default function WellnessPage() {
       </section>
 
       {/* Facilities Section */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-stone-100">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-stone-100">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <div className="md:col-span-1 p-8 md:p-12 bg-white shadow-sm border border-stone-200">
             <RevealText>

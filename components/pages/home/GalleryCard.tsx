@@ -6,18 +6,13 @@ interface GalleryCardProps {
   image: string;
   title: string;
   category: string;
-  tall?: boolean;
   onClick?: () => void;
 }
 
-export const GalleryCard = ({ image, title, category, tall = false, onClick }: GalleryCardProps) => {
-  const heightClass = tall
-    ? 'h-[400px] md:h-[600px]'
-    : 'h-[300px] md:h-[400px]';
-
+export const GalleryCard = ({ image, title, category, onClick }: GalleryCardProps) => {
   return (
     <div
-      className={`group relative overflow-hidden bg-neutral-800 cursor-pointer tap-highlight ${heightClass}`}
+      className="group relative overflow-hidden bg-neutral-800 cursor-pointer tap-highlight h-[380px] lg:h-[520px]"
       role="button"
       tabIndex={0}
       onClick={onClick}

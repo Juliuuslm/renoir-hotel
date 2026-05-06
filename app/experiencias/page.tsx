@@ -99,7 +99,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Intro */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white text-center">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-white text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <RevealText>
             <Compass size={32} className="mx-auto text-neutral-400 mb-6" strokeWidth={1} />
@@ -116,7 +116,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Agenda Cultural */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-50">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-neutral-50">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <RevealText>
@@ -143,7 +143,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Concierge Picks */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-900 text-white">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-neutral-900 text-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -286,7 +286,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Talleres Creativos */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-white">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-white">
         <div className="container mx-auto px-6 text-center">
           <RevealText>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-12">Talleres Creativos</h2>
@@ -316,7 +316,7 @@ export default function ExperienciasPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48 bg-neutral-900 text-white text-center">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-neutral-900 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
           <RevealText>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8">Su Historia Comienza Aquí</h2>
