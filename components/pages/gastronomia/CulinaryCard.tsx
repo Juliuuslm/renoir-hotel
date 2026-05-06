@@ -6,16 +6,13 @@ interface CulinaryCardProps {
   image: string;
   title: string;
   category?: string;
-  featured?: boolean;
   onClick?: () => void;
 }
 
-export const CulinaryCard = ({ image, title, category, featured = false, onClick }: CulinaryCardProps) => {
-  const height = featured ? 'h-[350px] md:h-[450px]' : 'h-[250px] md:h-[300px]';
-
+export const CulinaryCard = ({ image, title, category, onClick }: CulinaryCardProps) => {
   return (
     <div
-      className={`group relative overflow-hidden bg-neutral-900 cursor-pointer tap-highlight ${height}`}
+      className="group relative overflow-hidden bg-neutral-900 cursor-pointer tap-highlight h-[360px] md:h-[440px]"
       onClick={onClick}
       role="button"
       tabIndex={0}

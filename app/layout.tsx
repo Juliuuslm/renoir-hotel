@@ -32,7 +32,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://renoirhotel.com'),
+  metadataBase: new URL('https://aurora33.org'),
   title: {
     default: 'Renoir Hotel - Arte de Hospitalidad en CDMX',
     template: '%s | Renoir Hotel'
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_MX',
-    url: 'https://renoirhotel.com',
+    url: 'https://aurora33.org',
     siteName: 'Renoir Hotel',
     title: 'Renoir Hotel - Arte de Hospitalidad en CDMX',
     description: 'Un santuario de calma y sofisticación donde el diseño se encuentra con la hospitalidad de lujo.',

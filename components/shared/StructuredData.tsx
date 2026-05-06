@@ -5,7 +5,7 @@ export const HotelStructuredData = () => {
     name: 'Renoir Hotel',
     description:
       'Un santuario de calma y sofisticación donde el diseño se encuentra con la hospitalidad de lujo.',
-    image: 'https://renoirhotel.com/images/hotel-exterior.jpg',
+    image: 'https://aurora33.org/images/hotel-exterior.jpg',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Calle de la Paz 45',
@@ -15,7 +15,7 @@ export const HotelStructuredData = () => {
       addressCountry: 'MX',
     },
     telephone: '+52 55 7453 3388',
-    email: 'contacto@aurora33.org',
+    email: 'hola@aurora33.org',
     starRating: {
       '@type': 'Rating',
       ratingValue: '5',

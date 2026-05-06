@@ -46,8 +46,8 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm text-neutral-300">
               <li>Calle de la Paz 45, CDMX</li>
               <li>
-                <a href="mailto:contacto@aurora33.org" className="hover:text-white transition-colors">
-                  contacto@aurora33.org
+                <a href="mailto:hola@aurora33.org" className="hover:text-white transition-colors">
+                  hola@aurora33.org
                 </a>
               </li>
               <li>
