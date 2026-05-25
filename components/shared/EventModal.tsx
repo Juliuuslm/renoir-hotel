@@ -9,6 +9,16 @@ export const EventModal = () => {
 
   if (activeModal !== 'event' || !modalData) return null;
 
+  interface EventData {
+    title: string;
+    category: string;
+    image?: string;
+    month: string;
+    day: string;
+    description?: string;
+    time?: string;
+    location?: string;
+  }
   const {
     title,
     category,
@@ -18,7 +28,7 @@ export const EventModal = () => {
     description = '',
     time = '8:00 PM',
     location = 'Hotel Renoir',
-  } = modalData as any;
+  } = modalData as unknown as EventData;
 
   return (
     <div

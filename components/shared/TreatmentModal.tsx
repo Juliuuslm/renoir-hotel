@@ -18,7 +18,14 @@ export const TreatmentModal = () => {
 
   if (activeModal !== 'treatment' || !modalData) return null;
 
-  const { title, duration, price, desc, gallery = [] } = modalData;
+  interface TreatmentData {
+    title: string;
+    duration: string;
+    price: string;
+    desc: string;
+    gallery?: string[];
+  }
+  const { title, duration, price, desc, gallery = [] } = modalData as unknown as TreatmentData;
 
   const galleryImages = gallery.length > 0 ? gallery : [];
   const currentImage = galleryImages.length > 0 ? galleryImages[currentImageIndex] : null;

@@ -9,6 +9,16 @@ export const PillarDetailModal = () => {
 
   if (activeModal !== 'pillar-detail' || !modalData) return null;
 
+  interface PillarDetail { title: string; description: string; }
+  interface PillarData {
+    pillar?: string;
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    image?: string;
+    details?: PillarDetail[];
+    highlights?: string[];
+  }
   const {
     pillar = 'arte',
     title = 'Pilar',
@@ -17,7 +27,7 @@ export const PillarDetailModal = () => {
     image,
     details = [],
     highlights = [],
-  } = modalData;
+  } = modalData as unknown as PillarData;
 
   // Determinar ícono según pilar
   const getIcon = () => {
@@ -85,7 +95,7 @@ export const PillarDetailModal = () => {
           {/* Details Grid */}
           {details.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              {details.map((detail: any, idx: number) => (
+              {details.map((detail: PillarDetail, idx: number) => (
                 <div key={idx} className="border-l-4 border-yellow-600 pl-6">
                   <h3 className="font-serif text-xl text-neutral-900 mb-3">
                     {detail.title}

@@ -13,8 +13,7 @@ interface RoomCardProps {
   gallery?: string[];
   reverse?: boolean;
   index: number;
-  onOpenBooking: () => void;
-  onOpenSuiteDetail?: (data: any) => void;
+  onOpenSuiteDetail?: (data: Record<string, unknown>) => void;
 }
 
 const getFeatureIcon = (feature: string) => {
@@ -42,7 +41,6 @@ export const RoomCard = ({
   gallery = [],
   reverse = false,
   index,
-  onOpenBooking,
   onOpenSuiteDetail,
 }: RoomCardProps) => {
   const handleViewDetails = () => {

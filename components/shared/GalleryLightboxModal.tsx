@@ -9,7 +9,9 @@ export const GalleryLightboxModal = () => {
   const { activeModal, modalData, closeModal } = useModal();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const { images = [], initialIndex = 0 } = modalData || {};
+  interface GalleryImage { image: string; title: string; category: string; }
+  interface GalleryData { images?: GalleryImage[]; initialIndex?: number; }
+  const { images = [], initialIndex = 0 } = (modalData as unknown as GalleryData) || {};
   const currentImage = images[currentImageIndex] || {};
   const { image, title, category } = currentImage;
 

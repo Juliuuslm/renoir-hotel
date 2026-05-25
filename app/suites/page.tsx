@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Metadata } from 'next';
 import Image from 'next/image';
 import { RevealText } from '@/components/ui/RevealText';
 import { RoomCard } from '@/components/pages/suites/RoomCard';
@@ -30,11 +29,21 @@ const suiteGalleries = {
 
 export default function SuitesPage() {
   const [loaded, setLoaded] = useState(false);
-  const { openBookingModal, openSuiteDetailModal } = useModal();
+  const { openSuiteDetailModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setLoaded(true);
+    const isFirstVisit = !localStorage.getItem('renoir-visited');
+    if (!isFirstVisit) {
+      setLoaded(true);
+      return;
+    }
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    const splashDuration = prefersReducedMotion ? 1600 : 2800;
+    const timer = setTimeout(() => setLoaded(true), splashDuration);
+    return () => clearTimeout(timer);
   }, []);
 
   const rooms = [
@@ -73,7 +82,7 @@ export default function SuitesPage() {
             src="/images/suites/atelier-suite-bedroom.jpg"
             alt="Bed detail"
             fill
-            className={`object-cover transition-transform duration-[3s] ${
+            className={`object-cover transition-all duration-[2s] ease-out ${
               loaded ? 'scale-100 opacity-50' : 'scale-110 opacity-0'
             }`}
             priority
@@ -123,7 +132,6 @@ export default function SuitesPage() {
             {...room}
             reverse={idx % 2 !== 0}
             index={idx}
-            onOpenBooking={openBookingModal}
             onOpenSuiteDetail={openSuiteDetailModal}
           />
         ))}

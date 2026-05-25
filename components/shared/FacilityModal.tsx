@@ -9,6 +9,16 @@ export const FacilityModal = () => {
 
   if (activeModal !== 'facility' || !modalData) return null;
 
+  interface FacilityData {
+    title: string;
+    description: string;
+    image?: string;
+    hours?: string;
+    capacity?: string;
+    temperature?: string;
+    amenities?: string[];
+    additionalInfo?: string;
+  }
   const {
     title,
     description,
@@ -23,7 +33,7 @@ export const FacilityModal = () => {
       'Disponible para huéspedes del hotel',
     ],
     additionalInfo,
-  } = modalData;
+  } = modalData as unknown as FacilityData;
 
   return (
     <div
