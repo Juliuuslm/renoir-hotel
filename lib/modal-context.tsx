@@ -7,18 +7,18 @@ type ModalType = 'booking' | 'menu' | 'treatment' | 'facility' | 'event' | 'work
 
 interface ModalContextType {
   activeModal: ModalType;
-  modalData: any;
+  modalData: Record<string, unknown> | null;
   openBookingModal: () => void;
   openMenuModal: () => void;
-  openTreatmentModal: (data: any) => void;
-  openFacilityModal: (data: any) => void;
-  openEventModal: (data: any) => void;
-  openWorkshopModal: (data: any) => void;
-  openSuiteDetailModal: (data: any) => void;
-  openGalleryLightboxModal: (data: any) => void;
-  openDishDetailModal: (data: any) => void;
-  openPillarDetailModal: (data: any) => void;
-  openLocationDetailModal: (data: any) => void;
+  openTreatmentModal: (data: Record<string, unknown>) => void;
+  openFacilityModal: (data: Record<string, unknown>) => void;
+  openEventModal: (data: Record<string, unknown>) => void;
+  openWorkshopModal: (data: Record<string, unknown>) => void;
+  openSuiteDetailModal: (data: Record<string, unknown>) => void;
+  openGalleryLightboxModal: (data: Record<string, unknown>) => void;
+  openDishDetailModal: (data: Record<string, unknown>) => void;
+  openPillarDetailModal: (data: Record<string, unknown>) => void;
+  openLocationDetailModal: (data: Record<string, unknown>) => void;
   closeModal: () => void;
 }
 
@@ -26,7 +26,7 @@ const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [activeModal, setActiveModal] = useState<ModalType>(null);
-  const [modalData, setModalData] = useState<any>(null);
+  const [modalData, setModalData] = useState<Record<string, unknown> | null>(null);
 
   // Usar hook para manejar scroll lock
   useScrollLock(!!activeModal);
@@ -41,47 +41,47 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
     setModalData(null);
   };
 
-  const openTreatmentModal = (data: any) => {
+  const openTreatmentModal = (data: Record<string, unknown>) => {
     setActiveModal('treatment');
     setModalData(data);
   };
 
-  const openFacilityModal = (data: any) => {
+  const openFacilityModal = (data: Record<string, unknown>) => {
     setActiveModal('facility');
     setModalData(data);
   };
 
-  const openEventModal = (data: any) => {
+  const openEventModal = (data: Record<string, unknown>) => {
     setActiveModal('event');
     setModalData(data);
   };
 
-  const openWorkshopModal = (data: any) => {
+  const openWorkshopModal = (data: Record<string, unknown>) => {
     setActiveModal('workshop');
     setModalData(data);
   };
 
-  const openSuiteDetailModal = (data: any) => {
+  const openSuiteDetailModal = (data: Record<string, unknown>) => {
     setActiveModal('suite-detail');
     setModalData(data);
   };
 
-  const openGalleryLightboxModal = (data: any) => {
+  const openGalleryLightboxModal = (data: Record<string, unknown>) => {
     setActiveModal('gallery-lightbox');
     setModalData(data);
   };
 
-  const openDishDetailModal = (data: any) => {
+  const openDishDetailModal = (data: Record<string, unknown>) => {
     setActiveModal('dish-detail');
     setModalData(data);
   };
 
-  const openPillarDetailModal = (data: any) => {
+  const openPillarDetailModal = (data: Record<string, unknown>) => {
     setActiveModal('pillar-detail');
     setModalData(data);
   };
 
-  const openLocationDetailModal = (data: any) => {
+  const openLocationDetailModal = (data: Record<string, unknown>) => {
     setActiveModal('location-detail');
     setModalData(data);
   };

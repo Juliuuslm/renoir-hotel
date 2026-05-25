@@ -13,7 +13,17 @@ export default function GastronomiaPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setLoaded(true);
+    const isFirstVisit = !localStorage.getItem('renoir-visited');
+    if (!isFirstVisit) {
+      setLoaded(true);
+      return;
+    }
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    const splashDuration = prefersReducedMotion ? 1600 : 2800;
+    const timer = setTimeout(() => setLoaded(true), splashDuration);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -25,7 +35,7 @@ export default function GastronomiaPage() {
             src="/images/gastronomia/restaurant-main.jpg"
             alt="Dining"
             fill
-            className={`object-cover transition-transform duration-[3s] ${
+            className={`object-cover transition-all duration-[2s] ease-out ${
               loaded ? 'scale-100 opacity-60' : 'scale-110 opacity-0'
             }`}
             priority

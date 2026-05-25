@@ -14,8 +14,20 @@ export default function HomePage() {
   const { openBookingModal, openGalleryLightboxModal, openPillarDetailModal } = useModal();
 
   useEffect(() => {
-    setLoaded(true);
+    const isFirstVisit = !localStorage.getItem('renoir-visited');
+    if (!isFirstVisit) {
+      setLoaded(true);
+      return;
+    }
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    const splashDuration = prefersReducedMotion ? 1600 : 2800;
+    const timer = setTimeout(() => setLoaded(true), splashDuration);
+    return () => clearTimeout(timer);
   }, []);
+
+
 
   // Galería de imágenes para sección Momentos
   const galleryMoments = [
@@ -50,7 +62,7 @@ export default function HomePage() {
             src="/images/hero/lobby.jpg"
             alt="Hotel Renoir Lobby"
             fill
-            className={`object-cover transition-transform duration-[3s] ease-out ${
+            className={`object-cover transition-all duration-[2s] ease-out ${
               loaded ? 'scale-100 opacity-60' : 'scale-110 opacity-0'
             }`}
             priority

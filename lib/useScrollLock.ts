@@ -10,7 +10,8 @@ export const useScrollLock = (isLocked: boolean) => {
     const htmlElement = document.documentElement;
     const bodyElement = document.body;
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    const lenis = (window as any).lenis;
+    interface LenisInstance { stop(): void; start(): void; }
+    const lenis = (window as Window & { lenis?: LenisInstance }).lenis;
 
     if (isLocked) {
       // Bloquear overflow en html y body

@@ -9,6 +9,17 @@ export const DishDetailModal = () => {
 
   if (activeModal !== 'dish-detail' || !modalData) return null;
 
+  interface DishData {
+    title: string;
+    image?: string;
+    category: string;
+    description?: string;
+    price?: string;
+    prepTime?: string;
+    ingredients?: string[];
+    pairing?: string;
+    chefNote?: string;
+  }
   const {
     title,
     image,
@@ -16,14 +27,10 @@ export const DishDetailModal = () => {
     description = 'Platillo exquisitamente preparado con los mejores ingredientes de temporada.',
     price = '$45 USD',
     prepTime = '25-30 min',
-    ingredients = [
-      'Ingredientes frescos de mercado',
-      'Especias seleccionadas',
-      'Aceite de oliva extra virgen'
-    ],
+    ingredients = ['Ingredientes frescos de mercado', 'Especias seleccionadas', 'Aceite de oliva extra virgen'],
     pairing = 'Vino tinto de la casa',
-    chefNote = 'Recomendación especial del Chef'
-  } = modalData;
+    chefNote = 'Recomendación especial del Chef',
+  } = modalData as unknown as DishData;
 
   return (
     <div

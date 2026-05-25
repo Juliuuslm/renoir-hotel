@@ -8,6 +8,14 @@ export const WorkshopModal = () => {
 
   if (activeModal !== 'workshop' || !modalData) return null;
 
+  interface WorkshopData {
+    title: string;
+    description?: string;
+    duration?: string;
+    maxParticipants?: string;
+    price?: string;
+    schedule?: string[];
+  }
   const {
     title,
     description = 'Sumérgete en una experiencia creativa única.',
@@ -15,7 +23,7 @@ export const WorkshopModal = () => {
     maxParticipants = '6',
     price = '$150 USD',
     schedule = ['Miércoles 10:00 AM', 'Viernes 3:00 PM', 'Domingo 4:00 PM'],
-  } = modalData;
+  } = modalData as unknown as WorkshopData;
 
   return (
     <div

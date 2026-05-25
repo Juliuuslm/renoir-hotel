@@ -9,6 +9,18 @@ export const LocationDetailModal = () => {
 
   if (activeModal !== 'location-detail' || !modalData) return null;
 
+  interface LocationData {
+    title?: string;
+    description?: string;
+    image?: string;
+    address?: string;
+    hours?: string;
+    distance?: string;
+    contactInfo?: string;
+    howToGetThere?: string[];
+    tips?: string[];
+    conciergeNote?: string;
+  }
   const {
     title = 'Ubicación',
     description = 'Descripción del lugar',
@@ -20,7 +32,7 @@ export const LocationDetailModal = () => {
     howToGetThere = [],
     tips = [],
     conciergeNote = 'Nota del concierge',
-  } = modalData;
+  } = modalData as unknown as LocationData;
 
   return (
     <div

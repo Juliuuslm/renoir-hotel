@@ -9,7 +9,7 @@ interface TreatmentItemProps {
   desc: string;
   index: number;
   gallery?: string[];
-  onOpenTreatmentModal?: (data: any) => void;
+  onOpenTreatmentModal?: (data: Record<string, unknown>) => void;
 }
 
 export const TreatmentItem = ({ title, duration, price, desc, index, gallery = [], onOpenTreatmentModal }: TreatmentItemProps) => {

@@ -20,6 +20,15 @@ export const SuiteDetailModal = () => {
     return null;
   }
 
+  interface SuiteData {
+    title?: string;
+    price?: string;
+    description?: string;
+    image?: string;
+    gallery?: string[];
+    features?: string[];
+    amenities?: string[];
+  }
   const {
     title = 'Renoir Suite',
     price = '$450 USD',
@@ -35,7 +44,7 @@ export const SuiteDetailModal = () => {
       'Servicio de turndown',
       'Wi-Fi de alta velocidad',
     ],
-  } = modalData;
+  } = modalData as unknown as SuiteData;
 
   const galleryImages = gallery.length > 0 ? gallery : [image];
   const currentImage = galleryImages[currentImageIndex];
